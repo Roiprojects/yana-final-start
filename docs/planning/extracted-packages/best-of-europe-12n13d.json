@@ -1,0 +1,141 @@
+{
+  "package_title": "Best of Europe",
+  "slug": "best-of-europe-12n13d",
+  "scope": "international",
+  "tour_type": "group",
+  "group_subtype": null,
+  "category_name": "Europe",
+  "destination_name": "Europe (multi-country)",
+  "country": "Europe",
+  "duration_days": 13,
+  "duration_nights": 12,
+  "overview": "A grand group tour across France, Belgium, the Netherlands, Switzerland, Italy and more — iconic cities, alpine scenery and timeless landmarks.",
+  "highlights": [
+    "City tour of Paris | Admission inside the Eiffel Tower (2nd Level)",
+    "Drive from Paris to Brussels, the capital of the European Union",
+    "Beautiful day is planned in The Netherlands with Visit to Keukenhof",
+    "City tour of Luxembourg's Timeless Streets |Photo stop at Golden Lady"
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Arrival in Paris--Where Elegance Meets Adventure",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 2,
+      "title": "City tour of Paris | Admission inside the Eiffel Tower (2nd Level)",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 3,
+      "title": "Drive from Paris to Brussels, the capital of the European Union",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 4,
+      "title": "Beautiful day is planned in The Netherlands with Visit to Keukenhof",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 5,
+      "title": "City tour of Luxembourg's Timeless Streets |Photo stop at Golden Lady",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 6,
+      "title": "Drives to the Heart of Black Forest |See The Rhine Falls | Enjoy the Boat",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 7,
+      "title": "Excursion to Mt Titlis |Orientation tour of Lucerne |Free time for shopping",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 8,
+      "title": "Visit the Capital of Switzerland, Bern |Orientation tour of",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 9,
+      "title": "Orientation tour of Vaduz |Drive to Innsbruck |Visit Swarovski |Nordkette",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 10,
+      "title": "Visit to Romantic Venice Sprawling squares, beautiful monuments,",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 11,
+      "title": "Marvels of Pisa's Leaning Tower |Drive to Tuscany",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 12,
+      "title": "All roads lead to Rome discover the eternal city |Enter the world's",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 13,
+      "title": "Fly Back Home.",
+      "description": null,
+      "meals": null,
+      "stay": null
+    }
+  ],
+  "inclusions": [
+    "PARIS",
+    "Romantic Cruise on the Seine River in Paris.",
+    "City tour of Paris.",
+    "Visit to the 2nd level of the Eiffel Tower.",
+    "Special design Paris by night tour",
+    "Visit to Versailles Palace",
+    "BRUSSELS",
+    "Orientation Tour including the Grand Place, Mannekin Pis.",
+    "Photo stop at Atomium. (Photo stop)",
+    "Visit to Belgium Beer World",
+    "THE NETHERLANDS",
+    "Visit to Keukenhof Garden (till 10th May 2026) or Visit to Madurodam (from 11th",
+    "May 2026)",
+    "Visit to Wooden Shoe Factory and Cheese Farm",
+    "Amsterdam Canal Cruise",
+    "LUXEMBOURG",
+    "City tour of Luxembourg city.",
+    "Enjoy the tram ride in Luxembourg"
+  ],
+  "exclusions": [],
+  "price_amount": 280000,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": true,
+  "source_pdf": "2026 April - Oct Best Of Europe 12Nights 13Days By Yana Travels.pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}

@@ -1,0 +1,41 @@
+{
+  "package_title": "NEEDS CLIENT CONFIRMATION",
+  "slug": "example-destination-5d",
+  "tour_category": "NEEDS CLIENT CONFIRMATION",
+  "scope": "domestic | international",
+  "tour_type": "group | customized",
+  "group_subtype": "standard | kitchen_staff | null",
+  "destination": "NEEDS CLIENT CONFIRMATION",
+  "state": "NEEDS CLIENT CONFIRMATION",
+  "country": "NEEDS CLIENT CONFIRMATION",
+  "duration_days": null,
+  "duration_nights": null,
+  "overview": "NEEDS CLIENT CONFIRMATION",
+  "highlights": [],
+  "itinerary": [
+    { "day": 1, "title": "", "detail": "", "meals": "", "stay": "" }
+  ],
+  "accommodation": "NEEDS CLIENT CONFIRMATION",
+  "meals_info": "NEEDS CLIENT CONFIRMATION",
+  "transport_info": "NEEDS CLIENT CONFIRMATION",
+  "inclusions": [],
+  "exclusions": [],
+  "price": { "amount": null, "currency": "INR" },
+  "taxes_info": "NEEDS CLIENT CONFIRMATION",
+  "departures": [
+    { "depart_date": null, "return_date": null, "seats": null, "price_override": null }
+  ],
+  "pickup_location": "NEEDS CLIENT CONFIRMATION",
+  "drop_location": "NEEDS CLIENT CONFIRMATION",
+  "documents_required": [],
+  "visa_info": "NEEDS CLIENT CONFIRMATION",
+  "cancellation_policy": "NEEDS CLIENT CONFIRMATION",
+  "terms": "NEEDS CLIENT CONFIRMATION",
+  "contact": { "phone": "+91 9513588143", "email": "info@yanaindia.com" },
+  "source_pdf": null,
+  "source_pages": null,
+  "field_confidence": {
+    "_note": "Per field: 'extracted' | 'inferred' | 'missing'. Nothing is 'extracted' until a real PDF is processed."
+  },
+  "review_status": "pending"
+}

@@ -1,0 +1,90 @@
+{
+  "package_title": "Singapore & Malaysia",
+  "slug": "singapore-malaysia-6n7d",
+  "scope": "international",
+  "tour_type": "group",
+  "group_subtype": null,
+  "category_name": "International",
+  "destination_name": "Singapore & Malaysia",
+  "country": "Singapore · Malaysia",
+  "duration_days": 7,
+  "duration_nights": 6,
+  "overview": "City highlights, gardens and attractions across Singapore and Malaysia on a week-long group tour.",
+  "highlights": [
+    "Singapore",
+    "Garden By The Bay / Sentosa Island",
+    "Singapore Universal Studios",
+    "Singapore - Kuala Lumpur"
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Singapore",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 2,
+      "title": "Garden By The Bay / Sentosa Island",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 3,
+      "title": "Singapore Universal Studios",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 4,
+      "title": "Singapore - Kuala Lumpur",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 5,
+      "title": "Kuala Lumpur",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 6,
+      "title": "Kualalumpur - Genting Highlands",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 7,
+      "title": "Kaula Lumpur - Putrajaya Airport Drop",
+      "description": null,
+      "meals": null,
+      "stay": null
+    }
+  ],
+  "inclusions": [],
+  "exclusions": [
+    "Airfare",
+    "GST",
+    "TCS Refundable",
+    "Any drinks alcoholic or non-alcoholic",
+    "Excess baggage charge",
+    "Personal expenses",
+    "Services not specifically stated in the itinerary",
+    "Anythingnot mentioned in cost includes",
+    "Travel Insurance"
+  ],
+  "price_amount": 97000,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": false,
+  "source_pdf": "2026 New Singapore Malaysia 07Days By Yana Travels.pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}

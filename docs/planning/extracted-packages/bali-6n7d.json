@@ -1,0 +1,108 @@
+{
+  "package_title": "Beautiful Bali",
+  "slug": "bali-6n7d",
+  "scope": "international",
+  "tour_type": "group",
+  "group_subtype": null,
+  "category_name": "Beaches & Islands",
+  "destination_name": "Bali",
+  "country": "Indonesia",
+  "duration_days": 7,
+  "duration_nights": 6,
+  "overview": "Temples, emerald rice terraces, waterfalls and island day-trips across Bali — a relaxed group tour of Indonesia's most-loved island.",
+  "highlights": [
+    "Lempuyang Temple Tirtha Gangga Water Palace Besakih Temple",
+    "Kintamani Village Tour Tirtha Empul Temple Aloha Swing - Tegenungan",
+    "Jatiluwih Rice Terrace Taman Ayun Temple Tanah Lot Temple",
+    "Intertransfer Hotel Gwk Cultural Park Dreamland Beach Uluwatu"
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Arrival Sunset Dinner Cruise",
+      "description": null,
+      "meals": "L/D",
+      "stay": null
+    },
+    {
+      "day_number": 2,
+      "title": "Lempuyang Temple Tirtha Gangga Water Palace Besakih Temple",
+      "description": null,
+      "meals": "B/L/D",
+      "stay": null
+    },
+    {
+      "day_number": 3,
+      "title": "Kintamani Village Tour Tirtha Empul Temple Aloha Swing - Tegenungan",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 4,
+      "title": "Jatiluwih Rice Terrace Taman Ayun Temple Tanah Lot Temple",
+      "description": null,
+      "meals": "B/L/D",
+      "stay": null
+    },
+    {
+      "day_number": 5,
+      "title": "Intertransfer Hotel Gwk Cultural Park Dreamland Beach Uluwatu",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 6,
+      "title": "Nusa Penida West Island Tour",
+      "description": null,
+      "meals": "B/L/D",
+      "stay": null
+    },
+    {
+      "day_number": 7,
+      "title": "Departure",
+      "description": null,
+      "meals": "B",
+      "stay": null
+    }
+  ],
+  "inclusions": [
+    "4 Nights Accommodation Seminyak on Twin/Triple Share at 4 Star hotel/resort.",
+    "2 Nights Accommodation Kuta OR Ubud on Twin/Triple Share at 4 Star hotel/resort.",
+    "Daily Breakfast at hotel",
+    "06 Lunch and 06 Dinner includes.",
+    "Air Conditioned Vehicle during transfers and tours on private basis",
+    "English Speaking Driver cum Guide during Tours and Transfers",
+    "2X 600 ML Mineral Water during Arrival Transfers and Tours",
+    "Meals as specified in the itinerary",
+    "Entrance Fee at Tourist Objects as specified in the itinerary",
+    "FLOWER GARLAND AT AIRPORT DURING ARRIVAL"
+  ],
+  "exclusions": [
+    "Personal Expenses",
+    "Other Services which are not specified in the itinerary",
+    "Driver Tipping",
+    "Visa Fee at IDR. 500,000 net/person (approx. at USD. 35 to USD. 40 /person subject to the exchange rates fluctuation) payable at Bali Airport",
+    "GST & TCS ( TCS Refundable )",
+    "Anything not mentioned in includes",
+    "Airfare",
+    "Summary to enter Indonesia as per current regulation (subject to change)",
+    "1. Passport validity Minimum 6 Months prior to arrival",
+    "2. Visa On Arrival = IDR. 500,000 / person payable at Indonesia Airport Immigration Counter (approx. at",
+    "USD. 35 net/person subject to the exchange rates fluctuation)",
+    "3. COVID-19 Insurance with minimum coverage at USD. 25,000.",
+    "4. 2 Doze COVID Vaccine Certificate (in case not completed with 2 Doze then please take RT-PCR",
+    "Negative Test Result from the origin country within 48 hours prior to arrival)",
+    "5. Copy of Itinerary / Hotel Confirmation Voucher.",
+    "Should there be any other things to clarify or require, please feel free to contact us at your convenience - +919513588143"
+  ],
+  "price_amount": 59500,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": true,
+  "source_pdf": "2026 Beautiful Bali Group Tour 6Nights 7Days Yana Travels (1) (1).pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}

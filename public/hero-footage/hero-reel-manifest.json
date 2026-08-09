@@ -1,0 +1,128 @@
+{
+  "version": 2,
+  "title": "Yana Travels Homepage Hero Reel",
+  "durationTargetSeconds": 36,
+  "desktopOutput": "/hero/homepage-hero-real-16x9.mp4",
+  "mobileOutput": "/hero/homepage-hero-real-9x16.mp4",
+  "posterDesktop": "/hero/homepage-hero-real-16x9-poster.jpg",
+  "posterMobile": "/hero/homepage-hero-real-9x16-poster.jpg",
+  "segments": [
+    {
+      "id": "karnataka-jog-a",
+      "phase": "nature-karnataka",
+      "src": "public/hero-footage/raw/11-karnataka-jog-falls-a.mp4",
+      "label": "Jog Falls aerial",
+      "location": "Karnataka",
+      "start": 1.0,
+      "duration": 4.0
+    },
+    {
+      "id": "karnataka-jog-b",
+      "phase": "nature-karnataka",
+      "src": "public/hero-footage/raw/12-karnataka-jog-falls-b.mp4",
+      "label": "Jog Falls mist aerial",
+      "location": "Karnataka",
+      "start": 1.5,
+      "duration": 3.8
+    },
+    {
+      "id": "karnataka-coorg",
+      "phase": "nature-karnataka",
+      "src": "public/hero-footage/raw/13-karnataka-coorg.mp4",
+      "label": "Coorg hills aerial",
+      "location": "Karnataka",
+      "start": 2.0,
+      "duration": 3.8
+    },
+    {
+      "id": "karnataka-mysore",
+      "phase": "heritage-karnataka",
+      "src": "public/hero-footage/raw/06-epic-karnataka-highlight.mp4",
+      "label": "Mysore Palace grounds",
+      "location": "Karnataka",
+      "start": 4.0,
+      "duration": 2.8
+    },
+    {
+      "id": "india-jaisalmer",
+      "phase": "nature-india",
+      "src": "public/hero-footage/raw/05-epic-india-heritage.mp4",
+      "label": "Jaisalmer desert fort aerial",
+      "location": "India",
+      "start": 6.0,
+      "duration": 3.8
+    },
+    {
+      "id": "india-kerala-tea",
+      "phase": "nature-india",
+      "src": "public/hero-footage/raw/14-india-kerala-tea-valley.mp4",
+      "label": "Kerala tea valley",
+      "location": "India",
+      "start": 2.0,
+      "duration": 4.0
+    },
+    {
+      "id": "india-kerala-backwaters",
+      "phase": "nature-india",
+      "src": "public/hero-footage/raw/15-india-kerala-backwaters.mp4",
+      "label": "Kerala backwaters",
+      "location": "India",
+      "start": 2.0,
+      "duration": 3.8
+    },
+    {
+      "id": "vietnam-halong",
+      "phase": "nature-world",
+      "src": "public/hero-footage/raw/04-epic-vietnam-landscape.mp4",
+      "label": "Ha Long Bay",
+      "location": "Vietnam",
+      "start": 2.0,
+      "duration": 3.8
+    },
+    {
+      "id": "europe-norway",
+      "phase": "nature-world",
+      "src": "public/hero-footage/raw/16-europe-norway-fjord.mp4",
+      "label": "Norway fjord",
+      "location": "Norway",
+      "start": 1.0,
+      "duration": 3.2
+    },
+    {
+      "id": "europe-switzerland",
+      "phase": "nature-world",
+      "src": "public/hero-footage/raw/17-europe-switzerland-lake.mp4",
+      "label": "Swiss lake and mountains",
+      "location": "Switzerland",
+      "start": 1.0,
+      "duration": 3.2
+    },
+    {
+      "id": "europe-italy",
+      "phase": "nature-world",
+      "src": "public/hero-footage/raw/18-europe-italy-coast.mp4",
+      "label": "Italy coastline",
+      "location": "Italy",
+      "start": 2.0,
+      "duration": 2.8
+    },
+    {
+      "id": "world-maldives",
+      "phase": "nature-world",
+      "src": "public/hero-footage/raw/19-maldives-resort-water.mp4",
+      "label": "Maldives water aerial",
+      "location": "Maldives",
+      "start": 1.0,
+      "duration": 3.0
+    },
+    {
+      "id": "world-bali",
+      "phase": "nature-world",
+      "src": "public/hero-footage/raw/20-bali-rice-terraces.mp4",
+      "label": "Bali rice terraces",
+      "location": "Bali",
+      "start": 0.5,
+      "duration": 2.0
+    }
+  ]
+}

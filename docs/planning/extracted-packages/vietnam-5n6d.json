@@ -1,0 +1,92 @@
+{
+  "package_title": "Vietnam Group Tour",
+  "slug": "vietnam-5n6d",
+  "scope": "international",
+  "tour_type": "group",
+  "group_subtype": null,
+  "category_name": "International",
+  "destination_name": "Vietnam",
+  "country": "Vietnam",
+  "duration_days": 6,
+  "duration_nights": 5,
+  "overview": "Hanoi, a Halong Bay cruise, Danang and Hoi An — Vietnam's northern and central highlights over six days.",
+  "highlights": [
+    "Hanoi Hoa Lu Trang An Hanoi",
+    "Hanoi Halong Cruise By Private Car",
+    "Halong Bay Halong Hanoi Danang By Flight",
+    "Danang Bana Hill By Cable Car Hoi An Danang"
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Hanoi Arrival",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 2,
+      "title": "Hanoi Hoa Lu Trang An Hanoi",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 3,
+      "title": "Hanoi Halong Cruise By Private Car",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 4,
+      "title": "Halong Bay Halong Hanoi Danang By Flight",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 5,
+      "title": "Danang Bana Hill By Cable Car Hoi An Danang",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 6,
+      "title": "Danang Airport Departure",
+      "description": null,
+      "meals": null,
+      "stay": null
+    }
+  ],
+  "inclusions": [
+    "Note: Please take note that International check-in time to hotel is 1400 hrs and check-out time is 1200 hrs.",
+    "DAY 02 : HANOI HOA LU TRANG AN HANOI",
+    "After breakfast, transfer to Ninh Binh (approximately 2 hours). First stop at Hoa Lu, you will have a quick visit to two temples built in honor of the emperors Dinh Le, their sons, and the Queen... to know why Hoa",
+    "Lu was built as the capital of Vietnam in ending of the nine century. In the afternoon, take boat to visit",
+    "Trang An Scenic Landscape Complex was officially recognized by UNESCO as a mixed natural and cultural heritage of the world on June 25, 2014. Back to Hanoi for an overnight.",
+    "Distance: Hanoi center > Ninh Binh [100km] [02 hours drive]",
+    "Meals included: Breakfast, Lunch & India Dinner",
+    "DAY 03 : HANOI HALONG CRUISE BY PRIVATE CAR",
+    "After breakfast, 07H45am: only driver (no guide) will pick up you and transfer you to Halong. Embark",
+    "& Check in with a welcomed juice glass. Sailing cruise for a cruise amongst hundreds of islets of Ha Long",
+    "Bay. Enjoy a seafood lunch and a swim (if weather permits) before visiting a grotto of gigantic stalactites and stalagmites. Drop anchor in the late evening for an overnight stay amongst the dramatic limestone peaks rising out of the sea. Overnight on Cruise.",
+    "Distance: Hanoi center > Halong bay [180km] [03 hours drive]",
+    "Meals included: Breakfast, Vietnamese Lunch, Vietnamese Dinner",
+    "Note: Please note the program may be a little varied on the cruise you choose. Only Vietnamese &",
+    "International food is available on the boat. Depending on the cruise, the kayak will be included or not.",
+    "DAY 04 : HALONG BAY HALONG HANOI DANANG BY FLIGHT",
+    "Before returning to the wharf, you will spend the morning cruising through the limestone cliffs and emerald waters of Ha Long Bay. Arrival Wharf, tour guide and driver pick up you then transfer direct to Noi Bai",
+    "Airport for a domestic flight (* recommend flight after 17h30) to Danang. Arrive at Danang Airport, met"
+  ],
+  "exclusions": [],
+  "price_amount": 57500,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": true,
+  "source_pdf": "VIETNAM 5Nights 06Days By Yana Travels (2).pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}

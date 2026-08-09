@@ -1,0 +1,87 @@
+{
+  "package_title": "Andaman Family Package",
+  "slug": "andaman-family-4n5d",
+  "scope": "domestic",
+  "tour_type": "customized",
+  "group_subtype": null,
+  "category_name": "Beaches & Islands",
+  "destination_name": "Andaman",
+  "country": "India",
+  "duration_days": 5,
+  "duration_nights": 4,
+  "overview": "A family-friendly island escape across Port Blair, Havelock and Neil — white-sand beaches, the historic Cellular Jail, and scenic island ferries.",
+  "highlights": [
+    "Port Blair to Havelock — Elephant Beach & Radhanagar Beach",
+    "Havelock to Neil Island — Bharatpur Beach, Natural Rock Bridge & Laxmanpur Beach",
+    "Neil Island to Port Blair — Marina Park & local sightseeing"
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Port Blair arrival — Cellular Jail, Corbyn's Cove Beach & Light and Sound Show",
+      "description": null,
+      "meals": "D",
+      "stay": "Port Blair"
+    },
+    {
+      "day_number": 2,
+      "title": "Port Blair to Havelock — Elephant Beach & Radhanagar Beach",
+      "description": null,
+      "meals": "B/D",
+      "stay": "Havelock"
+    },
+    {
+      "day_number": 3,
+      "title": "Havelock to Neil Island — Bharatpur Beach, Natural Rock Bridge & Laxmanpur Beach",
+      "description": null,
+      "meals": "B/D",
+      "stay": "Neil"
+    },
+    {
+      "day_number": 4,
+      "title": "Neil Island to Port Blair — Marina Park & local sightseeing",
+      "description": null,
+      "meals": "B/D",
+      "stay": "Port Blair"
+    },
+    {
+      "day_number": 5,
+      "title": "Port Blair departure",
+      "description": null,
+      "meals": "B",
+      "stay": null
+    }
+  ],
+  "inclusions": [
+    "Accommodation in rooms as given at hotels in Port Blair--Havelock on Double basis with breakfast.",
+    "Daily breakfast & Dinner except on day of arrival.",
+    "Welcome gift on Arrival.",
+    "Sightseeing in private air-conditioned vehicle as per the itinerary Only--including Airport Pick up and drop.",
+    "Entry Tickets, Permit Fees, Boat/ Ferry Tickets, to visit all the places of sightseeing is inclusive in the package cost.",
+    "24 hours on call assistance during your stay",
+    "Travel assistance by Yana Travels Experts in all the islands.",
+    "If your trip begins early morning, a packed breakfast will be provided from the the hotel.",
+    "The field executive will provide travel assistance at all the major entry and exit points (Airport,",
+    "Jetty, Jail, Water sports complex, Havelock, Neil, etc.)",
+    "All dedicated vehicle charges (Toyota Rumion/Ertiga/Xylo/Scorpio N/Tata Winger) as per itinerary in AC and not at disposal."
+  ],
+  "exclusions": [
+    "Air Airfare",
+    "Two-wheeler rental fare",
+    "Overland Journey which is not mentioned in the Itinerary.",
+    "Any Medical/rescue evacuation due to mishaps",
+    "Any extra excursion or sightseeing apart from suggested tour itinerary.",
+    "Cost incidental to any change in the itinerary/ stay on account of flight cancellation due to bad weather",
+    "Roadblocks and/or any factors beyond control",
+    "GST",
+    "Anything not mentioned in the inclusions is excluded."
+  ],
+  "price_amount": null,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": false,
+  "source_pdf": "2026 Andaman_Family Package By Yana Travels  (2).pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}

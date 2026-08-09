@@ -1,0 +1,162 @@
+{
+  "package_title": "England & Europe",
+  "slug": "england-europe-15n16d",
+  "scope": "international",
+  "tour_type": "group",
+  "group_subtype": null,
+  "category_name": "Europe",
+  "destination_name": "England & Europe",
+  "country": "Europe",
+  "duration_days": 16,
+  "duration_nights": 15,
+  "overview": "An extended journey through England and continental Europe, taking in the highlights of several countries at a relaxed pace.",
+  "highlights": [
+    "Welcome to London A City of Timeless Charm",
+    "Guided city tour of London with changing of guards at Buckingham Palace.",
+    "Guided city tour of Oxford University. Ride on London Eye and Cruise on",
+    "London Paris by Eurostar Welcome to the City of Light Seine River"
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Welcome to London A City of Timeless Charm",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 2,
+      "title": "Guided city tour of London with changing of guards at Buckingham Palace.",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 3,
+      "title": "Guided city tour of Oxford University. Ride on London Eye and Cruise on",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 4,
+      "title": "London Paris by Eurostar Welcome to the City of Light Seine River",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 5,
+      "title": "City Tour of Paris Eiffel Tower / Montparnasse Tower Guided Tour of",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 6,
+      "title": "Paris Brussels Orientation Tour of Brussels Belgium Beer World",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 7,
+      "title": "The Netherlands Experience Keukenhof Gardens / Madurodam",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 8,
+      "title": "Luxembourg City Tour Glle Fra Luxtram Experience Proceed to",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 9,
+      "title": "Strasbourg Black Forest Rhine Falls with Boat Ride Enter",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 10,
+      "title": "Excursion to Mt. Titlis Lucerne Orientation Tour Lion Monument",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 11,
+      "title": "Excursion to Bern GoldenPass Train Experience Gstaad Saanen (DDLJ",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 12,
+      "title": "Vaduz Orientation Visit Swarovski Innsbruck City Tour Visit to the",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 13,
+      "title": "Romantic Venice St. Mark's Square Gondola Ride Drive to Padova",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 14,
+      "title": "Excursion to Pisa Leaning Tower of Pisa Square of Miracles (UNESCO",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 15,
+      "title": "Rome Eternal City Vatican City St. Peter's Basilica Photo stop",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 16,
+      "title": "Fly Back Home.",
+      "description": null,
+      "meals": null,
+      "stay": null
+    }
+  ],
+  "inclusions": [
+    "LONDON",
+    "Guided City tour of London",
+    "Visit to Madam Tussauds Wax Museum.",
+    "Ride on London Eye.",
+    "Visit to Versailles Palace isit to Tower of London",
+    "Visit to Oxford University",
+    "Euro Star Train from London to Paris",
+    "PARIS",
+    "Romantic Cruise on the Seine River in Paris.",
+    "City tour of Paris.",
+    "Visit to the 2nd level of the Eiffel Tower.",
+    "Special design Paris by night tour",
+    "Visit to Versailles Palace",
+    "BRUSSELS",
+    "Orientation Tour including the Grand Place, Mannekin Pis.",
+    "Photo stop at Atomium. (Photo stop)",
+    "Visit to Belgium Beer World",
+    "THE NETHERLANDS"
+  ],
+  "exclusions": [],
+  "price_amount": 365000,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": false,
+  "source_pdf": "2026 April - Oct England and Europe 15Nights 16Days By Yana Travels .pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}

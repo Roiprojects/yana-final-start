@@ -1,0 +1,75 @@
+{
+  "package_title": "Odisha Group Tour",
+  "slug": "odisha-3n4d",
+  "scope": "domestic",
+  "tour_type": "group",
+  "group_subtype": null,
+  "category_name": "Heritage & Pilgrimage",
+  "destination_name": "Odisha",
+  "country": "India",
+  "duration_days": 4,
+  "duration_nights": 3,
+  "overview": "Bhubaneswar, Puri, the Konark Sun Temple and Chilika Lake across a compact four-day tour of Odisha.",
+  "highlights": [
+    "Bhubaneswar-Puri",
+    "Puri-Chilika-Puri",
+    "Puri-konark-Bhubaneswar",
+    "Bhubaneswar Airport Drop."
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Bhubaneswar-Puri",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 2,
+      "title": "Puri-Chilika-Puri",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 3,
+      "title": "Puri-konark-Bhubaneswar",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 4,
+      "title": "Bhubaneswar Airport Drop.",
+      "description": null,
+      "meals": null,
+      "stay": null
+    }
+  ],
+  "inclusions": [
+    "3 Star Hotel or Resort",
+    "Accommodation on double/triple sharing basis.",
+    "Sightseeing by AC vehicle.",
+    "Airport transfers Driver Charges, Toll, Parking included.",
+    "03 Breakfast & 03 Dinner in the same hotel with fixed food menu basis.",
+    "03 Lunch local restaurant.",
+    "Tour Manager",
+    "Daily 1L water bottle per head.",
+    "Arrival and Departure from Airport."
+  ],
+  "exclusions": [
+    "Expenses of personal Nature such as tips, laundry, telephone, table drinks, beverages etc",
+    "Air tickets / Train tickets",
+    "Entrance fees",
+    "GST",
+    "Boating charges in Chilika Lake"
+  ],
+  "price_amount": 20500,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": false,
+  "source_pdf": "Odisha Group Tour 04Days By Yana Travels.pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}

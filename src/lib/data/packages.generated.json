@@ -1,0 +1,1389 @@
+[
+  {
+    "package_title": "Andaman Family Package",
+    "slug": "andaman-family-4n5d",
+    "scope": "domestic",
+    "tour_type": "customized",
+    "group_subtype": null,
+    "category_name": "Beaches & Islands",
+    "destination_name": "Andaman",
+    "country": "India",
+    "duration_days": 5,
+    "duration_nights": 4,
+    "overview": "A family-friendly island escape across Port Blair, Havelock and Neil — white-sand beaches, the historic Cellular Jail, and scenic island ferries.",
+    "highlights": [
+      "Port Blair to Havelock — Elephant Beach & Radhanagar Beach",
+      "Havelock to Neil Island — Bharatpur Beach, Natural Rock Bridge & Laxmanpur Beach",
+      "Neil Island to Port Blair — Marina Park & local sightseeing"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Port Blair arrival — Cellular Jail, Corbyn's Cove Beach & Light and Sound Show",
+        "description": null,
+        "meals": "D",
+        "stay": "Port Blair"
+      },
+      {
+        "day_number": 2,
+        "title": "Port Blair to Havelock — Elephant Beach & Radhanagar Beach",
+        "description": null,
+        "meals": "B/D",
+        "stay": "Havelock"
+      },
+      {
+        "day_number": 3,
+        "title": "Havelock to Neil Island — Bharatpur Beach, Natural Rock Bridge & Laxmanpur Beach",
+        "description": null,
+        "meals": "B/D",
+        "stay": "Neil"
+      },
+      {
+        "day_number": 4,
+        "title": "Neil Island to Port Blair — Marina Park & local sightseeing",
+        "description": null,
+        "meals": "B/D",
+        "stay": "Port Blair"
+      },
+      {
+        "day_number": 5,
+        "title": "Port Blair departure",
+        "description": null,
+        "meals": "B",
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "Accommodation in rooms as given at hotels in Port Blair--Havelock on Double basis with breakfast.",
+      "Daily breakfast & Dinner except on day of arrival.",
+      "Welcome gift on Arrival.",
+      "Sightseeing in private air-conditioned vehicle as per the itinerary Only--including Airport Pick up and drop.",
+      "Entry Tickets, Permit Fees, Boat/ Ferry Tickets, to visit all the places of sightseeing is inclusive in the package cost.",
+      "24 hours on call assistance during your stay",
+      "Travel assistance by Yana Travels Experts in all the islands.",
+      "If your trip begins early morning, a packed breakfast will be provided from the the hotel.",
+      "The field executive will provide travel assistance at all the major entry and exit points (Airport,",
+      "Jetty, Jail, Water sports complex, Havelock, Neil, etc.)",
+      "All dedicated vehicle charges (Toyota Rumion/Ertiga/Xylo/Scorpio N/Tata Winger) as per itinerary in AC and not at disposal."
+    ],
+    "exclusions": [
+      "Air Airfare",
+      "Two-wheeler rental fare",
+      "Overland Journey which is not mentioned in the Itinerary.",
+      "Any Medical/rescue evacuation due to mishaps",
+      "Any extra excursion or sightseeing apart from suggested tour itinerary.",
+      "Cost incidental to any change in the itinerary/ stay on account of flight cancellation due to bad weather",
+      "Roadblocks and/or any factors beyond control",
+      "GST",
+      "Anything not mentioned in the inclusions is excluded."
+    ],
+    "price_amount": null,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "2026 Andaman_Family Package By Yana Travels  (2).pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Best of Europe",
+    "slug": "best-of-europe-12n13d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Europe",
+    "destination_name": "Europe (multi-country)",
+    "country": "Europe",
+    "duration_days": 13,
+    "duration_nights": 12,
+    "overview": "A grand group tour across France, Belgium, the Netherlands, Switzerland, Italy and more — iconic cities, alpine scenery and timeless landmarks.",
+    "highlights": [
+      "City tour of Paris | Admission inside the Eiffel Tower (2nd Level)",
+      "Drive from Paris to Brussels, the capital of the European Union",
+      "Beautiful day is planned in The Netherlands with Visit to Keukenhof",
+      "City tour of Luxembourg's Timeless Streets |Photo stop at Golden Lady"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Arrival in Paris--Where Elegance Meets Adventure",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "City tour of Paris | Admission inside the Eiffel Tower (2nd Level)",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Drive from Paris to Brussels, the capital of the European Union",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Beautiful day is planned in The Netherlands with Visit to Keukenhof",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "City tour of Luxembourg's Timeless Streets |Photo stop at Golden Lady",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Drives to the Heart of Black Forest |See The Rhine Falls | Enjoy the Boat",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "Excursion to Mt Titlis |Orientation tour of Lucerne |Free time for shopping",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 8,
+        "title": "Visit the Capital of Switzerland, Bern |Orientation tour of",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 9,
+        "title": "Orientation tour of Vaduz |Drive to Innsbruck |Visit Swarovski |Nordkette",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 10,
+        "title": "Visit to Romantic Venice Sprawling squares, beautiful monuments,",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 11,
+        "title": "Marvels of Pisa's Leaning Tower |Drive to Tuscany",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 12,
+        "title": "All roads lead to Rome discover the eternal city |Enter the world's",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 13,
+        "title": "Fly Back Home.",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "PARIS",
+      "Romantic Cruise on the Seine River in Paris.",
+      "City tour of Paris.",
+      "Visit to the 2nd level of the Eiffel Tower.",
+      "Special design Paris by night tour",
+      "Visit to Versailles Palace",
+      "BRUSSELS",
+      "Orientation Tour including the Grand Place, Mannekin Pis.",
+      "Photo stop at Atomium. (Photo stop)",
+      "Visit to Belgium Beer World",
+      "THE NETHERLANDS",
+      "Visit to Keukenhof Garden (till 10th May 2026) or Visit to Madurodam (from 11th",
+      "May 2026)",
+      "Visit to Wooden Shoe Factory and Cheese Farm",
+      "Amsterdam Canal Cruise",
+      "LUXEMBOURG",
+      "City tour of Luxembourg city.",
+      "Enjoy the tram ride in Luxembourg"
+    ],
+    "exclusions": [],
+    "price_amount": 280000,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": true,
+    "source_pdf": "2026 April - Oct Best Of Europe 12Nights 13Days By Yana Travels.pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "England & Europe",
+    "slug": "england-europe-15n16d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Europe",
+    "destination_name": "England & Europe",
+    "country": "Europe",
+    "duration_days": 16,
+    "duration_nights": 15,
+    "overview": "An extended journey through England and continental Europe, taking in the highlights of several countries at a relaxed pace.",
+    "highlights": [
+      "Welcome to London A City of Timeless Charm",
+      "Guided city tour of London with changing of guards at Buckingham Palace.",
+      "Guided city tour of Oxford University. Ride on London Eye and Cruise on",
+      "London Paris by Eurostar Welcome to the City of Light Seine River"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Welcome to London A City of Timeless Charm",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Guided city tour of London with changing of guards at Buckingham Palace.",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Guided city tour of Oxford University. Ride on London Eye and Cruise on",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "London Paris by Eurostar Welcome to the City of Light Seine River",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "City Tour of Paris Eiffel Tower / Montparnasse Tower Guided Tour of",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Paris Brussels Orientation Tour of Brussels Belgium Beer World",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "The Netherlands Experience Keukenhof Gardens / Madurodam",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 8,
+        "title": "Luxembourg City Tour Glle Fra Luxtram Experience Proceed to",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 9,
+        "title": "Strasbourg Black Forest Rhine Falls with Boat Ride Enter",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 10,
+        "title": "Excursion to Mt. Titlis Lucerne Orientation Tour Lion Monument",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 11,
+        "title": "Excursion to Bern GoldenPass Train Experience Gstaad Saanen (DDLJ",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 12,
+        "title": "Vaduz Orientation Visit Swarovski Innsbruck City Tour Visit to the",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 13,
+        "title": "Romantic Venice St. Mark's Square Gondola Ride Drive to Padova",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 14,
+        "title": "Excursion to Pisa Leaning Tower of Pisa Square of Miracles (UNESCO",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 15,
+        "title": "Rome Eternal City Vatican City St. Peter's Basilica Photo stop",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 16,
+        "title": "Fly Back Home.",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "LONDON",
+      "Guided City tour of London",
+      "Visit to Madam Tussauds Wax Museum.",
+      "Ride on London Eye.",
+      "Visit to Versailles Palace isit to Tower of London",
+      "Visit to Oxford University",
+      "Euro Star Train from London to Paris",
+      "PARIS",
+      "Romantic Cruise on the Seine River in Paris.",
+      "City tour of Paris.",
+      "Visit to the 2nd level of the Eiffel Tower.",
+      "Special design Paris by night tour",
+      "Visit to Versailles Palace",
+      "BRUSSELS",
+      "Orientation Tour including the Grand Place, Mannekin Pis.",
+      "Photo stop at Atomium. (Photo stop)",
+      "Visit to Belgium Beer World",
+      "THE NETHERLANDS"
+    ],
+    "exclusions": [],
+    "price_amount": 365000,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "2026 April - Oct England and Europe 15Nights 16Days By Yana Travels .pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Beautiful Bali",
+    "slug": "bali-6n7d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Beaches & Islands",
+    "destination_name": "Bali",
+    "country": "Indonesia",
+    "duration_days": 7,
+    "duration_nights": 6,
+    "overview": "Temples, emerald rice terraces, waterfalls and island day-trips across Bali — a relaxed group tour of Indonesia's most-loved island.",
+    "highlights": [
+      "Lempuyang Temple Tirtha Gangga Water Palace Besakih Temple",
+      "Kintamani Village Tour Tirtha Empul Temple Aloha Swing - Tegenungan",
+      "Jatiluwih Rice Terrace Taman Ayun Temple Tanah Lot Temple",
+      "Intertransfer Hotel Gwk Cultural Park Dreamland Beach Uluwatu"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Arrival Sunset Dinner Cruise",
+        "description": null,
+        "meals": "L/D",
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Lempuyang Temple Tirtha Gangga Water Palace Besakih Temple",
+        "description": null,
+        "meals": "B/L/D",
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Kintamani Village Tour Tirtha Empul Temple Aloha Swing - Tegenungan",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Jatiluwih Rice Terrace Taman Ayun Temple Tanah Lot Temple",
+        "description": null,
+        "meals": "B/L/D",
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Intertransfer Hotel Gwk Cultural Park Dreamland Beach Uluwatu",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Nusa Penida West Island Tour",
+        "description": null,
+        "meals": "B/L/D",
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "Departure",
+        "description": null,
+        "meals": "B",
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "4 Nights Accommodation Seminyak on Twin/Triple Share at 4 Star hotel/resort.",
+      "2 Nights Accommodation Kuta OR Ubud on Twin/Triple Share at 4 Star hotel/resort.",
+      "Daily Breakfast at hotel",
+      "06 Lunch and 06 Dinner includes.",
+      "Air Conditioned Vehicle during transfers and tours on private basis",
+      "English Speaking Driver cum Guide during Tours and Transfers",
+      "2X 600 ML Mineral Water during Arrival Transfers and Tours",
+      "Meals as specified in the itinerary",
+      "Entrance Fee at Tourist Objects as specified in the itinerary",
+      "FLOWER GARLAND AT AIRPORT DURING ARRIVAL"
+    ],
+    "exclusions": [
+      "Personal Expenses",
+      "Other Services which are not specified in the itinerary",
+      "Driver Tipping",
+      "Visa Fee at IDR. 500,000 net/person (approx. at USD. 35 to USD. 40 /person subject to the exchange rates fluctuation) payable at Bali Airport",
+      "GST & TCS ( TCS Refundable )",
+      "Anything not mentioned in includes",
+      "Airfare",
+      "Summary to enter Indonesia as per current regulation (subject to change)",
+      "1. Passport validity Minimum 6 Months prior to arrival",
+      "2. Visa On Arrival = IDR. 500,000 / person payable at Indonesia Airport Immigration Counter (approx. at",
+      "USD. 35 net/person subject to the exchange rates fluctuation)",
+      "3. COVID-19 Insurance with minimum coverage at USD. 25,000.",
+      "4. 2 Doze COVID Vaccine Certificate (in case not completed with 2 Doze then please take RT-PCR",
+      "Negative Test Result from the origin country within 48 hours prior to arrival)",
+      "5. Copy of Itinerary / Hotel Confirmation Voucher.",
+      "Should there be any other things to clarify or require, please feel free to contact us at your convenience - +919513588143"
+    ],
+    "price_amount": 59500,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": true,
+    "source_pdf": "2026 Beautiful Bali Group Tour 6Nights 7Days Yana Travels (1) (1).pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "China Group Tour",
+    "slug": "china-8n9d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "International",
+    "destination_name": "China",
+    "country": "China",
+    "duration_days": 9,
+    "duration_nights": 8,
+    "overview": "A group journey through China's landmark cities and cultural sites over nine days.",
+    "highlights": [
+      "Cultural Immersion & Skyline Majesty",
+      "Water Village Charm And Local Shopping",
+      "Travel To Zhangjiajie Gateway To Nature'S Wonders",
+      "Breathtaking Zhangjiajie National Forest Park"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Arrive Shanghai (-/-/D)",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Cultural Immersion & Skyline Majesty",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Water Village Charm And Local Shopping",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Travel To Zhangjiajie Gateway To Nature'S Wonders",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Breathtaking Zhangjiajie National Forest Park",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Glass Bridge Thrills And Flight To Beijing",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "Beijing'S Imperial Legacy And Cultural Marvels",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 8,
+        "title": "The Great Wall And Ancient Summer Escapes",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 9,
+        "title": "Departure",
+        "description": null,
+        "meals": "B",
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "1. Daily accommodation with breakfast in double or triple sharing room",
+      "2. Sightseeing entrance fee listed in the itinerary.",
+      "3. Excellent English speaking tour guide.",
+      "4. Daily transfer during the tour.",
+      "5. 1 bottle of water per pax per day.",
+      "6. High-Speed Bullet Trains (2nd Class): Shanghai to Zhangjiajie",
+      "7. Domestic Airfare Zhangjiajie to Beijing",
+      "8. All lunches and dinners mentioned in the itinerary",
+      "9. Visa Charges",
+      "WHAT TOUR PRICE DOESN'T INCLUDE",
+      "1. GST 5% + TCS 5%",
+      "2. Insurance, Laundry, Telephone Charges, Drinks, Mineral Water, Pay Movie in the room.",
+      "3. Any country's departure tax and all other charges not specifically mentioned in the \"TOUR COST",
+      "INCLUDES\"",
+      "4. Tips to the Tour Manager, Tour guide and coach driver US $ 5 per day per person.",
+      "5. Airfare",
+      "DAY 01: ARRIVE SHANGHAI (-/-/D)",
+      "Upon arrival at Shanghai International Airport, you will be warmly greeted by our Yana Travels professional English speaking guide. You will be transferred by Maglev train to Shanghai City. Check into your hotel either Park Inn by Radisson or a similar 4-star property. After check-in, you'll have time to unwind and relax from your journey. In the evening, enjoy a delightful Indian dinner arranged at a local restaurant. This day offers a gentle introduction to the vibrant energy of Shanghai while preparing you for the days ahead."
+    ],
+    "exclusions": [],
+    "price_amount": 179000,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "2026 CHINA 08 NIGHTS 09 DAYS Group Tour By Yana Travels (1).pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Nepal Muktinath Pilgrimage",
+    "slug": "nepal-muktinath-7n8d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Pilgrimage",
+    "destination_name": "Nepal (Muktinath)",
+    "country": "Nepal",
+    "duration_days": 8,
+    "duration_nights": 7,
+    "overview": "A pilgrimage from Kathmandu to the sacred Muktinath temple, through Nepal's temples, towns and mountain scenery.",
+    "highlights": [
+      "Kathmandu - Drive to Pokhara",
+      "Pokhara Jomsom (Fly)",
+      "Jomsom Pokhara (Fly)",
+      "Pokhara Lumbini (Fly)"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Arrival Kathmandu",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Kathmandu - Drive to Pokhara",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Pokhara Jomsom (Fly)",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Jomsom Pokhara (Fly)",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Pokhara Lumbini (Fly)",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Lumbini- Kathmandu (Fly)",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "Kathmandu",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 8,
+        "title": "Kathmandu Departure",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "07 Nights accommodation at 3 Star Hotel on half board basis (Breakfast & Dinner)",
+      "Lunch Local Restaurant",
+      "Room will be on sharingbasis in Jomsom",
+      "Arrival and departure transfer and sightseeing tours A/C Vehicle",
+      "Air tickets for Pokhara-Jomsom-Pokhara",
+      "Air tickets for Pokhara Lumbini",
+      "Air tickets for Lumbini-Kathmandu",
+      "Jomsom Muktinath Jomsom by Bus (sharing basis)",
+      "ACAP permit fee",
+      "Manakamana Cable Car tickets (INR 500)",
+      "Monuments entrance fees as mentioned in the program & any payable fee on the spot",
+      "If Pokhara Jomsom Pokhara mini flight cancelled due to bad weather, Yana Travels will arrange sharing Jeep byroad.",
+      "Daily 01L Water Bottle per person in bus journey."
+    ],
+    "exclusions": [
+      "Insurance Fee If Required",
+      "Entry Tickets",
+      "Expenses of personal nature such as bar bills, communication charges, laundry, tips, etc.",
+      "Cost arising out of flight cancellation/road blockades/landslides/riots and events beyond our control and",
+      "Any other expenses not mentioned in the above cost",
+      "Boat ride fee on Pwewa Lake",
+      "GST",
+      "TCS Refundable",
+      "Mountain Flight INR 10000 Per Head (Self - Pay)",
+      "Airfare Bangalore to Kathmandu & Kathmandu to Bangalore"
+    ],
+    "price_amount": 65000,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "2026 New Nepal Group Tour (Kathmandu to Kathmandu) 08Days By Yana Travels.pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Singapore & Malaysia",
+    "slug": "singapore-malaysia-6n7d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "International",
+    "destination_name": "Singapore & Malaysia",
+    "country": "Singapore · Malaysia",
+    "duration_days": 7,
+    "duration_nights": 6,
+    "overview": "City highlights, gardens and attractions across Singapore and Malaysia on a week-long group tour.",
+    "highlights": [
+      "Singapore",
+      "Garden By The Bay / Sentosa Island",
+      "Singapore Universal Studios",
+      "Singapore - Kuala Lumpur"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Singapore",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Garden By The Bay / Sentosa Island",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Singapore Universal Studios",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Singapore - Kuala Lumpur",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Kuala Lumpur",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Kualalumpur - Genting Highlands",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "Kaula Lumpur - Putrajaya Airport Drop",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [],
+    "exclusions": [
+      "Airfare",
+      "GST",
+      "TCS Refundable",
+      "Any drinks alcoholic or non-alcoholic",
+      "Excess baggage charge",
+      "Personal expenses",
+      "Services not specifically stated in the itinerary",
+      "Anythingnot mentioned in cost includes",
+      "Travel Insurance"
+    ],
+    "price_amount": 97000,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "2026 New Singapore Malaysia 07Days By Yana Travels.pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Singapore · Malaysia · Thailand",
+    "slug": "singapore-malaysia-thailand-10n11d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "International",
+    "destination_name": "Singapore · Malaysia · Thailand",
+    "country": "Southeast Asia",
+    "duration_days": 11,
+    "duration_nights": 10,
+    "overview": "A three-country Southeast Asia group tour spanning Singapore, Malaysia and Thailand over eleven days.",
+    "highlights": [
+      "Singapore",
+      "Garden By The Bay / Sentosa Island",
+      "Singapore Universal Studios",
+      "Singapore - Kuala Lumpur"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Singapore",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Garden By The Bay / Sentosa Island",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Singapore Universal Studios",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Singapore - Kuala Lumpur",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Kuala Lumpur",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Kualalumpur - Genting Highlands",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "Kaula Lumpur - Putrajaya - Bangkok - Pattaya",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 8,
+        "title": "Coral Island Tour / Alcazar Show",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 9,
+        "title": "Pattaya - Bangkok",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 10,
+        "title": "Bangkok - Safari World Marine Park",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 11,
+        "title": "Bangkok Airport Drop",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [],
+    "exclusions": [
+      "GST",
+      "Airfare",
+      "TCS Refundable",
+      "Any drinks alcoholic or non-alcoholic",
+      "Excess baggage charge",
+      "Personal expenses",
+      "Services not specifically stated in the itinerary",
+      "Anythingnot mentioned in cost includes",
+      "Thailand On arrival Visa."
+    ],
+    "price_amount": 121000,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "2026 New Singapore Malaysia Thailand Group Tour 11Days By Yana Travels.pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Sri Lanka Ramayana Tour",
+    "slug": "sri-lanka-ramayana-6n7d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Pilgrimage",
+    "destination_name": "Sri Lanka",
+    "country": "Sri Lanka",
+    "duration_days": 7,
+    "duration_nights": 6,
+    "overview": "Follow the Ramayana trail across Sri Lanka's sacred sites, hill country and coast on a week-long group tour.",
+    "highlights": [
+      "Breakfast at Hotel",
+      "Day Excursion to Trincomalee",
+      "on the backs of elephants, which are sacred to the Buddha. Where it survived numerous",
+      "Seetha Amman Temple"
+    ],
+    "itinerary": [
+      {
+        "day_number": 2,
+        "title": "Breakfast at Hotel",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Day Excursion to Trincomalee",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "on the backs of elephants, which are sacred to the Buddha. Where it survived numerous",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Seetha Amman Temple",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Evening Leisure at the Beach",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "Arrival assistance at the Colombo Airport by Yana Travels representative",
+      "The accommodation in the 3 Star hotels. Check-in / Check-out 12:00 noon",
+      "Stay at DBL / TPL Sharing room stay Basis",
+      "Meals on Breakfast & Dinner basis at Hotel (B6) (D6)",
+      "Six Lunches at outside Indian Restaurants (L6)",
+      "Day Excursion to Trincomalee without entrance ticket",
+      "Complimentary Gem Gallery Visit",
+      "Complimentary Spice Garden visit",
+      "Complimentary entrance ticket to Cultural show at Kandy Up on visit Gem Museum",
+      "All Transfers by Air-conditioned private vehicles with an English-Speaking Tour Guide",
+      "Fuel and Local insurance for the vehicle",
+      "Two complementary water bottle (500ml) each person each day"
+    ],
+    "exclusions": [
+      "Entrance fees other than mention in Inclusion",
+      "Train Ticket",
+      "Airfare: Bangalore Colombo - Bangalore",
+      "Safari Jeep or Jeep for Horton Plains",
+      "Video and Camera permits at sights",
+      "Meals Outside of the stated meal plan",
+      "Tuk Tuk Charges",
+      "Use of vehicle other than the specified itinerary",
+      "Expenses of personal nature",
+      "Any other services not specified above",
+      "Early check in & late checks out at the hotels (Check in & check out time 12.00 to 12.00 Noon)",
+      "GST & TCS Charges",
+      "On arrival Visa charges",
+      "Below Entry Fees Included",
+      "Trincomalee USD",
+      "Hot Spring Wells 02",
+      "Bentota",
+      "Turtle Hatchery 05"
+    ],
+    "price_amount": 49500,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "2026 New Sri Lanka Group Tour 07Days By Yana Travels (1).pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Chardham Yatra by Helicopter",
+    "slug": "chardham-helicopter-5n6d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Pilgrimage",
+    "destination_name": "Chardham (Uttarakhand)",
+    "country": "India",
+    "duration_days": 6,
+    "duration_nights": 5,
+    "overview": "Darshan at Yamunotri, Gangotri, Kedarnath and Badrinath by helicopter — the four Himalayan shrines in a comfortable six-day pilgrimage.",
+    "highlights": [
+      "Heading To Maa Yamunotri",
+      "Heading To Maa Gangotri",
+      "Heading To Kedarnath",
+      "Heading To Badrinath"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Arrival In Dehradun",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Heading To Maa Yamunotri",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Heading To Maa Gangotri",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Heading To Kedarnath",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Heading To Badrinath",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Return To Dehradun",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "Round Trip Helicopter ride from Dehradun to the Char Dham shrines.",
+      "Accommodation @ Dehradun on the Arrival Day, just to unwind & get ready for your Yatra. Only",
+      "Dinner included the first night.",
+      "Accommodation for 5 nights: Accommodation at Dehradun on MAP Basis, and 01 night at each",
+      "Dham with all meals included.",
+      "Vegetarian Jain food can be arranged at the hotels if requested in advance during the booking process.",
+      "Local Sight Seeing with our guides at all four destinations.",
+      "VIP Priority Darshans.",
+      "Airport & hotel transfers at Dehradun.",
+      "Palki or Pony at Yamunotri - subject to availability.",
+      "Shri Kedarnath ji helicopter shuttle services: Sersi Kedar - Sersi.",
+      "Local transportation at all the Dhams on SIC basis.",
+      "Taxes & other government levy included.",
+      "TOUR GUIDELINES",
+      "Passangers are advised to book evening flights/Trains departing after 06:00PM, while returning back from Dehradun as due to weather/Operational reasons there might be delay in reaching back Badrinath to Dehradun.",
+      "VIP Darshans are subject to the orders issued by the temple authorities and State government.",
+      "In view of our helicopters' weight-carrying capacity, Diamond Hospitalities reserves the right to shuffle passengers between helicopters to manage the right weight for Life safety and hills flying CAR Section 08 Regulation of India. Therefore, passengers travelling together may not be accommodated in the same helicopter flight.",
+      "FIXED FLIGHT TIMINGS: This is a Daily Fixed Departure Helicopter tour, and departure timings f each destination is fixed. Therefore, passengers must ensure they report as per the scheduled"
+    ],
+    "exclusions": [],
+    "price_amount": 245000,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": true,
+    "source_pdf": "Chardham Yatra By Helicopter 2026 (5N 6D) By Yana Travels.pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Leh · Ladakh · Kargil",
+    "slug": "leh-ladakh-kargil-6n7d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Mountains & the North",
+    "destination_name": "Leh–Ladakh",
+    "country": "India",
+    "duration_days": 7,
+    "duration_nights": 6,
+    "overview": "High passes, blue lakes and stark mountain landscapes across Leh, Ladakh and Kargil on a seven-day group tour.",
+    "highlights": [
+      "Leh To Kargil",
+      "Kargil To Leh",
+      "Tour Of Khardungla Pass 18380 Ft. Nubra Valley And Hunder Sand Dunes",
+      "Tour Of Pangong Lake- It Is The Highest Land Locked Lake"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Arrive Leh 3505 Meters / 11567 Feet",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Leh To Kargil",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Kargil To Leh",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Tour Of Khardungla Pass 18380 Ft. Nubra Valley And Hunder Sand Dunes",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Tour Of Pangong Lake- It Is The Highest Land Locked Lake",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Pangong To Leh",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 7,
+        "title": "Departure Leh Airport",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "01 Nights in Kargil at hotel with breakfast and Dinner.",
+      "03 Night in Leh at Hotel with breakfast and Dinner.",
+      "01 Night in Nubra at Camp with breakfast and Dinner.",
+      "01 Night in Pangong at Cottage with breakfast and Dinner.",
+      "Lunch Local Restaurant.",
+      "Arrival & Departure transfers & sightseeing as per programmed by 01 non-Ac vehicle with driver.",
+      "Accommodation at the hotels sharing of Double/Triple Room.",
+      "Inner Line Permit (Indian Nationality)",
+      "Pick up and drop Leh airport.",
+      "Environment fees.",
+      "All parking fee and Toll taxes.",
+      "24x7 helpline assistance from Yana Travels.",
+      "The Above Packages Does Not Include",
+      "Air Tickets",
+      "Drinks",
+      "Meals other than mentioned",
+      "Lunch",
+      "Tips"
+    ],
+    "exclusions": [],
+    "price_amount": 35500,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": true,
+    "source_pdf": "Leh Ladakh Kargil Group Tour 07Days By Yana Travels (3).pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Odisha Group Tour",
+    "slug": "odisha-3n4d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Heritage & Pilgrimage",
+    "destination_name": "Odisha",
+    "country": "India",
+    "duration_days": 4,
+    "duration_nights": 3,
+    "overview": "Bhubaneswar, Puri, the Konark Sun Temple and Chilika Lake across a compact four-day tour of Odisha.",
+    "highlights": [
+      "Bhubaneswar-Puri",
+      "Puri-Chilika-Puri",
+      "Puri-konark-Bhubaneswar",
+      "Bhubaneswar Airport Drop."
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Bhubaneswar-Puri",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Puri-Chilika-Puri",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Puri-konark-Bhubaneswar",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Bhubaneswar Airport Drop.",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "3 Star Hotel or Resort",
+      "Accommodation on double/triple sharing basis.",
+      "Sightseeing by AC vehicle.",
+      "Airport transfers Driver Charges, Toll, Parking included.",
+      "03 Breakfast & 03 Dinner in the same hotel with fixed food menu basis.",
+      "03 Lunch local restaurant.",
+      "Tour Manager",
+      "Daily 1L water bottle per head.",
+      "Arrival and Departure from Airport."
+    ],
+    "exclusions": [
+      "Expenses of personal Nature such as tips, laundry, telephone, table drinks, beverages etc",
+      "Air tickets / Train tickets",
+      "Entrance fees",
+      "GST",
+      "Boating charges in Chilika Lake"
+    ],
+    "price_amount": 20500,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": false,
+    "source_pdf": "Odisha Group Tour 04Days By Yana Travels.pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  },
+  {
+    "package_title": "Vietnam Group Tour",
+    "slug": "vietnam-5n6d",
+    "scope": "international",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "International",
+    "destination_name": "Vietnam",
+    "country": "Vietnam",
+    "duration_days": 6,
+    "duration_nights": 5,
+    "overview": "Hanoi, a Halong Bay cruise, Danang and Hoi An — Vietnam's northern and central highlights over six days.",
+    "highlights": [
+      "Hanoi Hoa Lu Trang An Hanoi",
+      "Hanoi Halong Cruise By Private Car",
+      "Halong Bay Halong Hanoi Danang By Flight",
+      "Danang Bana Hill By Cable Car Hoi An Danang"
+    ],
+    "itinerary": [
+      {
+        "day_number": 1,
+        "title": "Hanoi Arrival",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 2,
+        "title": "Hanoi Hoa Lu Trang An Hanoi",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 3,
+        "title": "Hanoi Halong Cruise By Private Car",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 4,
+        "title": "Halong Bay Halong Hanoi Danang By Flight",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 5,
+        "title": "Danang Bana Hill By Cable Car Hoi An Danang",
+        "description": null,
+        "meals": null,
+        "stay": null
+      },
+      {
+        "day_number": 6,
+        "title": "Danang Airport Departure",
+        "description": null,
+        "meals": null,
+        "stay": null
+      }
+    ],
+    "inclusions": [
+      "Note: Please take note that International check-in time to hotel is 1400 hrs and check-out time is 1200 hrs.",
+      "DAY 02 : HANOI HOA LU TRANG AN HANOI",
+      "After breakfast, transfer to Ninh Binh (approximately 2 hours). First stop at Hoa Lu, you will have a quick visit to two temples built in honor of the emperors Dinh Le, their sons, and the Queen... to know why Hoa",
+      "Lu was built as the capital of Vietnam in ending of the nine century. In the afternoon, take boat to visit",
+      "Trang An Scenic Landscape Complex was officially recognized by UNESCO as a mixed natural and cultural heritage of the world on June 25, 2014. Back to Hanoi for an overnight.",
+      "Distance: Hanoi center > Ninh Binh [100km] [02 hours drive]",
+      "Meals included: Breakfast, Lunch & India Dinner",
+      "DAY 03 : HANOI HALONG CRUISE BY PRIVATE CAR",
+      "After breakfast, 07H45am: only driver (no guide) will pick up you and transfer you to Halong. Embark",
+      "& Check in with a welcomed juice glass. Sailing cruise for a cruise amongst hundreds of islets of Ha Long",
+      "Bay. Enjoy a seafood lunch and a swim (if weather permits) before visiting a grotto of gigantic stalactites and stalagmites. Drop anchor in the late evening for an overnight stay amongst the dramatic limestone peaks rising out of the sea. Overnight on Cruise.",
+      "Distance: Hanoi center > Halong bay [180km] [03 hours drive]",
+      "Meals included: Breakfast, Vietnamese Lunch, Vietnamese Dinner",
+      "Note: Please note the program may be a little varied on the cruise you choose. Only Vietnamese &",
+      "International food is available on the boat. Depending on the cruise, the kayak will be included or not.",
+      "DAY 04 : HALONG BAY HALONG HANOI DANANG BY FLIGHT",
+      "Before returning to the wharf, you will spend the morning cruising through the limestone cliffs and emerald waters of Ha Long Bay. Arrival Wharf, tour guide and driver pick up you then transfer direct to Noi Bai",
+      "Airport for a domestic flight (* recommend flight after 17h30) to Danang. Arrive at Danang Airport, met"
+    ],
+    "exclusions": [],
+    "price_amount": 57500,
+    "price_currency": "INR",
+    "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+    "hero_image_url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+    "is_featured": true,
+    "source_pdf": "VIETNAM 5Nights 06Days By Yana Travels (2).pdf",
+    "source_pages": "all",
+    "review_status": "extracted"
+  }
+]

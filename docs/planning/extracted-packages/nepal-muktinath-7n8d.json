@@ -1,0 +1,112 @@
+{
+  "package_title": "Nepal Muktinath Pilgrimage",
+  "slug": "nepal-muktinath-7n8d",
+  "scope": "international",
+  "tour_type": "group",
+  "group_subtype": null,
+  "category_name": "Pilgrimage",
+  "destination_name": "Nepal (Muktinath)",
+  "country": "Nepal",
+  "duration_days": 8,
+  "duration_nights": 7,
+  "overview": "A pilgrimage from Kathmandu to the sacred Muktinath temple, through Nepal's temples, towns and mountain scenery.",
+  "highlights": [
+    "Kathmandu - Drive to Pokhara",
+    "Pokhara Jomsom (Fly)",
+    "Jomsom Pokhara (Fly)",
+    "Pokhara Lumbini (Fly)"
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "title": "Arrival Kathmandu",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 2,
+      "title": "Kathmandu - Drive to Pokhara",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 3,
+      "title": "Pokhara Jomsom (Fly)",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 4,
+      "title": "Jomsom Pokhara (Fly)",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 5,
+      "title": "Pokhara Lumbini (Fly)",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 6,
+      "title": "Lumbini- Kathmandu (Fly)",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 7,
+      "title": "Kathmandu",
+      "description": null,
+      "meals": null,
+      "stay": null
+    },
+    {
+      "day_number": 8,
+      "title": "Kathmandu Departure",
+      "description": null,
+      "meals": null,
+      "stay": null
+    }
+  ],
+  "inclusions": [
+    "07 Nights accommodation at 3 Star Hotel on half board basis (Breakfast & Dinner)",
+    "Lunch Local Restaurant",
+    "Room will be on sharingbasis in Jomsom",
+    "Arrival and departure transfer and sightseeing tours A/C Vehicle",
+    "Air tickets for Pokhara-Jomsom-Pokhara",
+    "Air tickets for Pokhara Lumbini",
+    "Air tickets for Lumbini-Kathmandu",
+    "Jomsom Muktinath Jomsom by Bus (sharing basis)",
+    "ACAP permit fee",
+    "Manakamana Cable Car tickets (INR 500)",
+    "Monuments entrance fees as mentioned in the program & any payable fee on the spot",
+    "If Pokhara Jomsom Pokhara mini flight cancelled due to bad weather, Yana Travels will arrange sharing Jeep byroad.",
+    "Daily 01L Water Bottle per person in bus journey."
+  ],
+  "exclusions": [
+    "Insurance Fee If Required",
+    "Entry Tickets",
+    "Expenses of personal nature such as bar bills, communication charges, laundry, tips, etc.",
+    "Cost arising out of flight cancellation/road blockades/landslides/riots and events beyond our control and",
+    "Any other expenses not mentioned in the above cost",
+    "Boat ride fee on Pwewa Lake",
+    "GST",
+    "TCS Refundable",
+    "Mountain Flight INR 10000 Per Head (Self - Pay)",
+    "Airfare Bangalore to Kathmandu & Kathmandu to Bangalore"
+  ],
+  "price_amount": 65000,
+  "price_currency": "INR",
+  "taxes_info": "Per person. Prices are indicative — please enquire for the current quote, dates, and inclusions.",
+  "hero_image_url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+  "is_featured": false,
+  "source_pdf": "2026 New Nepal Group Tour (Kathmandu to Kathmandu) 08Days By Yana Travels.pdf",
+  "source_pages": "all",
+  "review_status": "extracted"
+}
