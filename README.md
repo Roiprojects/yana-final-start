@@ -36,6 +36,10 @@ The public site falls back to the bundled package catalogue when `DATABASE_URL` 
 For admin actions and enquiry persistence, add the required environment variables in a local
 `.env.local` file. Never commit that file or database credentials.
 
+Curated package photography is stored locally in `public/packages/` and is selected by package
+slug in `src/lib/data/packages.ts`, so both database-backed and offline package views use the same
+high-quality destination imagery.
+
 ## Scripts
 
 | Command | Purpose |
@@ -57,5 +61,7 @@ seeds from the extracted package data. Env vars are documented in [`.env.example
   editor currently accepts an image **URL**.
 - Raw source footage is intentionally excluded from this repository; the optimized homepage hero
   video and poster assets are included in `public/hero/`.
+- `.next/` is a generated Next.js cache. It is ignored and recreated automatically by `npm run dev`
+  or `npm run build`.
 
 Planning docs live in [`docs/`](docs/).

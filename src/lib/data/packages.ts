@@ -87,6 +87,28 @@ function num(v: string | number | null): number | null {
   return typeof v === "number" ? v : Number(v);
 }
 
+// Keep package imagery destination-specific and local so database records cannot
+// silently fall back to generic or stale external photography.
+const curatedPackageImages = new Set([
+  "andaman-family-4n5d",
+  "best-of-europe-12n13d",
+  "england-europe-15n16d",
+  "bali-6n7d",
+  "china-8n9d",
+  "nepal-muktinath-7n8d",
+  "singapore-malaysia-6n7d",
+  "singapore-malaysia-thailand-10n11d",
+  "sri-lanka-ramayana-6n7d",
+  "chardham-helicopter-5n6d",
+  "leh-ladakh-kargil-6n7d",
+  "odisha-3n4d",
+  "vietnam-5n6d",
+]);
+
+function packageImage(slug: string, fallback: string | null): string | null {
+  return curatedPackageImages.has(slug) ? `/packages/${slug}.jpg` : fallback;
+}
+
 function dbRowToListItem(r: DbListRow): PackageListItem {
   return {
     id: r.id,
@@ -98,7 +120,7 @@ function dbRowToListItem(r: DbListRow): PackageListItem {
     duration_nights: r.duration_nights,
     price_amount: num(r.price_amount),
     price_currency: r.price_currency,
-    hero_image_url: r.hero_image_url,
+    hero_image_url: packageImage(r.slug, r.hero_image_url),
     overview: r.overview,
     category_name: r.category_name,
     destination_name: r.destination_name,
@@ -117,7 +139,7 @@ function genToListItem(g: Generated): PackageListItem {
     duration_nights: g.duration_nights,
     price_amount: g.price_amount,
     price_currency: g.price_currency,
-    hero_image_url: g.hero_image_url,
+    hero_image_url: packageImage(g.slug, g.hero_image_url),
     overview: g.overview,
     category_name: g.category_name,
     destination_name: g.destination_name,
@@ -164,7 +186,7 @@ function toDetail(g: Generated, index: number): PackageDetail {
     visa_info: null,
     cancellation_policy: null,
     terms: null,
-    hero_image_url: g.hero_image_url,
+    hero_image_url: packageImage(g.slug, g.hero_image_url),
     is_featured: g.is_featured,
     source_pdf: g.source_pdf,
     source_pages: g.source_pages,
@@ -262,7 +284,7 @@ export async function getPackageBySlug(
       visa_info: null,
       cancellation_policy: null,
       terms: null,
-      hero_image_url: r.hero_image_url,
+      hero_image_url: packageImage(r.slug, r.hero_image_url),
       is_featured: r.is_featured,
       source_pdf: r.source_pdf,
       source_pages: r.source_pages,
