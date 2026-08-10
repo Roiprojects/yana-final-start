@@ -1,39 +1,31 @@
-"use client";
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useCallback,
-  useRef,
-  useEffect,
-} from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { X, CheckCircle2, Loader2, Send, MapPin, Calendar, Users, PhoneCall } from "lucide-react";
-import { enquiryFormSchema, type EnquiryFormValues } from "@/lib/schemas/enquiry";
-import { submitEnquiry } from "@/lib/actions/enquiry";
+import {
+  X,
+  CheckCircle2,
+  Loader2,
+  Send,
+  MapPin,
+  Calendar,
+  Users,
+  PhoneCall,
+} from "lucide-react";
+import {
+  enquiryFormSchema,
+  type EnquiryFormValues,
+} from "@/lib/schemas/enquiry";
+import { api } from "@/lib/api/client";
 import { unsplash } from "@/lib/images";
-
-/* ── Context ── */
-type EnquiryModalCtx = {
-  open: (prefill?: Partial<EnquiryFormValues>) => void;
-  close: () => void;
-};
-
-const Ctx = createContext<EnquiryModalCtx | null>(null);
-
-export function useEnquiryModal() {
-  const ctx = useContext(Ctx);
-  if (!ctx) throw new Error("useEnquiryModal must be used inside EnquiryModalProvider");
-  return ctx;
-}
+import { EnquiryModalContext } from "./enquiry-modal-context";
 
 /* ── Form fields ── */
 const fieldClass =
   "w-full rounded-lg border border-border-soft bg-bg-main px-3.5 py-2.5 text-sm text-text-main outline-none transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20";
-const labelClass = "mb-1 block text-xs font-bold uppercase tracking-wide text-text-secondary";
+const labelClass =
+  "mb-1 block text-xs font-bold uppercase tracking-wide text-text-secondary";
 const errorClass = "mt-1 text-[11px] text-red-500";
 
 const MODAL_IMAGE = "photo-1469474968028-56623f02e42e";
@@ -55,7 +47,12 @@ function EnquiryDialog({
     defaultValues: { type: "general", ...prefill },
   });
 
-  const { register, handleSubmit, setError, formState: { errors, isSubmitting } } = form;
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors, isSubmitting },
+  } = form;
 
   // close on Escape
   useEffect(() => {
@@ -69,13 +66,18 @@ function EnquiryDialog({
   // lock body scroll
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
   async function onSubmit(values: EnquiryFormValues) {
     setSubmitError(null);
-    const result = await submitEnquiry({ ...values, type: "general" });
-    if (result.ok) { setSubmitted(true); return; }
+    const result = await api.submitEnquiry({ ...values, type: "general" });
+    if (result.ok) {
+      setSubmitted(true);
+      return;
+    }
     if (result.fieldErrors) {
       for (const [field, message] of Object.entries(result.fieldErrors)) {
         setError(field as keyof EnquiryFormValues, { message });
@@ -88,29 +90,42 @@ function EnquiryDialog({
     <div
       ref={overlayRef}
       className="fixed inset-0 z-[200] flex items-center justify-center bg-deep/60 p-4 backdrop-blur-sm"
-      onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
+      onClick={(e) => {
+        if (e.target === overlayRef.current) onClose();
+      }}
       role="dialog"
       aria-modal="true"
       aria-label="Enquiry form"
     >
       <div className="relative flex w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-[0_32px_80px_-16px_rgba(12,39,64,0.45)]">
-
         {/* Left — hero image (desktop only) */}
         <div
           className="hidden w-[42%] shrink-0 flex-col justify-end bg-cover bg-center p-6 md:flex"
           style={{ backgroundImage: `url(${unsplash(MODAL_IMAGE, 800)})` }}
         >
-          <div className="absolute inset-0 left-0 w-[42%] bg-gradient-to-b from-deep/20 via-deep/50 to-deep/90" aria-hidden />
+          <div
+            className="absolute inset-0 left-0 w-[42%] bg-gradient-to-b from-deep/20 via-deep/50 to-deep/90"
+            aria-hidden
+          />
           <div className="relative">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">Yana Travels</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">
+              Yana Travels
+            </p>
             <h2 className="mt-1 font-heading text-xl font-bold leading-snug text-white">
-              Plan your<br />dream journey
+              Plan your
+              <br />
+              dream journey
             </h2>
             <p className="mt-2 text-xs leading-relaxed text-white/75">
-              Share a few details and our travel experts will craft the perfect itinerary for you.
+              Share a few details and our travel experts will craft the perfect
+              itinerary for you.
             </p>
             <div className="mt-4 space-y-2">
-              {["Domestic & international tours", "Tailor-made itineraries", "Expert guidance"].map((t) => (
+              {[
+                "Domestic & international tours",
+                "Tailor-made itineraries",
+                "Expert guidance",
+              ].map((t) => (
                 <div key={t} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   <span className="text-[11px] text-white/80">{t}</span>
@@ -125,8 +140,12 @@ function EnquiryDialog({
           {/* Header */}
           <div className="flex items-center justify-between bg-gradient-to-r from-primary to-[#2b7fc7] px-5 py-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">Free consultation</p>
-              <h3 className="font-heading text-base font-bold text-white">Get a Callback</h3>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">
+                Free consultation
+              </p>
+              <h3 className="font-heading text-base font-bold text-white">
+                Get a Callback
+              </h3>
             </div>
             <button
               type="button"
@@ -143,9 +162,12 @@ function EnquiryDialog({
             {submitted ? (
               <div className="flex flex-col items-center py-8 text-center">
                 <CheckCircle2 className="h-12 w-12 text-green-500" />
-                <h3 className="mt-4 text-lg font-bold text-text-main">Thank you!</h3>
+                <h3 className="mt-4 text-lg font-bold text-text-main">
+                  Thank you!
+                </h3>
                 <p className="mt-2 max-w-xs text-sm text-text-secondary">
-                  Your enquiry has been received. Our team will call you back shortly.
+                  Your enquiry has been received. Our team will call you back
+                  shortly.
                 </p>
                 <button
                   type="button"
@@ -156,64 +178,120 @@ function EnquiryDialog({
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-3">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                noValidate
+                className="space-y-3"
+              >
                 <div className="grid gap-3 sm:grid-cols-2">
                   {/* Name */}
                   <div>
                     <label className={labelClass} htmlFor="modal-name">
-                      <PhoneCall className="mr-1 inline h-3 w-3" />Name *
+                      <PhoneCall className="mr-1 inline h-3 w-3" />
+                      Name *
                     </label>
-                    <input id="modal-name" className={fieldClass} placeholder="Your full name" {...register("name")} />
-                    {errors.name && <p className={errorClass}>{errors.name.message}</p>}
+                    <input
+                      id="modal-name"
+                      className={fieldClass}
+                      placeholder="Your full name"
+                      {...register("name")}
+                    />
+                    {errors.name && (
+                      <p className={errorClass}>{errors.name.message}</p>
+                    )}
                   </div>
                   {/* Phone */}
                   <div>
                     <label className={labelClass} htmlFor="modal-phone">
                       Phone *
                     </label>
-                    <input id="modal-phone" inputMode="tel" className={fieldClass} placeholder="+91 98765 43210" {...register("phone")} />
-                    {errors.phone && <p className={errorClass}>{errors.phone.message}</p>}
+                    <input
+                      id="modal-phone"
+                      inputMode="tel"
+                      className={fieldClass}
+                      placeholder="+91 98765 43210"
+                      {...register("phone")}
+                    />
+                    {errors.phone && (
+                      <p className={errorClass}>{errors.phone.message}</p>
+                    )}
                   </div>
                   {/* Email */}
                   <div>
                     <label className={labelClass} htmlFor="modal-email">
                       Email
                     </label>
-                    <input id="modal-email" type="email" className={fieldClass} placeholder="you@email.com" {...register("email")} />
-                    {errors.email && <p className={errorClass}>{errors.email.message}</p>}
+                    <input
+                      id="modal-email"
+                      type="email"
+                      className={fieldClass}
+                      placeholder="you@email.com"
+                      {...register("email")}
+                    />
+                    {errors.email && (
+                      <p className={errorClass}>{errors.email.message}</p>
+                    )}
                   </div>
                   {/* Travellers */}
                   <div>
                     <label className={labelClass} htmlFor="modal-travellers">
-                      <Users className="mr-1 inline h-3 w-3" />Travellers
+                      <Users className="mr-1 inline h-3 w-3" />
+                      Travellers
                     </label>
-                    <input id="modal-travellers" type="number" min={1} className={fieldClass} placeholder="2" {...register("travellers")} />
+                    <input
+                      id="modal-travellers"
+                      type="number"
+                      min={1}
+                      className={fieldClass}
+                      placeholder="2"
+                      {...register("travellers")}
+                    />
                   </div>
                   {/* Destination */}
                   <div className="sm:col-span-2">
                     <label className={labelClass} htmlFor="modal-destination">
-                      <MapPin className="mr-1 inline h-3 w-3" />Destination of interest
+                      <MapPin className="mr-1 inline h-3 w-3" />
+                      Destination of interest
                     </label>
-                    <input id="modal-destination" className={fieldClass} placeholder="e.g. Kerala, Bali, Kashmir…" {...register("destinationInterest")} />
+                    <input
+                      id="modal-destination"
+                      className={fieldClass}
+                      placeholder="e.g. Kerala, Bali, Kashmir…"
+                      {...register("destinationInterest")}
+                    />
                   </div>
                   {/* Travel Date */}
                   <div className="sm:col-span-2">
                     <label className={labelClass} htmlFor="modal-date">
-                      <Calendar className="mr-1 inline h-3 w-3" />Preferred travel date
+                      <Calendar className="mr-1 inline h-3 w-3" />
+                      Preferred travel date
                     </label>
-                    <input id="modal-date" type="date" className={fieldClass} {...register("travelDate")} />
+                    <input
+                      id="modal-date"
+                      type="date"
+                      className={fieldClass}
+                      {...register("travelDate")}
+                    />
                   </div>
                   {/* Message */}
                   <div className="sm:col-span-2">
                     <label className={labelClass} htmlFor="modal-message">
                       Any other details
                     </label>
-                    <textarea id="modal-message" rows={2} className={fieldClass} placeholder="Budget, special requirements, etc." {...register("message")} />
+                    <textarea
+                      id="modal-message"
+                      rows={2}
+                      className={fieldClass}
+                      placeholder="Budget, special requirements, etc."
+                      {...register("message")}
+                    />
                   </div>
                 </div>
 
                 {submitError && (
-                  <p className="rounded-lg bg-red-50 px-3 py-2 text-xs text-red-600">{submitError}</p>
+                  <p className="rounded-lg bg-red-50 px-3 py-2 text-xs text-red-600">
+                    {submitError}
+                  </p>
                 )}
 
                 <button
@@ -230,7 +308,8 @@ function EnquiryDialog({
                 </button>
 
                 <p className="text-center text-[10px] text-text-secondary">
-                  We&apos;ll call you back within 2 business hours. No spam, ever.
+                  We&apos;ll call you back within 2 business hours. No spam,
+                  ever.
                 </p>
               </form>
             )}
@@ -242,14 +321,23 @@ function EnquiryDialog({
 }
 
 /* ── Provider ── */
-export function EnquiryModalProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState<{ open: boolean; prefill: Partial<EnquiryFormValues> }>({
+export function EnquiryModalProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [state, setState] = useState<{
+    open: boolean;
+    prefill: Partial<EnquiryFormValues>;
+  }>({
     open: false,
     prefill: {},
   });
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const open = useCallback((prefill: Partial<EnquiryFormValues> = {}) => {
     setState({ open: true, prefill });
@@ -260,13 +348,14 @@ export function EnquiryModalProvider({ children }: { children: React.ReactNode }
   }, []);
 
   return (
-    <Ctx.Provider value={{ open, close }}>
+    <EnquiryModalContext.Provider value={{ open, close }}>
       {children}
-      {mounted && state.open &&
+      {mounted &&
+        state.open &&
         createPortal(
           <EnquiryDialog prefill={state.prefill} onClose={close} />,
           document.body,
         )}
-    </Ctx.Provider>
+    </EnquiryModalContext.Provider>
   );
 }

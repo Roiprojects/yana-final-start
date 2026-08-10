@@ -19,7 +19,9 @@ const routes = [
 
 test.describe("public routes render", () => {
   for (const route of routes) {
-    test(`GET ${route} renders an h1 with header + footer`, async ({ page }) => {
+    test(`GET ${route} renders an h1 with header + footer`, async ({
+      page,
+    }) => {
       const res = await page.goto(route);
       expect(res?.status()).toBeLessThan(400);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -30,17 +32,22 @@ test.describe("public routes render", () => {
   }
 });
 
-test("unknown package slug returns 404", async ({ page }) => {
+test("unknown package slug shows the not-found state", async ({ page }) => {
+  // SPA fallback returns HTTP 200; the package detail route renders its own
+  // not-found state after the API responds 404.
   const res = await page.goto("/packages/does-not-exist", {
     waitUntil: "commit",
     timeout: 45000,
   });
-  expect(res?.status()).toBe(404);
+  expect(res?.status()).toBe(200);
+  await expect(
+    page.getByRole("heading", { name: "Package not found" }),
+  ).toBeVisible();
 });
 
-test("enquiry modal opens from header Enquire button", async ({ page }) => {
+test("enquiry modal opens from home hero button", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: /enquire/i }).first().click();
+  await page.getByRole("button", { name: /plan a custom trip/i }).click();
   await expect(page.getByRole("dialog")).toBeVisible({ timeout: 5000 });
   await expect(page.getByLabel(/name \*/i)).toBeVisible();
   await expect(page.getByLabel(/phone \*/i)).toBeVisible();
@@ -48,7 +55,7 @@ test("enquiry modal opens from header Enquire button", async ({ page }) => {
 
 test("enquiry modal validates required fields", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: /enquire/i }).first().click();
+  await page.getByRole("button", { name: /plan a custom trip/i }).click();
   await expect(page.getByRole("dialog")).toBeVisible({ timeout: 5000 });
   await page.getByRole("button", { name: /send enquiry/i }).click();
   await expect(page.getByText(/please enter your name/i)).toBeVisible();
@@ -58,7 +65,7 @@ test("enquiry modal submits end-to-end (success or graceful error)", async ({
   page,
 }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: /enquire/i }).first().click();
+  await page.getByRole("button", { name: /plan a custom trip/i }).click();
   await expect(page.getByRole("dialog")).toBeVisible({ timeout: 5000 });
   await page.getByLabel(/name \*/i).fill("Automated Test");
   await page.getByLabel(/phone \*/i).fill("9999999999");

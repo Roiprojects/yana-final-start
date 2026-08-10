@@ -1,4 +1,3 @@
-"use client";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,7 +7,7 @@ import {
   enquiryFormSchema,
   type EnquiryFormValues,
 } from "@/lib/schemas/enquiry";
-import { submitEnquiry } from "@/lib/actions/enquiry";
+import { api } from "@/lib/api/client";
 import { Button } from "@/components/ui/button";
 
 type Variant = "general" | "customized";
@@ -37,7 +36,7 @@ export function EnquiryForm({ variant }: { variant: Variant }) {
 
   async function onSubmit(values: EnquiryFormValues) {
     setSubmitError(null);
-    const result = await submitEnquiry({ ...values, type: variant });
+    const result = await api.submitEnquiry({ ...values, type: variant });
     if (result.ok) {
       setSubmitted(true);
       return;
@@ -47,7 +46,7 @@ export function EnquiryForm({ variant }: { variant: Variant }) {
         setError(field as keyof EnquiryFormValues, { message });
       }
     }
-    setSubmitError(result.error);
+    setSubmitError(result.error ?? "Something went wrong. Please try again.");
   }
 
   if (submitted) {

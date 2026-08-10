@@ -1,8 +1,8 @@
-"use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { Trash2, Loader2 } from "lucide-react";
-import { deletePackage } from "@/lib/actions/admin";
+import { useNavigate } from "react-router-dom";
+import { api } from "@/lib/api/client";
 
 export function DeletePackageButton({
   id,
@@ -11,8 +11,21 @@ export function DeletePackageButton({
   id: string;
   title: string;
 }) {
+  const navigate = useNavigate();
   const [confirming, setConfirming] = useState(false);
-  const [pending, startTransition] = useTransition();
+  const [pending, setPending] = useState(false);
+
+  async function handleDelete() {
+    setPending(true);
+    try {
+      await api.deletePackage(id);
+      navigate("/admin/packages");
+    } catch (err) {
+      alert((err as Error).message);
+    } finally {
+      setPending(false);
+    }
+  }
 
   if (!confirming) {
     return (
@@ -32,7 +45,7 @@ export function DeletePackageButton({
       <button
         type="button"
         disabled={pending}
-        onClick={() => startTransition(() => void deletePackage(id))}
+        onClick={handleDelete}
         className="inline-flex items-center gap-1 rounded-md bg-danger px-2.5 py-1 text-xs font-semibold text-white disabled:opacity-60"
       >
         {pending && <Loader2 className="h-3 w-3 animate-spin" />} Yes, delete

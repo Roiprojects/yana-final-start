@@ -1,7 +1,6 @@
-"use client";
 
-import { useState, useTransition } from "react";
-import { setEnquiryStatus } from "@/lib/actions/admin";
+import { useState } from "react";
+import { api } from "@/lib/api/client";
 import { cn } from "@/lib/utils";
 
 const OPTIONS = ["new", "contacted", "closed"] as const;
@@ -16,12 +15,14 @@ const tone: Record<Status, string> = {
 export function EnquiryStatusSelect({
   id,
   status,
+  onChanged,
 }: {
   id: string;
   status: Status;
+  onChanged?: () => void;
 }) {
   const [value, setValue] = useState<Status>(status);
-  const [pending, startTransition] = useTransition();
+  const [pending, setPending] = useState(false);
 
   return (
     <select
@@ -30,9 +31,12 @@ export function EnquiryStatusSelect({
       onChange={(e) => {
         const next = e.target.value as Status;
         setValue(next);
-        startTransition(() => {
-          void setEnquiryStatus(id, next);
-        });
+        setPending(true);
+        void api
+          .setEnquiryStatus(id, next)
+          .then(() => onChanged?.())
+          .catch(() => setValue(status))
+          .finally(() => setPending(false));
       }}
       className={cn(
         "cursor-pointer rounded-full px-3 py-1 text-xs font-semibold capitalize outline-none",

@@ -1,4 +1,3 @@
-"use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 

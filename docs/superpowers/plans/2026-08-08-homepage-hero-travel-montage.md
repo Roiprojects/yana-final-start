@@ -4,9 +4,9 @@
 
 **Goal:** Build a silent 30 to 50 second homepage hero video montage using real tourist-attraction imagery from Europe, Vietnam, India, Karnataka, and a few additional destinations.
 
-**Architecture:** Source royalty-permitted real-place still imagery, assemble a local MP4 montage with ffmpeg using timed pans and crossfades, then swap the homepage hero from slideshow backgrounds to a video-first hero with safe fallback behavior. Keep the asset in `public` so Next can serve it directly.
+**Architecture:** Source royalty-permitted real-place still imagery, assemble a local MP4 montage with ffmpeg using timed pans and crossfades, then swap the homepage hero from slideshow backgrounds to a video-first hero with safe fallback behavior. Keep the asset in `public` so Vite can serve it directly.
 
-**Tech Stack:** Next.js App Router, React, local `ffmpeg`, static assets in `public`
+**Tech Stack:** React 19 SPA (Vite) + React Router v7, React, local `ffmpeg`, static assets in `public`
 
 ## Global Constraints
 

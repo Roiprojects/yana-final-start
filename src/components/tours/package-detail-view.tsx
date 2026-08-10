@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Clock,
   MapPin,
@@ -18,7 +17,11 @@ import { whatsappLink } from "@/lib/site-config";
 import { EnquireNowButton } from "@/components/ui/enquire-now-button";
 import type { PackageDetail } from "@/lib/types/tour";
 
-const MEALS: Record<string, string> = { B: "Breakfast", L: "Lunch", D: "Dinner" };
+const MEALS: Record<string, string> = {
+  B: "Breakfast",
+  L: "Lunch",
+  D: "Dinner",
+};
 function mealLabel(code: string): string {
   const parts = code
     .split("/")
@@ -74,7 +77,10 @@ function List({
       <h3 className="mb-3 font-bold">{title}</h3>
       <ul className="space-y-2">
         {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
+          <li
+            key={i}
+            className="flex items-start gap-2 text-sm text-text-secondary"
+          >
             <Icon
               className={`mt-0.5 h-4 w-4 shrink-0 ${positive ? "text-success" : "text-danger"}`}
               aria-hidden
@@ -114,73 +120,69 @@ export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
     <article className="-mt-24">
       {/* Cinematic hero with overlaid title */}
       <div className="px-3 sm:px-4">
-      <div className="grain relative flex min-h-[70vh] items-end overflow-hidden rounded-[1.75rem] bg-lavender md:rounded-[2rem]">
-        {pkg.hero_image_url ? (
-          <Image
-            src={pkg.hero_image_url}
-            alt={pkg.title}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
+        <div className="grain relative flex min-h-[70vh] items-end overflow-hidden rounded-[1.75rem] bg-lavender md:rounded-[2rem]">
+          {pkg.hero_image_url ? (
+            <img
+              src={pkg.hero_image_url}
+              alt={pkg.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-lavender to-bg-soft">
+              <MapPin className="h-10 w-10 text-primary/40" aria-hidden />
+            </div>
+          )}
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/40 to-deep/20"
           />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-lavender to-bg-soft">
-            <MapPin className="h-10 w-10 text-primary/40" aria-hidden />
-          </div>
-        )}
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-deep/90 via-deep/40 to-deep/20"
-        />
-        <Container className="relative z-10 pb-12 pt-36 text-white">
-          <div className="mb-4 flex flex-wrap gap-2">
-            <span className="rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-md">
-              {pkg.tour_type}
-            </span>
-            <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/90 backdrop-blur-md">
-              {pkg.scope}
-            </span>
-            {pkg.category_name && (
-              <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold text-white/90 backdrop-blur-md">
-                {pkg.category_name}
+          <Container className="relative z-10 pb-12 pt-36 text-white">
+            <div className="mb-4 flex flex-wrap gap-2">
+              <span className="rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-md">
+                {pkg.tour_type}
               </span>
-            )}
-          </div>
-          <h1 className="max-w-3xl font-heading text-4xl font-extrabold leading-tight text-white md:text-6xl">
-            {pkg.title}
-          </h1>
-          <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-white/85">
-            {pkg.destination_name && (
-              <span className="inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4" aria-hidden />
-                {pkg.destination_name}
+              <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white/90 backdrop-blur-md">
+                {pkg.scope}
               </span>
-            )}
-            {dur && (
-              <span className="inline-flex items-center gap-2">
-                <Clock className="h-4 w-4" aria-hidden />
-                {dur}
-              </span>
-            )}
-            {price && (
-              <span className="inline-flex items-center gap-2">
-                <span className="text-white/60">From</span>
-                <span className="font-heading text-lg font-bold text-white">
-                  {price}
+              {pkg.category_name && (
+                <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold text-white/90 backdrop-blur-md">
+                  {pkg.category_name}
                 </span>
-              </span>
-            )}
-          </div>
-        </Container>
-      </div>
+              )}
+            </div>
+            <h1 className="max-w-3xl font-heading text-4xl font-extrabold leading-tight text-white md:text-6xl">
+              {pkg.title}
+            </h1>
+            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-white/85">
+              {pkg.destination_name && (
+                <span className="inline-flex items-center gap-2">
+                  <MapPin className="h-4 w-4" aria-hidden />
+                  {pkg.destination_name}
+                </span>
+              )}
+              {dur && (
+                <span className="inline-flex items-center gap-2">
+                  <Clock className="h-4 w-4" aria-hidden />
+                  {dur}
+                </span>
+              )}
+              {price && (
+                <span className="inline-flex items-center gap-2">
+                  <span className="text-white/60">From</span>
+                  <span className="font-heading text-lg font-bold text-white">
+                    {price}
+                  </span>
+                </span>
+              )}
+            </div>
+          </Container>
+        </div>
       </div>
 
       <Container className="py-14">
         <div className="grid gap-10 lg:grid-cols-[1fr_340px]">
           {/* Main */}
           <div className="space-y-8">
-
             <Prose title="Overview" text={pkg.overview} />
 
             {pkg.highlights && pkg.highlights.length > 0 && (
@@ -188,8 +190,14 @@ export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
                 <h2 className="mb-3 text-xl font-bold">Highlights</h2>
                 <ul className="grid gap-2 sm:grid-cols-2">
                   {pkg.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-sm text-text-secondary"
+                    >
+                      <Check
+                        className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                        aria-hidden
+                      />
                       {h}
                     </li>
                   ))}
@@ -225,13 +233,19 @@ export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
                             <div className="mt-3 flex flex-wrap gap-2">
                               {day.meals && (
                                 <span className="inline-flex items-center gap-1.5 rounded-full bg-bg-soft px-3 py-1 text-xs font-medium text-deep">
-                                  <Utensils className="h-3.5 w-3.5 text-primary" aria-hidden />
+                                  <Utensils
+                                    className="h-3.5 w-3.5 text-primary"
+                                    aria-hidden
+                                  />
                                   {mealLabel(day.meals)}
                                 </span>
                               )}
                               {day.stay && (
                                 <span className="inline-flex items-center gap-1.5 rounded-full bg-bg-soft px-3 py-1 text-xs font-medium text-deep">
-                                  <BedDouble className="h-3.5 w-3.5 text-primary" aria-hidden />
+                                  <BedDouble
+                                    className="h-3.5 w-3.5 text-primary"
+                                    aria-hidden
+                                  />
                                   {day.stay}
                                 </span>
                               )}
@@ -247,16 +261,28 @@ export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
 
             {(pkg.accommodation || pkg.meals_info || pkg.transport_info) && (
               <section className="grid gap-4 rounded-xl border border-border-soft bg-white p-5 sm:grid-cols-3">
-                <InfoRow icon={BedDouble} label="Stay" value={pkg.accommodation} />
+                <InfoRow
+                  icon={BedDouble}
+                  label="Stay"
+                  value={pkg.accommodation}
+                />
                 <InfoRow icon={Utensils} label="Meals" value={pkg.meals_info} />
-                <InfoRow icon={Bus} label="Transport" value={pkg.transport_info} />
+                <InfoRow
+                  icon={Bus}
+                  label="Transport"
+                  value={pkg.transport_info}
+                />
               </section>
             )}
 
             {pkg.inclusions?.length || pkg.exclusions?.length ? (
               <section className="grid gap-8 sm:grid-cols-2">
                 <List title="Inclusions" items={pkg.inclusions} positive />
-                <List title="Exclusions" items={pkg.exclusions} positive={false} />
+                <List
+                  title="Exclusions"
+                  items={pkg.exclusions}
+                  positive={false}
+                />
               </section>
             ) : null}
 
@@ -265,7 +291,11 @@ export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
             <Prose title="Terms & conditions" text={pkg.terms} />
 
             {pkg.documents_required && pkg.documents_required.length > 0 && (
-              <List title="Documents required" items={pkg.documents_required} positive />
+              <List
+                title="Documents required"
+                items={pkg.documents_required}
+                positive
+              />
             )}
           </div>
 
@@ -275,13 +305,17 @@ export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
               {price ? (
                 <p className="text-sm text-text-secondary">
                   From{" "}
-                  <span className="text-2xl font-extrabold text-deep">{price}</span>
+                  <span className="text-2xl font-extrabold text-deep">
+                    {price}
+                  </span>
                   {pkg.taxes_info ? (
                     <span className="block text-xs">{pkg.taxes_info}</span>
                   ) : null}
                 </p>
               ) : (
-                <p className="text-lg font-bold text-deep">Enquire for pricing</p>
+                <p className="text-lg font-bold text-deep">
+                  Enquire for pricing
+                </p>
               )}
 
               {(pkg.pickup_location || pkg.drop_location) && (

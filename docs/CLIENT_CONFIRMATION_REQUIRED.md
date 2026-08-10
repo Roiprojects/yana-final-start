@@ -1,6 +1,6 @@
 # Client Confirmation Required — Yana Travels
 
-**Version:** 0.1  ·  **Date:** 2026-07-21
+**Version:** 0.2 · **Date:** 2026-08-10
 Everything below blocks or shapes the build. Nothing here will be invented. Items are grouped by
 priority. Please answer inline or attach the requested files.
 
@@ -11,14 +11,19 @@ priority. Please answer inline or attach the requested files.
 1. ✅ **Trip-package PDFs** — RECEIVED (13 PDFs in `packages/`, 2026-07-23). Extracted to
    `docs/planning/extracted-packages/` and live on the site.
 2. ✅ **Company brochure PDF** — RECEIVED (`packages/Yana Travels New Brochure 2025.pdf`).
-   *(Still to be parsed into the About page.)*
+   _(Still to be parsed into the About page.)_
 3. 🔴 **Logo files** — STILL MISSING. Need vector (SVG/AI/EPS/PDF) + high-res PNG.
-   *(Needed to finalise the purple palette and replace the text wordmark in the header.)*
-4. 🔴 **Supabase project** — real project-ref + access token (to replace placeholders in `.mcp.json`)
-   or confirmation to create a new Supabase project under the client's org.
-5. **Who owns hosting & Supabase accounts?** (Recommended: client-owned.)
+   _(Needed to finalise the brand palette and replace the text wordmark in the header.)_
+4. ✅ **PostgreSQL database** — PROVIDED (`DATABASE_URL` in `.env`, git-ignored). Schema applied
+   via `db/schema.sql` + `db/setup.mjs`.
+5. 🔴 **Admin credentials** — need real `ADMIN_EMAIL` + `ADMIN_PASSWORD` + a long random
+   `AUTH_SECRET` (currently placeholders `NEEDS CLIENT CONFIRMATION`). Admin e2e tests are
+   skipped until these are set.
+6. **Who owns hosting & the database account?** (Recommended: client-owned.) Hosting target is
+   undecided — see `docs/DEPLOYMENT_PLAN.md`.
 
 ### Package data to confirm (now that PDFs are extracted)
+
 - Confirm the **per-person prices** shown are current (extracted from the 2026 PDFs).
 - Provide **departure dates**, **hotel names**, and **cancellation/visa policy** text per package
   (currently omitted, not invented).
@@ -63,6 +68,7 @@ priority. Please answer inline or attach the requested files.
 31. **Domain** — migrate `yanaindia.com` now or build on a subdomain first? Registrar access?
 
 ## ⚠️ Security note (not a question — an action we are taking)
+
 - The **current site publicly exposes full bank account number + IFSC**. We will **NOT** reproduce
   these on the new site (fraud/phishing risk). If account details must be shared with customers,
   it should be done privately (invoice/quote), not on a public web page.
@@ -70,7 +76,8 @@ priority. Please answer inline or attach the requested files.
 ---
 
 ### How this list is used
-- P0 items unblock the technology setup and PDF extraction.
+
+- P0 items unblock the technology setup and verified data seeding.
 - P1 items are extracted from PDFs where possible, then confirmed; anything still missing renders
   as absent on the public site (never as invented content) and stays `NEEDS CLIENT CONFIRMATION`
   internally until resolved.

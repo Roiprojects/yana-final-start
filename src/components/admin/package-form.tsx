@@ -1,14 +1,13 @@
-"use client";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { packageInputSchema, type PackageInput } from "@/lib/schemas/package";
-import { savePackage } from "@/lib/actions/admin";
+import { api } from "@/lib/api/client";
 import { Button } from "@/components/ui/button";
-import type { EditablePackage } from "@/lib/data/admin";
+import type { EditablePackage } from "@/lib/types/admin";
 
 const field =
   "w-full rounded-lg border border-border-soft bg-white px-3.5 py-2.5 text-sm outline-none focus-visible:border-primary";
@@ -20,7 +19,7 @@ function toLines(arr: string[] | null | undefined): string {
 }
 
 export function PackageForm({ pkg }: { pkg: EditablePackage | null }) {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [serverError, setServerError] = useState<string | null>(null);
 
   const {
@@ -58,18 +57,17 @@ export function PackageForm({ pkg }: { pkg: EditablePackage | null }) {
 
   async function onSubmit(values: PackageInput) {
     setServerError(null);
-    const result = await savePackage(pkg?.id ?? null, values);
+    const result = await api.savePackage(pkg?.id ?? null, values);
     if (result.ok) {
-      router.push("/admin/packages");
-      router.refresh();
+      navigate("/admin/packages");
       return;
     }
     if (result.fieldErrors) {
       for (const [k, m] of Object.entries(result.fieldErrors)) {
-        setError(k as keyof PackageInput, { message: m });
+        setError(k as keyof PackageInput, { message: m as string });
       }
     }
-    setServerError(result.error);
+    setServerError(result.error ?? "Save failed");
   }
 
   return (
@@ -80,86 +78,175 @@ export function PackageForm({ pkg }: { pkg: EditablePackage | null }) {
     >
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className={label} htmlFor="title">Title *</label>
+          <label className={label} htmlFor="title">
+            Title *
+          </label>
           <input id="title" className={field} {...register("title")} />
           {errors.title && <p className={err}>{errors.title.message}</p>}
         </div>
         <div>
-          <label className={label} htmlFor="slug">Slug *</label>
+          <label className={label} htmlFor="slug">
+            Slug *
+          </label>
           <input id="slug" className={field} {...register("slug")} />
           {errors.slug && <p className={err}>{errors.slug.message}</p>}
         </div>
         <div>
-          <label className={label} htmlFor="scope">Scope *</label>
+          <label className={label} htmlFor="scope">
+            Scope *
+          </label>
           <select id="scope" className={field} {...register("scope")}>
             <option value="domestic">Domestic</option>
             <option value="international">International</option>
           </select>
         </div>
         <div>
-          <label className={label} htmlFor="tour_type">Tour type *</label>
+          <label className={label} htmlFor="tour_type">
+            Tour type *
+          </label>
           <select id="tour_type" className={field} {...register("tour_type")}>
             <option value="group">Group</option>
             <option value="customized">Customized</option>
           </select>
         </div>
         <div>
-          <label className={label} htmlFor="category_name">Category</label>
-          <input id="category_name" className={field} {...register("category_name")} />
+          <label className={label} htmlFor="category_name">
+            Category
+          </label>
+          <input
+            id="category_name"
+            className={field}
+            {...register("category_name")}
+          />
         </div>
         <div>
-          <label className={label} htmlFor="destination_name">Destination</label>
-          <input id="destination_name" className={field} {...register("destination_name")} />
+          <label className={label} htmlFor="destination_name">
+            Destination
+          </label>
+          <input
+            id="destination_name"
+            className={field}
+            {...register("destination_name")}
+          />
         </div>
         <div>
-          <label className={label} htmlFor="duration_days">Days</label>
-          <input id="duration_days" type="number" className={field} {...register("duration_days")} />
-          {errors.duration_days && <p className={err}>{errors.duration_days.message}</p>}
+          <label className={label} htmlFor="duration_days">
+            Days
+          </label>
+          <input
+            id="duration_days"
+            type="number"
+            className={field}
+            {...register("duration_days")}
+          />
+          {errors.duration_days && (
+            <p className={err}>{errors.duration_days.message}</p>
+          )}
         </div>
         <div>
-          <label className={label} htmlFor="duration_nights">Nights</label>
-          <input id="duration_nights" type="number" className={field} {...register("duration_nights")} />
+          <label className={label} htmlFor="duration_nights">
+            Nights
+          </label>
+          <input
+            id="duration_nights"
+            type="number"
+            className={field}
+            {...register("duration_nights")}
+          />
         </div>
         <div>
-          <label className={label} htmlFor="price_amount">Price (₹ per person)</label>
-          <input id="price_amount" type="number" className={field} {...register("price_amount")} />
-          {errors.price_amount && <p className={err}>{errors.price_amount.message}</p>}
+          <label className={label} htmlFor="price_amount">
+            Price (₹ per person)
+          </label>
+          <input
+            id="price_amount"
+            type="number"
+            className={field}
+            {...register("price_amount")}
+          />
+          {errors.price_amount && (
+            <p className={err}>{errors.price_amount.message}</p>
+          )}
         </div>
         <div>
-          <label className={label} htmlFor="country">Country</label>
+          <label className={label} htmlFor="country">
+            Country
+          </label>
           <input id="country" className={field} {...register("country")} />
         </div>
       </div>
 
       <div>
-        <label className={label} htmlFor="overview">Overview</label>
-        <textarea id="overview" rows={3} className={field} {...register("overview")} />
+        <label className={label} htmlFor="overview">
+          Overview
+        </label>
+        <textarea
+          id="overview"
+          rows={3}
+          className={field}
+          {...register("overview")}
+        />
       </div>
 
       <div className="grid gap-5 md:grid-cols-3">
         <div>
-          <label className={label} htmlFor="highlights">Highlights (one per line)</label>
-          <textarea id="highlights" rows={5} className={field} {...register("highlights")} />
+          <label className={label} htmlFor="highlights">
+            Highlights (one per line)
+          </label>
+          <textarea
+            id="highlights"
+            rows={5}
+            className={field}
+            {...register("highlights")}
+          />
         </div>
         <div>
-          <label className={label} htmlFor="inclusions">Inclusions (one per line)</label>
-          <textarea id="inclusions" rows={5} className={field} {...register("inclusions")} />
+          <label className={label} htmlFor="inclusions">
+            Inclusions (one per line)
+          </label>
+          <textarea
+            id="inclusions"
+            rows={5}
+            className={field}
+            {...register("inclusions")}
+          />
         </div>
         <div>
-          <label className={label} htmlFor="exclusions">Exclusions (one per line)</label>
-          <textarea id="exclusions" rows={5} className={field} {...register("exclusions")} />
+          <label className={label} htmlFor="exclusions">
+            Exclusions (one per line)
+          </label>
+          <textarea
+            id="exclusions"
+            rows={5}
+            className={field}
+            {...register("exclusions")}
+          />
         </div>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className={label} htmlFor="hero_image_url">Hero image URL</label>
-          <input id="hero_image_url" className={field} {...register("hero_image_url")} />
-          {errors.hero_image_url && <p className={err}>{errors.hero_image_url.message}</p>}
+          <label className={label} htmlFor="hero_image_url">
+            Hero image URL
+          </label>
+          <input
+            id="hero_image_url"
+            className={field}
+            {...register("hero_image_url")}
+          />
+          {errors.hero_image_url && (
+            <p className={err}>{errors.hero_image_url.message}</p>
+          )}
         </div>
         <div>
-          <label className={label} htmlFor="taxes_info">Price note / taxes</label>
-          <input id="taxes_info" className={field} {...register("taxes_info")} />
+          <label className={label} htmlFor="taxes_info">
+            Price note / taxes
+          </label>
+          <input
+            id="taxes_info"
+            className={field}
+            {...register("taxes_info")}
+          />
         </div>
       </div>
 
@@ -192,7 +279,7 @@ export function PackageForm({ pkg }: { pkg: EditablePackage | null }) {
         </Button>
         <button
           type="button"
-          onClick={() => router.push("/admin/packages")}
+          onClick={() => navigate("/admin/packages")}
           className="rounded-full border border-border-soft px-5 py-2.5 text-sm font-semibold text-text-main hover:bg-bg-soft"
         >
           Cancel

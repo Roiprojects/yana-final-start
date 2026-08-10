@@ -1,8 +1,15 @@
-"use client";
 
 import { useState } from "react";
-import { Plus, Pencil, Trash2, CheckCircle2, XCircle, Upload, Loader2 } from "lucide-react";
-import { toggleItemActive, deleteItem } from "@/lib/actions/admin-actions";
+import {
+  Plus,
+  Pencil,
+  Trash2,
+  CheckCircle2,
+  XCircle,
+  Upload,
+  Loader2,
+} from "lucide-react";
+import { api } from "@/lib/api/client";
 
 export interface FieldDef {
   name: string;
@@ -16,21 +23,26 @@ export interface FieldDef {
 interface CrudManagerProps<T extends { id: string; is_active?: boolean }> {
   title: string;
   description: string;
-  tableName: string;
+  /** DB table name — also the API module key. */
+  module: string;
   items: T[];
-  columns: { key: keyof T | string; label: string; render?: (item: T) => React.ReactNode }[];
+  columns: {
+    key: keyof T | string;
+    label: string;
+    render?: (item: T) => React.ReactNode;
+  }[];
   fields: FieldDef[];
-  onSaveAction: (formData: FormData) => Promise<{ ok: boolean; error?: string }>;
+  onReload: () => void;
 }
 
 export function CrudManager<T extends { id: string; is_active?: boolean }>({
   title,
   description,
-  tableName,
+  module,
   items,
   columns,
   fields,
-  onSaveAction,
+  onReload,
 }: CrudManagerProps<T>) {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<T | null>(null);
@@ -58,15 +70,20 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
   }
 
   async function handleToggle(id: string, current: boolean) {
-    await toggleItemActive(tableName, id, current);
+    await api.toggleModule(module, id, current);
+    onReload();
   }
 
   async function handleDelete(id: string) {
-    await deleteItem(tableName, id);
+    await api.deleteModule(module, id);
     setDeleteConfirmId(null);
+    onReload();
   }
 
-  async function handleImageUpload(fieldName: string, e: React.ChangeEvent<HTMLInputElement>) {
+  async function handleImageUpload(
+    fieldName: string,
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -75,10 +92,9 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
     data.append("file", file);
 
     try {
-      const res = await fetch("/api/upload", { method: "POST", body: data });
-      const json = await res.json();
+      const json = await api.upload(data);
       if (json.ok && json.url) {
-        setImageUrls((prev) => ({ ...prev, [fieldName]: json.url }));
+        setImageUrls((prev) => ({ ...prev, [fieldName]: json.url as string }));
       } else {
         alert("Image upload failed: " + (json.error || "Unknown error"));
       }
@@ -92,17 +108,22 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
+
     const formData = new FormData(e.currentTarget);
-    
-    // Add image URLs
     Object.entries(imageUrls).forEach(([k, v]) => {
       formData.set(k, v);
     });
 
+    const body: Record<string, unknown> = {};
+    formData.forEach((value, key) => {
+      body[key] = value;
+    });
+
     try {
-      const res = await onSaveAction(formData);
+      const res = await api.saveModule(module, body);
       if (res.ok) {
         setModalOpen(false);
+        onReload();
       } else {
         alert(res.error || "Save failed");
       }
@@ -134,7 +155,9 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
       {items.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center shadow-sm">
           <p className="text-lg font-bold text-slate-700">No records found</p>
-          <p className="mt-1 text-sm text-slate-500">Click "Add" above to create your first record.</p>
+          <p className="mt-1 text-sm text-slate-500">
+            Click "Add" above to create your first record.
+          </p>
         </div>
       ) : (
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -153,16 +176,26 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
               </thead>
               <tbody className="divide-y divide-slate-150">
                 {items.map((item) => (
-                  <tr key={item.id} className="hover:bg-slate-50/60 transition-colors">
+                  <tr
+                    key={item.id}
+                    className="hover:bg-slate-50/60 transition-colors"
+                  >
                     {columns.map((col) => (
-                      <td key={String(col.key)} className="px-5 py-4 font-medium text-slate-800">
-                        {col.render ? col.render(item) : String(item[col.key as keyof T] ?? "—")}
+                      <td
+                        key={String(col.key)}
+                        className="px-5 py-4 font-medium text-slate-800"
+                      >
+                        {col.render
+                          ? col.render(item)
+                          : String(item[col.key as keyof T] ?? "—")}
                       </td>
                     ))}
                     <td className="px-5 py-4 text-center">
                       <button
                         type="button"
-                        onClick={() => handleToggle(item.id, Boolean(item.is_active))}
+                        onClick={() =>
+                          handleToggle(item.id, Boolean(item.is_active))
+                        }
                         className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold transition ${
                           item.is_active
                             ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
@@ -171,11 +204,13 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                       >
                         {item.is_active ? (
                           <>
-                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" /> Active
+                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />{" "}
+                            Active
                           </>
                         ) : (
                           <>
-                            <XCircle className="h-3.5 w-3.5 text-slate-400" /> Inactive
+                            <XCircle className="h-3.5 w-3.5 text-slate-400" />{" "}
+                            Inactive
                           </>
                         )}
                       </button>
@@ -211,13 +246,19 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
           <div className="w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
             <h2 className="text-xl font-bold text-slate-900">
-              {editingItem ? `Edit ${title.replace(/s$/i, "")}` : `Add New ${title.replace(/s$/i, "")}`}
+              {editingItem
+                ? `Edit ${title.replace(/s$/i, "")}`
+                : `Add New ${title.replace(/s$/i, "")}`}
             </h2>
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-              {editingItem && <input type="hidden" name="id" value={editingItem.id} />}
+              {editingItem && (
+                <input type="hidden" name="id" value={editingItem.id} />
+              )}
 
               {fields.map((f) => {
-                const val = editingItem ? (editingItem[f.name as keyof T] as any) : f.defaultValue;
+                const val = editingItem
+                  ? (editingItem[f.name as keyof T] as unknown)
+                  : f.defaultValue;
 
                 if (f.type === "textarea") {
                   return (
@@ -228,7 +269,7 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                       <textarea
                         name={f.name}
                         rows={3}
-                        defaultValue={val ?? ""}
+                        defaultValue={(val as string) ?? ""}
                         placeholder={f.placeholder}
                         className="w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                       />
@@ -244,7 +285,7 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                       </label>
                       <select
                         name={f.name}
-                        defaultValue={val ?? f.options?.[0]?.value}
+                        defaultValue={(val as string) ?? f.options?.[0]?.value}
                         className="w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white"
                       >
                         {f.options?.map((opt) => (
@@ -258,7 +299,7 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                 }
 
                 if (f.type === "image") {
-                  const currentImg = imageUrls[f.name] || val;
+                  const currentImg = imageUrls[f.name] || (val as string) || "";
                   return (
                     <div key={f.name}>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">
@@ -266,15 +307,18 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                       </label>
                       {currentImg && (
                         <div className="mb-2 relative h-32 w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={currentImg} alt="Preview" className="h-full w-full object-cover" />
+                          <img
+                            src={currentImg}
+                            alt="Preview"
+                            className="h-full w-full object-cover"
+                          />
                         </div>
                       )}
                       <div className="flex items-center gap-3">
                         <input
                           type="hidden"
                           name={f.name}
-                          value={imageUrls[f.name] || val || ""}
+                          value={imageUrls[f.name] || currentImg}
                         />
                         <label className="cursor-pointer inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition">
                           {uploadingField === f.name ? (
@@ -282,7 +326,9 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                           ) : (
                             <Upload className="h-4 w-4 text-primary" />
                           )}
-                          {uploadingField === f.name ? "Uploading…" : "Upload Image"}
+                          {uploadingField === f.name
+                            ? "Uploading…"
+                            : "Upload Image"}
                           <input
                             type="file"
                             accept="image/*"
@@ -291,7 +337,9 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                           />
                         </label>
                         {currentImg && (
-                          <span className="text-xs text-slate-400 truncate max-w-[200px]">{currentImg}</span>
+                          <span className="text-xs text-slate-400 truncate max-w-[200px]">
+                            {currentImg}
+                          </span>
                         )}
                       </div>
                     </div>
@@ -308,7 +356,10 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                         defaultChecked={Boolean(val)}
                         className="h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary"
                       />
-                      <label htmlFor={f.name} className="text-sm font-semibold text-slate-700">
+                      <label
+                        htmlFor={f.name}
+                        className="text-sm font-semibold text-slate-700"
+                      >
                         {f.label}
                       </label>
                     </div>
@@ -323,7 +374,7 @@ export function CrudManager<T extends { id: string; is_active?: boolean }>({
                     <input
                       type={f.type}
                       name={f.name}
-                      defaultValue={val ?? ""}
+                      defaultValue={(val as string) ?? ""}
                       placeholder={f.placeholder}
                       className="w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                     />

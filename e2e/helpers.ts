@@ -3,6 +3,10 @@ import { expect, type Page } from "@playwright/test";
 /** Admin credentials come from the environment (never hardcoded / committed). */
 export const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "admin@yanaindia.com";
 export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "";
+/** Treat the committed placeholder (or an empty value) as "no real credentials". */
+export const hasAdminCreds =
+  ADMIN_PASSWORD.length > 0 &&
+  !ADMIN_PASSWORD.includes("NEEDS_CLIENT_CONFIRMATION");
 
 export async function adminLogin(page: Page) {
   if (!ADMIN_PASSWORD) {

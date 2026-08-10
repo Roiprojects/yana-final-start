@@ -6,7 +6,7 @@
 
 **Architecture:** Source real travel clips into a local footage library, define the approved luxury-to-epic-to-energy sequence in a manifest, render web-optimized desktop and mobile masters with ffmpeg, then update the homepage hero to serve the correct asset per viewport while keeping graceful fallback behavior. The implementation should preserve the existing hero component structure and replace the current slideshow-like MP4 with true moving footage.
 
-**Tech Stack:** Next.js 16 app router, React/TypeScript, public static assets, PowerShell scripting, ffmpeg, existing homepage hero component.
+**Tech Stack:** React 19 SPA (Vite) + React Router v7, TypeScript, public static assets, PowerShell scripting, ffmpeg, existing homepage hero component.
 
 ## Global Constraints
 
@@ -30,6 +30,7 @@
 ### Task 1: Create the real-footage source library and selection manifest
 
 **Files:**
+
 - Create: `public/hero-footage/raw/`
 - Create: `public/hero-footage/exports/`
 - Create: `public/hero-footage/posters/`
@@ -38,8 +39,10 @@
 - Modify: `docs/superpowers/specs/2026-08-08-homepage-hero-real-footage-design.md`
 
 **Interfaces:**
+
 - Consumes: approved spec in `docs/superpowers/specs/2026-08-08-homepage-hero-real-footage-design.md`
 - Produces: `public/hero-footage/hero-reel-manifest.json` with shape:
+
   ```json
   {
     "version": 1,
@@ -75,6 +78,7 @@ New-Item -ItemType Directory -Force 'docs/superpowers/reference' | Out-Null
 - [ ] **Step 2: Gather 10-14 real footage clips and save them into `public/hero-footage/raw`**
 
 Use real moving travel footage only. Required coverage across the chosen set:
+
 - at least 2 Europe clips
 - at least 1 Vietnam clip
 - at least 2 India clips
@@ -82,6 +86,7 @@ Use real moving travel footage only. Required coverage across the chosen set:
 - 3-6 additional premium global destination clips
 
 Name files in order of intended use:
+
 ```text
 public/hero-footage/raw/01-luxury-calm-europe-coast.mp4
 public/hero-footage/raw/02-luxury-calm-resort-water.mp4
@@ -159,10 +164,13 @@ public/hero-footage/raw/10-energy-skyline-night.mp4
 - [ ] **Step 5: Verify the raw footage library is real video, not stills**
 
 Run:
+
 ```powershell
 Get-ChildItem 'public/hero-footage/raw' | Select-Object Name,Length
 ```
+
 Expected:
+
 - Multiple `.mp4` or `.mov` files exist
 - No `.jpg`, `.jpeg`, `.png`, or slideshow assets are being used as source clips
 
@@ -176,11 +184,13 @@ git commit -m "feat: add real-footage hero reel source library"
 ### Task 2: Build the reel render script for 16:9 and 9:16 exports
 
 **Files:**
+
 - Create: `scripts/video/build-homepage-hero.ps1`
 - Create: `scripts/video/README-homepage-hero.md`
 - Modify: `public/hero-footage/hero-reel-manifest.json`
 
 **Interfaces:**
+
 - Consumes: `public/hero-footage/hero-reel-manifest.json`
 - Produces: script interface
   ```powershell
@@ -195,9 +205,11 @@ git commit -m "feat: add real-footage hero reel source library"
 - [ ] **Step 1: Write a failing smoke check for the missing render script**
 
 Run:
+
 ```powershell
 Test-Path 'scripts/video/build-homepage-hero.ps1'
 ```
+
 Expected: `False`
 
 - [ ] **Step 2: Create the render script with manifest parsing and ffmpeg guards**
@@ -246,7 +258,7 @@ ffmpeg -y -i 'public/hero/homepage-hero-real-9x16.mp4' -frames:v 1 -update 1 'pu
 
 - [ ] **Step 6: Document how to rebuild the reel**
 
-```markdown
+````markdown
 # Homepage Hero Reel Build
 
 Run:
@@ -254,13 +266,16 @@ Run:
 ```powershell
 .\scripts\video\build-homepage-hero.ps1 -ManifestPath 'public/hero-footage/hero-reel-manifest.json'
 ```
+````
 
 Outputs:
+
 - `public/hero/homepage-hero-real-16x9.mp4`
 - `public/hero/homepage-hero-real-9x16.mp4`
 - `public/hero/homepage-hero-real-16x9-poster.jpg`
 - `public/hero/homepage-hero-real-9x16-poster.jpg`
-```
+
+````
 
 - [ ] **Step 7: Run the render script and verify both outputs exist**
 
@@ -268,8 +283,10 @@ Run:
 ```powershell
 .\scripts\video\build-homepage-hero.ps1 -ManifestPath 'public/hero-footage/hero-reel-manifest.json'
 Get-ChildItem 'public/hero' | Select-Object Name,Length
-```
+````
+
 Expected:
+
 - both `.mp4` files exist
 - both poster `.jpg` files exist
 - exported sizes look plausible for 30-50 second H.264 files
@@ -284,13 +301,16 @@ git commit -m "feat: add homepage hero reel build pipeline"
 ### Task 3: Integrate responsive desktop and mobile hero video playback
 
 **Files:**
+
 - Modify: `src/components/marketing/hero-slideshow.tsx`
-- Modify: `src/app/(public)/page.tsx`
+- Modify: `src/pages/home.tsx`
 - Modify: `public/hero-footage/hero-reel-manifest.json`
 
 **Interfaces:**
+
 - Consumes: final hero assets in `public/hero/`
 - Produces component interface:
+
   ```ts
   type HeroSlideshowProps = {
     images: string[];
@@ -360,28 +380,33 @@ if (!videoSrc && images.length > 0) {
 - [ ] **Step 5: Verify the homepage references the new real-footage assets**
 
 Run:
+
 ```powershell
-Select-String -Path 'src\components\marketing\hero-slideshow.tsx','src\app\(public)\page.tsx' -Pattern 'homepage-hero-real-16x9','homepage-hero-real-9x16','mobileVideoSrc','mobilePoster'
+Select-String -Path 'src\components\marketing\hero-slideshow.tsx','src\pages\home.tsx' -Pattern 'homepage-hero-real-16x9','homepage-hero-real-9x16','mobileVideoSrc','mobilePoster'
 ```
+
 Expected:
+
 - desktop and mobile hero asset names are present
 - the mobile-specific props are used
 
 - [ ] **Step 6: Commit**
 
 ```bash
-git add src/components/marketing/hero-slideshow.tsx src/app/(public)/page.tsx public/hero-footage/hero-reel-manifest.json
+git add src/components/marketing/hero-slideshow.tsx src/pages/home.tsx public/hero-footage/hero-reel-manifest.json
 git commit -m "feat: serve responsive real-footage hero reels"
 ```
 
 ### Task 4: Verify quality, performance, and production build
 
 **Files:**
+
 - Modify: `docs/superpowers/reference/hero-footage-sources.md`
 - Modify: `scripts/video/README-homepage-hero.md`
 - Modify: `public/hero-footage/hero-reel-manifest.json`
 
 **Interfaces:**
+
 - Consumes: built assets and integrated homepage references
 - Produces: verified deliverables list
   - desktop reel present
@@ -393,37 +418,47 @@ git commit -m "feat: serve responsive real-footage hero reels"
 - [ ] **Step 1: Confirm both reel durations are within the approved range**
 
 Run:
+
 ```powershell
 ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 'public/hero/homepage-hero-real-16x9.mp4'
 ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 'public/hero/homepage-hero-real-9x16.mp4'
 ```
+
 Expected:
+
 - both durations are between `30` and `50` seconds
 
 - [ ] **Step 2: Confirm both outputs are silent**
 
 Run:
+
 ```powershell
 ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 'public/hero/homepage-hero-real-16x9.mp4'
 ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 'public/hero/homepage-hero-real-9x16.mp4'
 ```
+
 Expected:
+
 - no audio stream is returned for either file
 
 - [ ] **Step 3: Run typecheck**
 
 Run:
+
 ```powershell
 npm run typecheck
 ```
+
 Expected: PASS with exit code `0`
 
 - [ ] **Step 4: Run production build**
 
 Run:
+
 ```powershell
 npm run build
 ```
+
 Expected: PASS with exit code `0`
 
 - [ ] **Step 5: Record any output-size adjustments if the files are too heavy**

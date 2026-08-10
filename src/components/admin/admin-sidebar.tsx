@@ -1,19 +1,17 @@
-"use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import { adminNav } from "@/lib/admin-nav";
 import { cn } from "@/lib/utils";
 
 export function AdminSidebar() {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
   return (
     <nav
       aria-label="Admin"
       className="flex h-full flex-col gap-6 overflow-y-auto p-4"
     >
-      <Link href="/admin" className="px-2 py-1">
+      <Link to="/admin" className="px-2 py-1">
         <span className="font-heading text-lg font-extrabold text-white">
           Yana Admin
         </span>
@@ -34,7 +32,7 @@ export function AdminSidebar() {
               return (
                 <li key={item.href}>
                   <Link
-                    href={item.href}
+                    to={item.href}
                     className={cn(
                       "flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-colors",
                       active

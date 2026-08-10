@@ -1,24 +1,23 @@
-"use client";
 
-import Link from "next/link";
-import Image from "next/image";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, Phone } from "lucide-react";
 import { primaryNav, siteConfig, whatsappLink } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
-import { useEnquiryModal } from "@/components/providers/enquiry-modal-provider";
+import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { open: openEnquiry } = useEnquiryModal();
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      const revealOffset = isHome ? Math.max(window.innerHeight * 0.72, 420) : 18;
+      const revealOffset = isHome
+        ? Math.max(window.innerHeight * 0.72, 420)
+        : 18;
       setScrolled(window.scrollY > revealOffset);
     };
     handleScroll();
@@ -38,17 +37,14 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-[var(--container-site)] items-center justify-between gap-3 px-4 sm:h-22 sm:px-6 lg:px-8">
         <Link
-          href="/"
+          to="/"
           aria-label="Yana Travels home"
           className="group flex shrink-0 items-center gap-3 rounded-full px-1 py-1"
         >
           <span className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-[linear-gradient(145deg,#2a9bea,#075eac)] shadow-[0_18px_34px_-18px_rgba(23,63,107,0.85)] ring-2 ring-[#f5d779]/75 transition-transform duration-300 group-hover:scale-[1.03] sm:h-16 sm:w-16 sm:rounded-[1.15rem]">
-            <Image
+            <img
               src="/brand/yana-logo.png"
               alt="Yana Travels"
-              width={124}
-              height={80}
-              priority
               className="h-9 w-auto object-contain brightness-125 contrast-125 saturate-125 drop-shadow-[0_3px_8px_rgba(255,255,255,0.28)] sm:h-12"
             />
           </span>
@@ -90,7 +86,11 @@ export function SiteHeader() {
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((value) => !value)}
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </div>
@@ -101,7 +101,7 @@ export function SiteHeader() {
             {primaryNav.map((item) => (
               <div key={item.href} className="py-1">
                 <Link
-                  href={item.href}
+                  to={item.href}
                   className="block rounded-xl px-2 py-2 font-medium text-text-main"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -112,7 +112,7 @@ export function SiteHeader() {
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
-                        href={child.href}
+                        to={child.href}
                         className="rounded-lg px-2 py-1.5 text-sm text-text-secondary hover:text-primary"
                         onClick={() => setMobileOpen(false)}
                       >
@@ -150,17 +150,13 @@ export function SiteHeader() {
   );
 }
 
-function NavLink({
-  item,
-}: {
-  item: (typeof primaryNav)[number];
-}) {
+function NavLink({ item }: { item: (typeof primaryNav)[number] }) {
   const linkClass =
     "inline-flex items-center gap-0.5 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-semibold text-text-main transition-colors duration-200 hover:bg-[#f8f3e8] hover:text-primary";
 
   if (!item.children) {
     return (
-      <Link href={item.href} className={linkClass}>
+      <Link to={item.href} className={linkClass}>
         {item.label}
       </Link>
     );
@@ -168,7 +164,7 @@ function NavLink({
 
   return (
     <div className="group relative">
-      <Link href={item.href} className={linkClass}>
+      <Link to={item.href} className={linkClass}>
         {item.label}
         <ChevronDown className="h-3.5 w-3.5" aria-hidden />
       </Link>
@@ -176,7 +172,7 @@ function NavLink({
         {item.children.map((child) => (
           <Link
             key={child.href}
-            href={child.href}
+            to={child.href}
             className="block rounded-xl px-3.5 py-2.5 text-sm font-medium text-text-main transition-colors hover:bg-[#f8f3e8] hover:text-primary"
           >
             {child.label}

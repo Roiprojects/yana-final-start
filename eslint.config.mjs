@@ -1,18 +1,55 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import js from "@eslint/js";
+import globals from "globals";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import tseslint from "typescript-eslint";
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
-
-export default eslintConfig;
+export default tseslint.config(
+  {
+    ignores: [
+      "dist/**",
+      "node_modules/**",
+      "coverage/**",
+      "test-results/**",
+      "playwright-report/**",
+      "*.tsbuildinfo",
+    ],
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      ecmaVersion: 2022,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+    plugins: {
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+    },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
+      // Allow explicit `any` where a JSON blob or third-party shape is unknown.
+      "@typescript-eslint/no-explicit-any": "off",
+      // The recommended fetch-on-mount pattern (setLoading at effect start)
+      // trips this React Compiler rule; downgraded to avoid noisy false alarms.
+      "react-hooks/set-state-in-effect": "off",
+    },
+  },
+  // Plain Node scripts (e.g. db/setup.mjs) need Node globals.
+  {
+    files: ["**/*.{mjs,cjs,js}"],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: "module",
+      globals: { ...globals.node },
+    },
+  },
+);

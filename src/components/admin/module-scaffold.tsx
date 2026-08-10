@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 /**
  * Standard admin module scaffold — the shared shell every content module uses.
  * Shows the toolbar (search / filter / add) and an empty state. The list table,
- * forms, and draft→preview→publish workflow are wired to Supabase in Phase 5.
+ * forms, and draft→preview→publish workflow are wired to the admin API.
  */
 export function ModuleScaffold({
   title,
@@ -58,7 +58,7 @@ export function ModuleScaffold({
       <EmptyState
         icon={icon}
         title="Nothing here yet"
-        description="This module's data is stored in Supabase. Records will appear once the database is connected and content is added."
+        description="This module isn't wired up yet. Records will appear once the module is implemented."
       />
 
       {capabilities && capabilities.length > 0 && (
@@ -81,20 +81,3 @@ export function ModuleScaffold({
     </div>
   );
 }
-
-export const STANDARD_CAPABILITIES = [
-  "Add",
-  "Edit",
-  "View",
-  "Delete",
-  "Activate/Deactivate",
-  "Draft",
-  "Preview",
-  "Publish",
-  "Reorder",
-  "Search",
-  "Filter",
-  "Pagination",
-  "Image upload",
-  "Validation",
-];

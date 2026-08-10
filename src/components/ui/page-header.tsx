@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { unsplash } from "@/lib/images";
@@ -59,7 +59,9 @@ export function PageHeader({
           <span className="mb-4 inline-flex rounded-full border border-[#eadfcf] bg-white/90 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-primary shadow-sm">
             Signature journeys
           </span>
-          <h1 className="text-4xl font-extrabold tracking-[-0.05em] md:text-6xl">{title}</h1>
+          <h1 className="text-4xl font-extrabold tracking-[-0.05em] md:text-6xl">
+            {title}
+          </h1>
           {subtitle ? (
             <p className="mt-4 max-w-2xl text-lg leading-8 text-text-secondary md:text-xl">
               {subtitle}
@@ -83,7 +85,9 @@ function Breadcrumbs({
       aria-label="Breadcrumb"
       className={cn(
         "mb-5 flex flex-wrap items-center gap-1 text-sm font-medium",
-        tone === "light" ? "text-white/92 [text-shadow:0_2px_10px_rgba(0,0,0,0.18)]" : "text-text-secondary",
+        tone === "light"
+          ? "text-white/92 [text-shadow:0_2px_10px_rgba(0,0,0,0.18)]"
+          : "text-text-secondary",
       )}
     >
       {crumbs.map((crumb, i) => (
@@ -91,7 +95,7 @@ function Breadcrumbs({
           {i > 0 ? <ChevronRight className="h-3.5 w-3.5" aria-hidden /> : null}
           {crumb.href ? (
             <Link
-              href={crumb.href}
+              to={crumb.href}
               className={cn(
                 "transition-colors",
                 tone === "light" ? "hover:text-white" : "hover:text-primary",
@@ -100,7 +104,9 @@ function Breadcrumbs({
               {crumb.label}
             </Link>
           ) : (
-            <span className={tone === "light" ? "text-white" : "text-text-main"}>
+            <span
+              className={tone === "light" ? "text-white" : "text-text-main"}
+            >
               {crumb.label}
             </span>
           )}

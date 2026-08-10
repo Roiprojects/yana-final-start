@@ -1,32 +1,9 @@
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-
-type Variant = "primary" | "secondary" | "ghost";
-type Size = "md" | "lg";
-
-const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-2 disabled:opacity-50 disabled:pointer-events-none";
-
-const variants: Record<Variant, string> = {
-  primary: "bg-primary text-white hover:bg-primary-hover",
-  secondary:
-    "bg-lavender text-deep hover:bg-[color-mix(in_srgb,var(--color-lavender)_80%,white)]",
-  ghost:
-    "border border-border-soft bg-white text-primary hover:bg-bg-soft",
-};
-
-const sizes: Record<Size, string> = {
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-6 py-3 text-base",
-};
-
-export function buttonClasses(
-  variant: Variant = "primary",
-  size: Size = "md",
-  className?: string,
-) {
-  return cn(base, variants[variant], sizes[size], className);
-}
+import { Link } from "react-router-dom";
+import {
+  buttonClasses,
+  type ButtonSize,
+  type ButtonVariant,
+} from "@/components/ui/button-styles";
 
 export function Button({
   variant = "primary",
@@ -34,8 +11,8 @@ export function Button({
   className,
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: Variant;
-  size?: Size;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
 }) {
   return (
     <button className={buttonClasses(variant, size, className)} {...props} />
@@ -51,8 +28,8 @@ export function LinkButton({
   external,
 }: {
   href: string;
-  variant?: Variant;
-  size?: Size;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   className?: string;
   children: React.ReactNode;
   external?: boolean;
@@ -70,7 +47,7 @@ export function LinkButton({
     );
   }
   return (
-    <Link href={href} className={buttonClasses(variant, size, className)}>
+    <Link to={href} className={buttonClasses(variant, size, className)}>
       {children}
     </Link>
   );

@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { primaryNav, siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
@@ -13,11 +12,9 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-18 w-18 items-center justify-center rounded-[1.35rem] bg-[linear-gradient(145deg,#2a9bea,#075eac)] shadow-[0_22px_40px_-24px_rgba(23,63,107,1)] ring-2 ring-[#f5d779]/65">
-              <Image
+              <img
                 src="/brand/yana-logo.png"
                 alt="Yana Travels"
-                width={132}
-                height={84}
                 className="h-13 w-auto object-contain brightness-125 contrast-125 saturate-125 drop-shadow-[0_3px_8px_rgba(255,255,255,0.24)]"
               />
             </span>
@@ -31,8 +28,9 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/62">
-            Curated domestic and international journeys with thoughtful planning,
-            smooth coordination, and a brighter premium experience from enquiry to return.
+            Curated domestic and international journeys with thoughtful
+            planning, smooth coordination, and a brighter premium experience
+            from enquiry to return.
           </p>
           <div className="mt-5 flex gap-3">
             <a
@@ -63,7 +61,10 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
             {primaryNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="transition-colors hover:text-white">
+                <Link
+                  to={item.href}
+                  className="transition-colors hover:text-white"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -115,10 +116,10 @@ export function SiteFooter() {
         <Container className="flex flex-col items-center justify-between gap-2 py-6 pb-28 text-xs text-white/50 sm:flex-row md:pb-6">
           <p>© {year} Yana Travels. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-white">
+            <Link to="/privacy-policy" className="hover:text-white">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white">
+            <Link to="/terms" className="hover:text-white">
               Terms &amp; Conditions
             </Link>
           </div>

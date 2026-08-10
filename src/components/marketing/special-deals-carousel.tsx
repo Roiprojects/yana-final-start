@@ -1,8 +1,6 @@
-"use client";
 
 import { useRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { unsplash } from "@/lib/images";
 import type { PackageListItem } from "@/lib/types/tour";
@@ -104,11 +102,13 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
         <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-deep sm:text-3xl lg:text-4xl">
-              Brightly presented journeys that feel premium before the enquiry even starts.
+              Brightly presented journeys that feel premium before the enquiry
+              even starts.
             </h2>
             <p className="mt-3 text-sm leading-6 text-text-secondary sm:text-base">
-              A cleaner luxury layout inspired by leading travel brands: large imagery,
-              stronger hierarchy, and card styling that feels curated instead of crowded.
+              A cleaner luxury layout inspired by leading travel brands: large
+              imagery, stronger hierarchy, and card styling that feels curated
+              instead of crowded.
             </p>
           </div>
           <div className="hidden rounded-full border border-[#eadfcf] bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-sm sm:block">
@@ -152,12 +152,10 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
                 className="flex w-[290px] flex-none flex-col overflow-hidden rounded-[1.7rem] border border-[#e8decb] bg-white shadow-[0_24px_50px_-34px_rgba(16,33,58,0.3)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_32px_66px_-30px_rgba(16,33,58,0.38)] sm:w-[330px]"
               >
                 <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#f2efe8]">
-                  <Image
+                  <img
                     src={imageSrc}
                     alt={pkg.title}
-                    fill
-                    sizes="(max-width: 640px) 290px, 330px"
-                    className="object-cover brightness-[1.08] contrast-[1.05] saturate-[1.16] transition-transform duration-700 hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-cover brightness-[1.08] contrast-[1.05] saturate-[1.16] transition-transform duration-700 hover:scale-105"
                   />
                   <span className="absolute left-4 top-4 inline-flex rounded-full bg-white/92 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-primary shadow-sm backdrop-blur-sm">
                     {destination}
@@ -190,7 +188,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
                       </p>
                     </div>
                     <Link
-                      href={`/packages/${pkg.slug}`}
+                      to={`/packages/${pkg.slug}`}
                       className="inline-flex items-center gap-2 rounded-full bg-cta px-4 py-2.5 text-sm font-semibold text-white shadow-[0_16px_30px_-18px_rgba(23,63,107,0.8)] transition-all duration-200 hover:-translate-y-0.5"
                     >
                       Explore

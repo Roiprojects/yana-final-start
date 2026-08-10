@@ -1,6 +1,6 @@
 # Product Requirements Document — Yana Travels Website
 
-**Version:** 0.1 (Planning)  ·  **Date:** 2026-07-21  ·  **Status:** Draft for client review
+**Version:** 0.2 (Build) · **Date:** 2026-08-10 · **Status:** Implemented — React SPA + Express API + PostgreSQL
 **Lens:** Product Manager / Business Analyst
 
 > Confirmed facts are sourced from the live site https://yanaindia.com/ (audited 2026-07-21).
@@ -10,17 +10,17 @@
 
 ## 1. Company snapshot (confirmed from existing site)
 
-| Field | Value | Source |
-|---|---|---|
-| Brand | Yana Travels / "Yana India" | site |
-| Tagline | "Reach your dream with us" | site |
-| Email | info@yanaindia.com | site |
-| Phone / WhatsApp | +91 9513588143 | site (booking is WhatsApp-based) |
-| Bengaluru office | #20, 3rd Floor, 8th Cross, Sampige Road, Malleshwaram, Bengaluru 560003 (near Asha Sweet Center) | contact.html |
-| Udupi office | #4-153, Ramnath Building, Near Upavana Nursery, Hayagreeva Nagar, Kunjibettu Post, Udupi 576102 | contact.html |
-| Facebook | facebook.com/yana.reachyourdreamwithus | site |
-| Instagram | (invite link on site) | site |
-| Current vendor | ITFEND (itfend.tech) | footer |
+| Field            | Value                                                                                            | Source                           |
+| ---------------- | ------------------------------------------------------------------------------------------------ | -------------------------------- |
+| Brand            | Yana Travels / "Yana India"                                                                      | site                             |
+| Tagline          | "Reach your dream with us"                                                                       | site                             |
+| Email            | info@yanaindia.com                                                                               | site                             |
+| Phone / WhatsApp | +91 9513588143                                                                                   | site (booking is WhatsApp-based) |
+| Bengaluru office | #20, 3rd Floor, 8th Cross, Sampige Road, Malleshwaram, Bengaluru 560003 (near Asha Sweet Center) | contact.html                     |
+| Udupi office     | #4-153, Ramnath Building, Near Upavana Nursery, Hayagreeva Nagar, Kunjibettu Post, Udupi 576102  | contact.html                     |
+| Facebook         | facebook.com/yana.reachyourdreamwithus                                                           | site                             |
+| Instagram        | (invite link on site)                                                                            | site                             |
+| Current vendor   | ITFEND (itfend.tech)                                                                             | footer                           |
 
 > ⚠️ The existing contact page publicly exposes **full bank account + IFSC details**. This is a
 > security/fraud risk and should **not** be reproduced on the new public site. See CONTENT_GAP_REPORT.
@@ -36,13 +36,13 @@ capture structured leads on its own.
 
 ## 3. Goals & success metrics
 
-| Goal | Success signal |
-|---|---|
-| Convert browsers into qualified enquiries | Enquiry form submissions captured in Supabase; measurable conversion rate |
-| Let staff manage all content without a developer | 100% of packages/pages editable via admin panel |
-| Present a premium, trustworthy brand | Modern design system, real content, fast Core Web Vitals |
-| Structured, searchable package catalogue | Filter by domestic/international, group/customized, category, duration |
-| Reduce dependence on WhatsApp-only funnel | Web enquiry + WhatsApp both available |
+| Goal                                             | Success signal                                                                                  |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| Convert browsers into qualified enquiries        | Enquiry form submissions captured in PostgreSQL via the Express API; measurable conversion rate |
+| Let staff manage all content without a developer | 100% of packages/pages editable via admin panel                                                 |
+| Present a premium, trustworthy brand             | Modern design system, real content, fast Core Web Vitals                                        |
+| Structured, searchable package catalogue         | Filter by domestic/international, group/customized, category, duration                          |
+| Reduce dependence on WhatsApp-only funnel        | Web enquiry + WhatsApp both available                                                           |
 
 **Out of scope for v1 (assumption — confirm):** online payment/booking checkout, user accounts
 for travellers, multi-currency pricing, blog/CMS articles. These can be phase 2.
@@ -87,8 +87,8 @@ Shivanasamudra Falls.
 
 ## 6. New requirements introduced by this brief (beyond current site)
 
-- **Group Tours** split into: *with Kitchen Staff*, *Domestic*, *International*.
-- **Customized Tours** split into: *Domestic*, *International*.
+- **Group Tours** split into: _with Kitchen Staff_, _Domestic_, _International_.
+- **Customized Tours** split into: _Domestic_, _International_.
 - Dedicated **Tour Packages** listing + **Package Details** pages (dynamic).
 - **Gallery**, **Brochure** download, **Services** detail.
 - Two enquiry flows: **Customized Tour Enquiry** and **General Enquiry**.
@@ -101,33 +101,33 @@ Shivanasamudra Falls.
 - FR2 — Package detail page renders overview, highlights, day-wise itinerary, inclusions,
   exclusions, accommodation, meals, transport, price, departures, policies — each field optional
   and only shown when present.
-- FR3 — Enquiry forms (general + customized) validate via Zod and persist to Supabase; admin sees
+- FR3 — Enquiry forms (general + customized) validate via Zod and persist to PostgreSQL through the Express API; admin sees
   them in an Enquiry module with status workflow.
 - FR4 — Every content surface (home hero, sections, about, services, gallery, packages, SEO,
   settings) is admin-editable and reflected live.
-- FR5 — Admin auth via Supabase Auth; role-gated; RLS enforced.
+- FR5 — Admin auth via Express HMAC-cookie sessions (`server/auth.ts`, `requireAdmin`); role-gated.
 - FR6 — Draft → Preview → Publish workflow for content; activate/deactivate; reorder.
-- FR7 — Image & PDF upload to Supabase Storage.
+- FR7 — Image & PDF upload via `POST /api/upload` (multer → `public/uploads/`), admin-auth-gated.
 - FR8 — WhatsApp deep-link + web enquiry both offered on package/contact pages.
 
 ## 8. Non-functional requirements
 
-- Performance: Core Web Vitals "Good"; images optimised (next/image), lazy-loaded.
+- Performance: Core Web Vitals "Good"; images optimised (Vite static assets), lazy-loaded.
 - Accessibility: WCAG 2.1 AA target.
 - SEO: per-page metadata, Open Graph, sitemap, structured data (Trip/Product where valid).
-- Security: RLS on all tables, no secrets in client, no bank details on public site.
+- Security: admin routes gated by HMAC auth on the Express API; no secrets in client; no bank details on public site.
 - Reliability: graceful empty/error states; no crash on missing package fields.
 - i18n: English v1 (assumption). Additional languages = phase 2.
 
 ## 9. Assumptions register
 
-| # | Assumption | Confirm? |
-|---|---|---|
-| A1 | No online payments in v1 | ✅ needs client |
-| A2 | English only in v1 | ✅ needs client |
-| A3 | Enquiry (not instant booking) is the primary conversion | ✅ needs client |
-| A4 | Same two offices (Bengaluru, Udupi) remain current | ✅ needs client |
-| A5 | Phone +91 9513588143 is current and is also WhatsApp | ✅ needs client |
-| A6 | Package list from old site is still the intended catalogue | ✅ needs client |
+| #   | Assumption                                                 | Confirm?        |
+| --- | ---------------------------------------------------------- | --------------- |
+| A1  | No online payments in v1                                   | ✅ needs client |
+| A2  | English only in v1                                         | ✅ needs client |
+| A3  | Enquiry (not instant booking) is the primary conversion    | ✅ needs client |
+| A4  | Same two offices (Bengaluru, Udupi) remain current         | ✅ needs client |
+| A5  | Phone +91 9513588143 is current and is also WhatsApp       | ✅ needs client |
+| A6  | Package list from old site is still the intended catalogue | ✅ needs client |
 
 See `docs/CLIENT_CONFIRMATION_REQUIRED.md` for the full list.

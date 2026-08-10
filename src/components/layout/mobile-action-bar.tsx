@@ -1,9 +1,7 @@
-"use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import { Compass, House, PackageOpen, Send } from "lucide-react";
-import { useEnquiryModal } from "@/components/providers/enquiry-modal-provider";
+import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
 import { cn } from "@/lib/utils";
 
 const appNav = [
@@ -14,7 +12,7 @@ const appNav = [
 
 export function MobileActionBar() {
   const { open: openEnquiry } = useEnquiryModal();
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
   return (
     <div className="fixed inset-x-3 bottom-3 z-40 md:hidden">
@@ -23,18 +21,25 @@ export function MobileActionBar() {
         className="mx-auto grid min-h-[4.25rem] grid-cols-4 gap-1 rounded-[1.45rem] border border-white/80 bg-white/92 px-2 pb-[calc(0.55rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_22px_55px_-24px_rgba(16,33,58,0.48)] backdrop-blur-xl"
       >
         {appNav.map(({ label, href, icon: Icon }) => {
-          const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
+          const active =
+            href === "/" ? pathname === "/" : pathname.startsWith(href);
           return (
             <Link
               key={href}
-              href={href}
+              to={href}
               aria-current={active ? "page" : undefined}
               className={cn(
                 "flex min-w-0 flex-col items-center gap-1 rounded-xl px-1 py-1.5 text-[10px] font-bold transition-all",
-                active ? "bg-[#f8edc9] text-primary" : "text-text-secondary hover:text-primary",
+                active
+                  ? "bg-[#f8edc9] text-primary"
+                  : "text-text-secondary hover:text-primary",
               )}
             >
-              <Icon className="h-5 w-5" strokeWidth={active ? 2.5 : 2} aria-hidden />
+              <Icon
+                className="h-5 w-5"
+                strokeWidth={active ? 2.5 : 2}
+                aria-hidden
+              />
               <span>{label}</span>
             </Link>
           );

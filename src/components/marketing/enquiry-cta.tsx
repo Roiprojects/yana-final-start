@@ -1,10 +1,9 @@
-"use client";
 
 import { Container } from "@/components/ui/container";
 import { LinkButton } from "@/components/ui/button";
 import { whatsappLink } from "@/lib/site-config";
 import { unsplash, ctaImage } from "@/lib/images";
-import { useEnquiryModal } from "@/components/providers/enquiry-modal-provider";
+import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
 
 export function EnquiryCta() {
   const { open: openEnquiry } = useEnquiryModal();

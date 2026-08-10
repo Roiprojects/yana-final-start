@@ -1,7 +1,6 @@
-"use client";
 
-import { useState, useTransition } from "react";
-import { togglePackageActive, togglePackageFeatured } from "@/lib/actions/admin";
+import { useState } from "react";
+import { api } from "@/lib/api/client";
 import { cn } from "@/lib/utils";
 
 function Toggle({
@@ -14,23 +13,20 @@ function Toggle({
   onToggle: (next: boolean) => void;
 }) {
   const [value, setValue] = useState(on);
-  const [pending, startTransition] = useTransition();
   return (
     <button
       type="button"
       role="switch"
       aria-checked={value}
       aria-label={label}
-      disabled={pending}
       onClick={() => {
         const next = !value;
         setValue(next);
-        startTransition(() => onToggle(next));
+        void onToggle(next);
       }}
       className={cn(
         "relative inline-flex h-6 w-11 items-center rounded-full transition-colors",
         value ? "bg-primary" : "bg-border-soft",
-        pending && "opacity-60",
       )}
     >
       <span
@@ -43,22 +39,42 @@ function Toggle({
   );
 }
 
-export function ActiveToggle({ id, active }: { id: string; active: boolean }) {
+export function ActiveToggle({
+  id,
+  active,
+  onChanged,
+}: {
+  id: string;
+  active: boolean;
+  onChanged?: () => void;
+}) {
   return (
     <Toggle
       on={active}
       label="Active"
-      onToggle={(next) => void togglePackageActive(id, next)}
+      onToggle={(next) => {
+        void api.togglePackageActive(id, next).then(() => onChanged?.());
+      }}
     />
   );
 }
 
-export function FeaturedToggle({ id, featured }: { id: string; featured: boolean }) {
+export function FeaturedToggle({
+  id,
+  featured,
+  onChanged,
+}: {
+  id: string;
+  featured: boolean;
+  onChanged?: () => void;
+}) {
   return (
     <Toggle
       on={featured}
       label="Featured"
-      onToggle={(next) => void togglePackageFeatured(id, next)}
+      onToggle={(next) => {
+        void api.togglePackageFeatured(id, next).then(() => onChanged?.());
+      }}
     />
   );
 }

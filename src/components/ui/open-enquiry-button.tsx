@@ -1,6 +1,5 @@
-"use client";
 
-import { useEnquiryModal } from "@/components/providers/enquiry-modal-provider";
+import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
 
 export function OpenEnquiryButton({
   children,
@@ -16,7 +15,9 @@ export function OpenEnquiryButton({
     <button
       type="button"
       className={className}
-      onClick={() => open(destination ? { destinationInterest: destination } : {})}
+      onClick={() =>
+        open(destination ? { destinationInterest: destination } : {})
+      }
     >
       {children}
     </button>

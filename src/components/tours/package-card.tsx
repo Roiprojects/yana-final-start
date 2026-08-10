@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "react-router-dom";
 import { Clock, ArrowUpRight } from "lucide-react";
 import { unsplash } from "@/lib/images";
 import type { PackageListItem } from "@/lib/types/tour";
@@ -32,16 +31,14 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
 
   return (
     <Link
-      href={`/packages/${pkg.slug}`}
+      to={`/packages/${pkg.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-[#eadfcf] bg-white shadow-[0_16px_40px_-24px_rgba(16,33,58,0.28)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_68px_-26px_rgba(16,33,58,0.42)]"
     >
       <div className="relative aspect-[16/11] w-full overflow-hidden bg-bg-soft">
-        <Image
+        <img
           src={img}
           alt={pkg.title}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover saturate-[1.16] contrast-[1.05] brightness-[1.08] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover saturate-[1.16] contrast-[1.05] brightness-[1.08] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
         />
         {dur ? (
           <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/92 px-3 py-1 text-[11px] font-bold text-deep shadow-sm backdrop-blur">
@@ -60,7 +57,8 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
           {pkg.title}
         </h3>
         <p className="mt-2 text-sm leading-6 text-text-secondary">
-          {pkg.overview || "A richer, better-presented journey curated for comfort, clarity, and attraction."}
+          {pkg.overview ||
+            "A richer, better-presented journey curated for comfort, clarity, and attraction."}
         </p>
 
         <div className="mt-auto flex items-end justify-between gap-3 pt-5">
@@ -73,7 +71,10 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
                 <span className="font-heading text-xl font-extrabold tracking-tight text-primary">
                   {price}
                 </span>
-                <span className="text-xs font-medium text-text-secondary"> / person</span>
+                <span className="text-xs font-medium text-text-secondary">
+                  {" "}
+                  / person
+                </span>
               </>
             ) : (
               <span className="text-sm font-semibold text-text-secondary">
