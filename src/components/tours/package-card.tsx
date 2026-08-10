@@ -27,7 +27,7 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
   const price = formatPrice(pkg.price_amount, pkg.price_currency);
   const dur = duration(pkg.duration_days, pkg.duration_nights);
   const img =
-    pkg.hero_image_url ?? unsplash("photo-1500530855697-b586d89ba3ee", 1280);
+    pkg.hero_image_url ?? unsplash("photo-1469474968028-56623f02e42e", 1280);
 
   return (
     <Link
@@ -38,7 +38,7 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
         <img
           src={img}
           alt={pkg.title}
-          className="absolute inset-0 h-full w-full object-cover saturate-[1.16] contrast-[1.05] brightness-[1.08] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
         />
         {dur ? (
           <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/92 px-3 py-1 text-[11px] font-bold text-deep shadow-sm backdrop-blur">

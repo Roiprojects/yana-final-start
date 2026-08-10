@@ -47,7 +47,7 @@ export function AboutPage() {
         title="About Yana Travels"
         subtitle={siteConfig.tagline}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
-        image="photo-1524492412937-b28074a5d7da"
+        image="photo-1548013146-72479768bada"
       />
 
       <Section>

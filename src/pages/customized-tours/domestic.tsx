@@ -12,7 +12,7 @@ export function DomesticCustomizedToursPage() {
           { label: "Customized Tours", href: "/customized-tours" },
           { label: "Domestic" },
         ]}
-        image="photo-1524492412937-b28074a5d7da"
+        image="photo-1548013146-72479768bada"
       />
       <FilteredPackages
         filters={{ scope: "domestic" }}

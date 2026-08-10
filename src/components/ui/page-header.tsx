@@ -22,7 +22,7 @@ export function PageHeader({
       <div className="px-3 pt-22 sm:px-4">
         <div className="grain relative overflow-hidden rounded-[2rem] border border-white/60 shadow-[0_30px_80px_-40px_rgba(16,33,58,0.4)] md:rounded-[2.4rem]">
           <div
-            className="absolute inset-0 scale-[1.02] bg-cover bg-center saturate-[1.14] contrast-[1.05] brightness-[1.08]"
+            className="absolute inset-0 scale-[1.02] bg-cover bg-center brightness-[1.05]"
             style={{ backgroundImage: `url(${unsplash(image, 1800)})` }}
             aria-hidden
           />

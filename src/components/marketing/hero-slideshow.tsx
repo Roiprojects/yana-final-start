@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 /**
@@ -36,7 +35,7 @@ export function HeroSlideshow({
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
         <video
           className="absolute inset-0 hidden h-full w-full scale-[1.01] object-cover md:block"
-          style={{ filter: "brightness(1.1) contrast(1.07) saturate(1.18)" }}
+          style={{ filter: "brightness(1.05)" }}
           autoPlay
           muted
           loop
@@ -48,7 +47,7 @@ export function HeroSlideshow({
         </video>
         <video
           className="absolute inset-0 h-full w-full scale-[1.01] object-cover md:hidden"
-          style={{ filter: "brightness(1.1) contrast(1.07) saturate(1.18)" }}
+          style={{ filter: "brightness(1.05)" }}
           autoPlay
           muted
           loop
@@ -70,7 +69,7 @@ export function HeroSlideshow({
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${src})`,
-            filter: "brightness(1.08) contrast(1.05) saturate(1.16)",
+            filter: "brightness(1.05)",
             opacity: i === active ? 1 : 0,
             transition: "opacity 1600ms ease-in-out",
             animation: i === active ? "kenburns 8s ease-out both" : "none",

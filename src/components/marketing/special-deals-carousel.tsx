@@ -1,4 +1,3 @@
-
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -43,7 +42,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             title: "Best of Europe",
             scope: "INTERNATIONAL",
             destination_name: "Europe",
-            hero_image_url: unsplash("photo-1467269204594-9661b134dd2b", 1280),
+            hero_image_url: unsplash("photo-1501785888041-af3ef285b470", 1280),
             duration_days: 13,
             duration_nights: 12,
             price_amount: 220000,
@@ -57,7 +56,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             title: "Beautiful Bali",
             scope: "INTERNATIONAL",
             destination_name: "Bali",
-            hero_image_url: unsplash("photo-1537953773345-d172ccf13cf1", 1280),
+            hero_image_url: unsplash("photo-1537996194471-e657df975ab4", 1280),
             duration_days: 7,
             duration_nights: 6,
             price_amount: 50000,
@@ -71,7 +70,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             title: "Singapore & Malaysia",
             scope: "INTERNATIONAL",
             destination_name: "Singapore & Malaysia",
-            hero_image_url: unsplash("photo-1525625293386-3f8f99389edd", 1280),
+            hero_image_url: unsplash("photo-1492571350019-22de08371fd3", 1280),
             duration_days: 7,
             duration_nights: 6,
             price_amount: 78000,
@@ -85,7 +84,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             title: "Chardham Yatra by Helicopter",
             scope: "DOMESTIC",
             destination_name: "Uttarakhand",
-            hero_image_url: unsplash("photo-1518002054494-3a6f94352e9d", 1280),
+            hero_image_url: unsplash("photo-1470071459604-3b5ec3a7fe05", 1280),
             duration_days: 6,
             duration_nights: 5,
             price_amount: null,
@@ -142,7 +141,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
           {displayItems.map((pkg) => {
             const imageSrc =
               pkg.hero_image_url ||
-              unsplash("photo-1507525428034-b723cf961d3e", 1280);
+              unsplash("photo-1469474968028-56623f02e42e", 1280);
             const destination =
               pkg.destination_name || pkg.scope || "Curated journey";
 
@@ -155,7 +154,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
                   <img
                     src={imageSrc}
                     alt={pkg.title}
-                    className="absolute inset-0 h-full w-full object-cover brightness-[1.08] contrast-[1.05] saturate-[1.16] transition-transform duration-700 hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-700 hover:scale-105"
                   />
                   <span className="absolute left-4 top-4 inline-flex rounded-full bg-white/92 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-primary shadow-sm backdrop-blur-sm">
                     {destination}

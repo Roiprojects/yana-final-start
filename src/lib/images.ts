@@ -9,21 +9,21 @@
  */
 
 export function unsplash(id: string, w = 1920): string {
-  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=92&sat=10&con=10&exp=4`;
+  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=92`;
 }
 
-export const heroImage = "photo-1506744038136-46273834b3fb"; // alpine lake panorama
+export const heroImage = "photo-1519681393784-d120267933ba"; // bright alpine lake panorama
 
-export const experienceImage = "photo-1500530855697-b586d89ba3ee"; // luxury road trip mood
+export const experienceImage = "photo-1469474968028-56623f02e42e"; // bright mountain landscape
 
-export const ctaImage = "photo-1499856871958-5b9627545d1a"; // elevated city escape
+export const ctaImage = "photo-1472214103451-9374bd1c798e"; // bright open landscape
 
 /** Thematic collections — safe, evocative groupings (not specific-place claims). */
 export const collections = [
   {
     title: "Mountains & the North",
     blurb: "Himalayan valleys, high passes, and alpine calm.",
-    image: "photo-1464822759023-fed622ff2c3b",
+    image: "photo-1506905925346-21bda4d32df4",
     href: "/group-tours/domestic",
   },
   {
@@ -35,13 +35,13 @@ export const collections = [
   {
     title: "Heritage & Pilgrimage",
     blurb: "Timeless monuments and journeys of the spirit.",
-    image: "photo-1524492412937-b28074a5d7da",
+    image: "photo-1548013146-72479768bada",
     href: "/group-tours/domestic",
   },
   {
     title: "International Escapes",
     blurb: "Iconic cities and horizons beyond India.",
-    image: "photo-1499856871958-5b9627545d1a",
+    image: "photo-1436491865332-7a61a109cc05",
     href: "/group-tours/international",
   },
 ] as const;

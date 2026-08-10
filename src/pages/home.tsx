@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -282,7 +281,7 @@ export function HomePage() {
                 <img
                   src={unsplash(c.image, 1280)}
                   alt={c.title}
-                  className="absolute inset-0 h-full w-full object-cover brightness-[1.08] contrast-[1.05] saturate-[1.16] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-white/94 p-5 backdrop-blur-sm">
                   <h3 className="text-xl font-bold leading-tight text-deep">
@@ -306,7 +305,7 @@ export function HomePage() {
                 <img
                   src={unsplash(experienceImage, 1600)}
                   alt="A scenic travel route"
-                  className="absolute inset-0 h-full w-full object-cover brightness-[1.08] contrast-[1.05] saturate-[1.14]"
+                  className="absolute inset-0 h-full w-full object-cover brightness-[1.05]"
                 />
               </div>
               <div className="border-t border-[#eadfcf] bg-white p-5">
