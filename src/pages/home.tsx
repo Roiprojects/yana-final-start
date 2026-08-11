@@ -125,28 +125,34 @@ export function HomePage() {
           />
 
           <Container className="relative z-10 flex min-h-[calc(100svh-1rem)] flex-col py-5 sm:py-6 lg:py-7">
-            <div className="flex w-full flex-wrap items-start justify-between gap-4">
-              <Link
-                to="/"
-                aria-label="Yana Travels home"
-                className="group flex shrink-0 items-center gap-3 rounded-full"
-              >
-                <span className="flex h-16 w-16 items-center justify-center rounded-[1.15rem] bg-white shadow-[0_18px_34px_-18px_rgba(23,63,107,0.45)] transition-transform duration-300 group-hover:scale-[1.03]">
-                  <img
-                    src="/brand/yana-logo.png"
-                    alt="Yana Travels"
-                    className="h-12 w-auto object-contain"
-                  />
-                </span>
-                <span className="hidden min-w-0 flex-col sm:flex">
-                  <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
-                    Yana
+            <div className="flex w-full flex-wrap items-center justify-between gap-x-4 gap-y-4">
+              <div className="flex min-w-0 items-center gap-4">
+                <Link
+                  to="/"
+                  aria-label="Yana Travels home"
+                  className="group flex shrink-0 items-center gap-3 rounded-full"
+                >
+                  <span className="flex h-16 w-16 items-center justify-center rounded-[1.15rem] bg-white shadow-[0_18px_34px_-18px_rgba(23,63,107,0.45)] transition-transform duration-300 group-hover:scale-[1.03]">
+                    <img
+                      src="/brand/yana-logo.png"
+                      alt="Yana Travels"
+                      className="h-12 w-auto object-contain"
+                    />
                   </span>
-                  <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
-                    Travels
+                  <span className="hidden min-w-0 flex-col sm:flex">
+                    <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
+                      Yana
+                    </span>
+                    <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
+                      Travels
+                    </span>
                   </span>
-                </span>
-              </Link>
+                </Link>
+
+                <div className="w-56 sm:w-72 md:w-80">
+                  <HeroSearch />
+                </div>
+              </div>
 
               <div className="hidden max-w-4xl flex-wrap items-center justify-end gap-2 sm:flex">
                 {primaryNav.map((item) => (
@@ -170,9 +176,6 @@ export function HomePage() {
                       then turns you into a story teller.
                     </span>
                   </h1>
-                  <div className="mt-7 animate-rise [animation-delay:200ms]">
-                    <HeroSearch />
-                  </div>
                 </div>
               </div>
 
