@@ -15,6 +15,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { PackageGrid, SampleDataBanner } from "@/components/tours/package-grid";
 import { EnquiryCta } from "@/components/marketing/enquiry-cta";
 import { HeroSlideshow } from "@/components/marketing/hero-slideshow";
+import { HeroSearch } from "@/components/marketing/hero-search";
 import { HeroFeaturesPanel } from "@/components/marketing/hero-features-panel";
 import { SpecialDealsSection } from "@/components/marketing/special-deals-carousel";
 import { HowItWorks } from "@/components/marketing/how-it-works";
@@ -169,6 +170,9 @@ export function HomePage() {
                       then turns you into a story teller.
                     </span>
                   </h1>
+                  <div className="mt-7 animate-rise [animation-delay:200ms]">
+                    <HeroSearch />
+                  </div>
                 </div>
               </div>
 

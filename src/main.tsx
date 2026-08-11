@@ -49,10 +49,12 @@ import { AdminItineraryPage } from "@/pages/admin/itinerary";
 import { AdminSeoPage } from "@/pages/admin/seo";
 import { AdminSettingsPage } from "@/pages/admin/settings";
 import { AdminPasswordPage } from "@/pages/admin/password";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Public site */}
         <Route element={<PublicLayout />}>

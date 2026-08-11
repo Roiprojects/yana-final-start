@@ -110,13 +110,29 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <Container className="flex flex-col items-center justify-between gap-2 py-6 pb-28 text-xs text-white/50 sm:flex-row md:pb-6">
           <p>© {year} Yana Travels. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link to="/privacy-policy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="hover:text-white">
-              Terms &amp; Conditions
-            </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <span>
+              Developed by{" "}
+              <a
+                href="https://wa.me/919945379333"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-white/80 transition-colors hover:text-white"
+              >
+                ROI Infotech
+              </a>
+            </span>
+            <span className="hidden sm:inline" aria-hidden>
+              ·
+            </span>
+            <div className="flex gap-4">
+              <Link to="/privacy-policy" className="hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-white">
+                Terms &amp; Conditions
+              </Link>
+            </div>
           </div>
         </Container>
       </div>
