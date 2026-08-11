@@ -45,18 +45,16 @@ test("unknown package slug shows the not-found state", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("enquiry modal opens from home hero button", async ({ page }) => {
+test("enquiry modal auto-opens on home load", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: /plan a custom trip/i }).click();
-  await expect(page.getByRole("dialog")).toBeVisible({ timeout: 5000 });
+  await expect(page.getByRole("dialog")).toBeVisible({ timeout: 7000 });
   await expect(page.getByLabel(/name \*/i)).toBeVisible();
   await expect(page.getByLabel(/phone \*/i)).toBeVisible();
 });
 
 test("enquiry modal validates required fields", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: /plan a custom trip/i }).click();
-  await expect(page.getByRole("dialog")).toBeVisible({ timeout: 5000 });
+  await expect(page.getByRole("dialog")).toBeVisible({ timeout: 7000 });
   await page.getByRole("button", { name: /send enquiry/i }).click();
   await expect(page.getByText(/please enter your name/i)).toBeVisible();
 });
@@ -65,8 +63,7 @@ test("enquiry modal submits end-to-end (success or graceful error)", async ({
   page,
 }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: /plan a custom trip/i }).click();
-  await expect(page.getByRole("dialog")).toBeVisible({ timeout: 5000 });
+  await expect(page.getByRole("dialog")).toBeVisible({ timeout: 7000 });
   await page.getByLabel(/name \*/i).fill("Automated Test");
   await page.getByLabel(/phone \*/i).fill("9999999999");
   await page.getByRole("button", { name: /send enquiry/i }).click();

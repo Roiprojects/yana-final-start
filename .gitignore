@@ -26,6 +26,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+dev.log
+server.log
+public/build-render.log
+jar.txt
+
+# Raw hero footage is huge (GBs) and regenerable from the manifest + Pexels.
+# Only the rendered output (public/hero/*.mp4) is committed.
+/public/hero-footage/raw/
+
+# Transient image candidates used while sourcing stock imagery.
+docs/tmp-paris-cand-*.jpg
 
 # env files (can opt-in for committing if needed)
 .env*

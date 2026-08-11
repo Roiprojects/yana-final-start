@@ -1,23 +1,11 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { unsplash } from "@/lib/images";
+import { PackageCard } from "@/components/tours/package-card";
 import type { PackageListItem } from "@/lib/types/tour";
 
 interface SpecialDealsProps {
   items: PackageListItem[];
-}
-
-function formatPrice(amount: number | null, currency: string | null) {
-  if (!amount) {
-    return "Plan on enquiry";
-  }
-
-  return new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: currency || "INR",
-    maximumFractionDigits: 0,
-  }).format(amount);
 }
 
 export function SpecialDealsSection({ items }: SpecialDealsProps) {
@@ -32,7 +20,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
     });
   };
 
-  const displayItems =
+  const displayItems: PackageListItem[] =
     items.length > 0
       ? items
       : [
@@ -40,7 +28,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             id: "1",
             slug: "best-of-europe-12n13d",
             title: "Best of Europe",
-            scope: "INTERNATIONAL",
+            scope: "international",
             destination_name: "Europe",
             hero_image_url: unsplash("photo-1501785888041-af3ef285b470", 1280),
             duration_days: 13,
@@ -48,13 +36,13 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             price_amount: 220000,
             price_currency: "INR",
             overview: null,
-            tour_type: null,
+            tour_type: "group",
           },
           {
             id: "2",
             slug: "beautiful-bali",
             title: "Beautiful Bali",
-            scope: "INTERNATIONAL",
+            scope: "international",
             destination_name: "Bali",
             hero_image_url: unsplash("photo-1537996194471-e657df975ab4", 1280),
             duration_days: 7,
@@ -62,13 +50,13 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             price_amount: 50000,
             price_currency: "INR",
             overview: null,
-            tour_type: null,
+            tour_type: "group",
           },
           {
             id: "3",
             slug: "singapore-malaysia",
             title: "Singapore & Malaysia",
-            scope: "INTERNATIONAL",
+            scope: "international",
             destination_name: "Singapore & Malaysia",
             hero_image_url: unsplash("photo-1492571350019-22de08371fd3", 1280),
             duration_days: 7,
@@ -76,13 +64,13 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             price_amount: 78000,
             price_currency: "INR",
             overview: null,
-            tour_type: null,
+            tour_type: "group",
           },
           {
             id: "4",
             slug: "chardham-helicopter-5n6d",
             title: "Chardham Yatra by Helicopter",
-            scope: "DOMESTIC",
+            scope: "domestic",
             destination_name: "Uttarakhand",
             hero_image_url: unsplash("photo-1470071459604-3b5ec3a7fe05", 1280),
             duration_days: 6,
@@ -90,7 +78,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
             price_amount: null,
             price_currency: "INR",
             overview: null,
-            tour_type: null,
+            tour_type: "group",
           },
         ];
 
@@ -116,7 +104,7 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
         </div>
       </div>
 
-      <div className="relative group">
+      <div className="relative">
         <button
           onClick={() => scroll("left")}
           aria-label="Scroll left"
@@ -138,66 +126,11 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
           className="flex gap-5 overflow-x-auto px-1 pb-4 scrollbar-none scroll-smooth"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {displayItems.map((pkg) => {
-            const imageSrc =
-              pkg.hero_image_url ||
-              unsplash("photo-1469474968028-56623f02e42e", 1280);
-            const destination =
-              pkg.destination_name || pkg.scope || "Curated journey";
-
-            return (
-              <div
-                key={pkg.id}
-                className="flex w-[290px] flex-none flex-col overflow-hidden rounded-[1.7rem] border border-[#e8decb] bg-white shadow-[0_24px_50px_-34px_rgba(16,33,58,0.3)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_32px_66px_-30px_rgba(16,33,58,0.38)] sm:w-[330px]"
-              >
-                <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#f2efe8]">
-                  <img
-                    src={imageSrc}
-                    alt={pkg.title}
-                    className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-700 hover:scale-105"
-                  />
-                  <span className="absolute left-4 top-4 inline-flex rounded-full bg-white/92 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-primary shadow-sm backdrop-blur-sm">
-                    {destination}
-                  </span>
-                </div>
-
-                <div className="flex flex-1 flex-col p-5">
-                  <div className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#ad7f19]">
-                    <span>
-                      {pkg.duration_nights && pkg.duration_days
-                        ? `${pkg.duration_nights}N / ${pkg.duration_days}D`
-                        : "Tailor-made"}
-                    </span>
-                    <span>{pkg.scope || "Premium itinerary"}</span>
-                  </div>
-                  <h3 className="mt-3 font-heading text-xl font-extrabold leading-tight tracking-[-0.03em] text-deep">
-                    {pkg.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-text-secondary">
-                    {pkg.overview ||
-                      "Refined trip planning with a brighter, more premium presentation and a clearer path to enquiry."}
-                  </p>
-                  <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#efe5d3] pt-4">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-secondary">
-                        Starting from
-                      </p>
-                      <p className="mt-1 text-lg font-extrabold tracking-[-0.03em] text-primary">
-                        {formatPrice(pkg.price_amount, pkg.price_currency)}
-                      </p>
-                    </div>
-                    <Link
-                      to={`/packages/${pkg.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-cta px-4 py-2.5 text-sm font-semibold text-white shadow-[0_16px_30px_-18px_rgba(23,63,107,0.8)] transition-all duration-200 hover:-translate-y-0.5"
-                    >
-                      Explore
-                      <ArrowUpRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {displayItems.map((pkg) => (
+            <div key={pkg.id} className="w-[290px] flex-none sm:w-[330px]">
+              <PackageCard pkg={pkg} />
+            </div>
+          ))}
         </div>
       </div>
     </div>

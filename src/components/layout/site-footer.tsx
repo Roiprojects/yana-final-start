@@ -7,31 +7,26 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 overflow-hidden bg-deep text-white/80">
+    <footer className="mt-24 overflow-hidden bg-[#3457ca] text-white/80">
       <Container className="grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-[1.25fr_0.9fr_0.9fr_1.1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-18 w-18 items-center justify-center rounded-[1.35rem] bg-[linear-gradient(145deg,#2a9bea,#075eac)] shadow-[0_22px_40px_-24px_rgba(23,63,107,1)] ring-2 ring-[#f5d779]/65">
+            <span className="flex h-18 w-18 items-center justify-center rounded-[1.35rem] bg-white shadow-[0_22px_40px_-24px_rgba(23,63,107,0.55)]">
               <img
                 src="/brand/yana-logo.png"
                 alt="Yana Travels"
-                className="h-13 w-auto object-contain brightness-125 contrast-125 saturate-125 drop-shadow-[0_3px_8px_rgba(255,255,255,0.24)]"
+                className="h-13 w-auto object-contain"
               />
             </span>
             <div className="flex flex-col">
-              <p className="font-heading text-xl font-extrabold leading-[0.88] tracking-[-0.03em] text-white">
+              <p className="font-heading text-[1.85rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white">
                 Yana
               </p>
-              <p className="font-heading text-xl font-extrabold leading-[0.88] tracking-[-0.03em] text-white">
+              <p className="font-heading text-[1.85rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white">
                 Travels
               </p>
             </div>
           </div>
-          <p className="mt-5 max-w-sm text-sm leading-7 text-white/62">
-            Curated domestic and international journeys with thoughtful
-            planning, smooth coordination, and a brighter premium experience
-            from enquiry to return.
-          </p>
           <div className="mt-5 flex gap-3">
             <a
               href={siteConfig.social.facebook}

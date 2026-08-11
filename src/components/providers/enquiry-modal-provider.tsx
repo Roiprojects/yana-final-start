@@ -1,4 +1,3 @@
-
 import { useState, useCallback, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useForm } from "react-hook-form";
@@ -138,7 +137,7 @@ function EnquiryDialog({
         {/* Right — form */}
         <div className="flex flex-1 flex-col">
           {/* Header */}
-          <div className="flex items-center justify-between bg-gradient-to-r from-primary to-[#2b7fc7] px-5 py-4">
+          <div className="flex items-center justify-between bg-gradient-to-r from-[#bae6fd] to-[#7dd3fc] px-5 py-4">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">
                 Free consultation
@@ -297,7 +296,7 @@ function EnquiryDialog({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-[#2b7fc7] py-3 text-sm font-bold text-white shadow-[0_10px_26px_-8px_rgba(18,96,158,0.6)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-8px_rgba(18,96,158,0.8)] disabled:opacity-70"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#bae6fd] to-[#7dd3fc] py-3 text-sm font-bold text-white shadow-[0_10px_26px_-8px_rgba(125,211,252,0.6)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-8px_rgba(125,211,252,0.8)] disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -346,6 +345,15 @@ export function EnquiryModalProvider({
   const close = useCallback(() => {
     setState((s) => ({ ...s, open: false }));
   }, []);
+
+  // Auto-open the enquiry popup once when the site first loads.
+  const autoOpened = useRef(false);
+  useEffect(() => {
+    if (autoOpened.current) return;
+    autoOpened.current = true;
+    const t = setTimeout(() => open(), 700);
+    return () => clearTimeout(t);
+  }, [open]);
 
   return (
     <EnquiryModalContext.Provider value={{ open, close }}>

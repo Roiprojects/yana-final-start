@@ -10,13 +10,12 @@ test.describe("foundation smoke", () => {
     ).toBeVisible();
 
     // Hero heading
-    await expect(
-      page.getByRole("heading", { level: 1 }),
-    ).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-    // Primary CTA
+    // Primary CTA — the enquiry popup auto-opens shortly after load
+    await expect(page.getByRole("dialog")).toBeVisible({ timeout: 7000 });
     await expect(
-      page.getByRole("link", { name: /explore packages/i }),
+      page.getByRole("heading", { name: /get a callback/i }),
     ).toBeVisible();
 
     // Footer legal links

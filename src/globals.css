@@ -116,11 +116,7 @@
 }
 
 .bg-cta {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    #27598f 100%
-  );
+  background-image: linear-gradient(135deg, #3457ca 0%, #2743ab 100%);
 }
 
 .glow-lavender {

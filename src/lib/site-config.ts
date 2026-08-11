@@ -24,7 +24,7 @@ export const siteConfig = {
   offices: [
     {
       name: "Udupi",
-      note: "Corporate Office",
+      note: "",
       address: "Corporate Office, Udupi",
     },
     {

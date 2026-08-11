@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Compass, Layers3 } from "lucide-react";
@@ -36,12 +35,23 @@ export function PackagesPage() {
   const [searchParams] = useSearchParams();
   const scope = searchParams.get("scope") ?? undefined;
   const type = searchParams.get("type") ?? undefined;
+  const q = searchParams.get("q") ?? "";
 
   const [items, setItems] = useState<PackageListItem[]>([]);
   const [sample, setSample] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const hasFilter = Boolean(scope || type);
+  const hasFilter = Boolean(scope || type || q);
+  const query = q.trim().toLowerCase();
+  const filtered = query
+    ? items.filter((p) =>
+        [p.title, p.scope, p.destination_name, p.overview]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase()
+          .includes(query),
+      )
+    : items;
 
   useEffect(() => {
     let cancelled = false;
@@ -129,35 +139,44 @@ export function PackagesPage() {
             ) : (
               <>
                 {sample ? <SampleDataBanner /> : null}
-                {items.length > 0 ? (
+                {filtered.length > 0 ? (
                   <>
                     <div className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-[1.5rem] border border-[#eadfcf] bg-white px-5 py-4 shadow-[0_16px_36px_-26px_rgba(16,33,58,0.2)]">
                       <p className="text-sm text-text-secondary">
                         <span className="font-semibold text-deep">
-                          {items.length}
+                          {filtered.length}
                         </span>{" "}
-                        package{items.length === 1 ? "" : "s"}
-                        {hasFilter
-                          ? " matched your filters"
-                          : " available to explore"}
+                        package{filtered.length === 1 ? "" : "s"}
+                        {query ? (
+                          <>
+                            {" "}
+                            for &ldquo;
+                            <span className="font-semibold text-deep">{q}</span>
+                            &rdquo;
+                          </>
+                        ) : hasFilter ? (
+                          " matched your filters"
+                        ) : (
+                          " available to explore"
+                        )}
                       </p>
                       <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ad7f19]">
                         Curated departures
                       </p>
                     </div>
-                    <PackageGrid items={items} />
+                    <PackageGrid items={filtered} />
                   </>
                 ) : (
                   <EmptyState
                     icon={Compass}
                     title={
                       hasFilter
-                        ? "No packages match these filters"
+                        ? "No packages match your search"
                         : "No packages published yet"
                     }
                     description={
                       hasFilter
-                        ? "Try clearing the filters, or send us an enquiry and we'll help directly."
+                        ? "Try clearing the filters or search, or send us an enquiry and we'll help directly."
                         : "Verified tour packages will be listed here once they are published from the admin panel."
                     }
                     action={<EnquireNowButton />}

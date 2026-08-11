@@ -32,58 +32,69 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
   return (
     <Link
       to={`/packages/${pkg.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-[#eadfcf] bg-white shadow-[0_16px_40px_-24px_rgba(16,33,58,0.28)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_68px_-26px_rgba(16,33,58,0.42)]"
+      className="group relative block aspect-[3/4] w-full overflow-hidden rounded-[1.4rem] border border-[#eadfcf] bg-bg-soft shadow-[0_16px_40px_-24px_rgba(16,33,58,0.28)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_68px_-26px_rgba(16,33,58,0.42)]"
     >
-      <div className="relative aspect-[16/11] w-full overflow-hidden bg-bg-soft">
-        <img
-          src={img}
-          alt={pkg.title}
-          className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-        />
-        {dur ? (
-          <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/92 px-3 py-1 text-[11px] font-bold text-deep shadow-sm backdrop-blur">
-            <Clock className="h-3 w-3 text-primary" aria-hidden />
-            {dur}
-          </span>
-        ) : null}
-      </div>
+      <img
+        src={img}
+        alt={pkg.title}
+        className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+      />
 
-      <div className="flex flex-1 flex-col p-5">
-        <p className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
+      {/* Resting state — the full image with a subtle title */}
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent p-5 pt-20">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e8c979]">
           {pkg.scope}
           {pkg.destination_name ? ` · ${pkg.destination_name}` : ""}
         </p>
-        <h3 className="mt-1.5 font-heading text-lg font-bold leading-snug text-deep transition-colors group-hover:text-primary">
+        <h3 className="mt-1 font-heading text-lg font-bold leading-snug text-white">
           {pkg.title}
         </h3>
-        <p className="mt-2 text-sm leading-6 text-text-secondary">
+      </div>
+
+      {/* Hover state — full details overlay + Explore */}
+      <div className="absolute inset-0 flex translate-y-5 flex-col justify-end bg-[linear-gradient(180deg,rgba(16,33,58,0.55),rgba(23,63,107,0.94))] p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e8c979]">
+          {pkg.scope}
+          {pkg.destination_name ? ` · ${pkg.destination_name}` : ""}
+        </p>
+        <h3 className="mt-1 font-heading text-xl font-bold leading-snug text-white">
+          {pkg.title}
+        </h3>
+        {dur ? (
+          <span className="mt-2 inline-flex w-fit items-center gap-1 rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white/90">
+            <Clock className="h-3 w-3" aria-hidden />
+            {dur}
+          </span>
+        ) : null}
+        <p className="mt-2 line-clamp-3 text-sm leading-6 text-white/80">
           {pkg.overview ||
             "A richer, better-presented journey curated for comfort, clarity, and attraction."}
         </p>
 
-        <div className="mt-auto flex items-end justify-between gap-3 pt-5">
-          <span className="text-deep">
+        <div className="mt-4 flex items-center justify-between gap-3 border-t border-white/20 pt-4">
+          <span className="text-white">
             {price ? (
               <>
-                <span className="block text-[11px] font-medium uppercase tracking-wide text-text-secondary">
+                <span className="block text-[11px] font-medium uppercase tracking-wide text-white/60">
                   From
                 </span>
-                <span className="font-heading text-xl font-extrabold tracking-tight text-primary">
+                <span className="font-heading text-lg font-extrabold tracking-tight text-[#e8c979]">
                   {price}
                 </span>
-                <span className="text-xs font-medium text-text-secondary">
+                <span className="text-xs font-medium text-white/60">
                   {" "}
                   / person
                 </span>
               </>
             ) : (
-              <span className="text-sm font-semibold text-text-secondary">
+              <span className="text-sm font-semibold text-white/80">
                 Enquire for price
               </span>
             )}
           </span>
-          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-[0_10px_22px_-8px_rgba(18,96,158,0.7)] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2b7fc7]">
-            <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:rotate-45" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#3457ca] px-4 py-2 text-sm font-bold text-white shadow-[0_10px_22px_-8px_rgba(52,87,202,0.55)]">
+            Explore
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
           </span>
         </div>
       </div>

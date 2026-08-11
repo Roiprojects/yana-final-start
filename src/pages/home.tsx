@@ -22,7 +22,6 @@ import { ValueProps } from "@/components/marketing/value-props";
 import { TrustBadges } from "@/components/marketing/trust-badges";
 import { DestinationMarquee } from "@/components/marketing/destination-marquee";
 import { Faq } from "@/components/marketing/faq";
-import { OpenEnquiryButton } from "@/components/ui/open-enquiry-button";
 import { primaryNav } from "@/lib/site-config";
 import {
   unsplash,
@@ -131,18 +130,18 @@ export function HomePage() {
                 aria-label="Yana Travels home"
                 className="group flex shrink-0 items-center gap-3 rounded-full"
               >
-                <span className="flex h-16 w-16 items-center justify-center rounded-[1.15rem] bg-[linear-gradient(145deg,#2a9bea,#075eac)] shadow-[0_18px_34px_-18px_rgba(23,63,107,0.85)] ring-2 ring-[#f5d779]/75 transition-transform duration-300 group-hover:scale-[1.03]">
+                <span className="flex h-16 w-16 items-center justify-center rounded-[1.15rem] bg-white shadow-[0_18px_34px_-18px_rgba(23,63,107,0.45)] transition-transform duration-300 group-hover:scale-[1.03]">
                   <img
                     src="/brand/yana-logo.png"
                     alt="Yana Travels"
-                    className="h-12 w-auto object-contain brightness-125 contrast-125 saturate-125 drop-shadow-[0_3px_8px_rgba(255,255,255,0.28)]"
+                    className="h-12 w-auto object-contain"
                   />
                 </span>
                 <span className="hidden min-w-0 flex-col sm:flex">
-                  <span className="font-heading text-[1.15rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)] sm:text-[1.3rem]">
+                  <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
                     Yana
                   </span>
-                  <span className="font-heading text-[1.15rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)] sm:text-[1.3rem]">
+                  <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
                     Travels
                   </span>
                 </span>
@@ -166,23 +165,10 @@ export function HomePage() {
                 <div className="max-w-3xl p-1 sm:p-2">
                   <h1 className="max-w-3xl animate-rise font-display text-4xl font-semibold leading-[0.96] tracking-[-0.045em] text-white drop-shadow-[0_18px_34px_rgba(0,0,0,0.58)] sm:text-5xl md:text-[3.7rem] xl:text-[4.35rem]">
                     Traveling - it leaves you speechless,
-                    <span className="block text-[#f6d77f]">
+                    <span className="block text-white">
                       then turns you into a story teller.
                     </span>
                   </h1>
-
-                  <div className="mt-6 flex flex-wrap items-center gap-3">
-                    <Link
-                      to="/packages"
-                      className="inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3.5 font-bold text-white shadow-[0_20px_36px_-20px_rgba(23,63,107,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
-                    >
-                      Explore packages
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                    <OpenEnquiryButton className="inline-flex items-center gap-2 rounded-full border border-white/42 bg-black/24 px-6 py-3.5 font-bold text-white shadow-[0_16px_34px_-16px_rgba(0,0,0,0.48)] transition-all duration-300 hover:bg-black/34">
-                      Plan a custom trip
-                    </OpenEnquiryButton>
-                  </div>
                 </div>
               </div>
 

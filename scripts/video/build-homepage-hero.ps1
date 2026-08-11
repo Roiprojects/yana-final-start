@@ -42,14 +42,16 @@ function Invoke-ReelRender {
     [int]$Width,
     [int]$Height,
     [int]$Crf,
-    [string]$OutputPath
+    [string]$OutputPath,
+    [switch]$UseMobile
   )
 
   $args = @('-y')
   foreach ($item in $Items) {
     $start = [string]::Format($culture, '{0:0.###}', [double]$item.start)
     $duration = [string]::Format($culture, '{0:0.###}', [double]$item.duration)
-    $args += @('-ss', $start, '-t', $duration, '-i', $item.src)
+    $src = if ($UseMobile -and $item.srcMobile) { $item.srcMobile } else { $item.src }
+    $args += @('-ss', $start, '-t', $duration, '-i', $src)
   }
 
   $filter = New-FilterComplex -Items $Items -Width $Width -Height $Height
@@ -69,7 +71,7 @@ function Invoke-ReelRender {
 }
 
 Invoke-ReelRender -Items $segments -Width 1920 -Height 1080 -Crf 24 -OutputPath 'public/hero/homepage-hero-real-16x9.mp4'
-Invoke-ReelRender -Items $segments -Width 1080 -Height 1920 -Crf 25 -OutputPath 'public/hero/homepage-hero-real-9x16.mp4'
+Invoke-ReelRender -Items $segments -Width 1080 -Height 1920 -Crf 25 -OutputPath 'public/hero/homepage-hero-real-9x16.mp4' -UseMobile
 
 & ffmpeg -y -i 'public/hero/homepage-hero-real-16x9.mp4' -frames:v 1 -update 1 'public/hero/homepage-hero-real-16x9-poster.jpg'
 if ($LASTEXITCODE -ne 0) { throw 'Failed to generate desktop poster' }
