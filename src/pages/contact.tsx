@@ -50,7 +50,7 @@ export function ContactPage() {
       <Section>
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-[1.9rem] border border-[#eadfcf] bg-[linear-gradient(135deg,#fffefb,#f7f1e4)] p-7 shadow-[0_24px_56px_-34px_rgba(16,33,58,0.26)]">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-white shadow-[0_18px_32px_-18px_rgba(23,63,107,0.8)]">
+            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-white shadow-[0_18px_32px_-18px_rgba(52,87,202,0.8)]">
               <Sparkles className="h-6 w-6" aria-hidden />
             </div>
             <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-deep">

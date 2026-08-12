@@ -37,7 +37,7 @@ export function SiteFooter() {
       <Container className="grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-[1.25fr_0.9fr_0.9fr_1.1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-18 w-18 items-center justify-center rounded-[1.35rem] bg-white shadow-[0_22px_40px_-24px_rgba(23,63,107,0.55)]">
+            <span className="flex h-18 w-18 items-center justify-center rounded-[1.35rem] bg-white shadow-[0_22px_40px_-24px_rgba(52,87,202,0.55)]">
               <img
                 src="/brand/yana-logo.png"
                 alt="Yana Travels"

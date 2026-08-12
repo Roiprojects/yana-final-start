@@ -40,7 +40,7 @@ export function GallerySection() {
                 A glimpse of journeys we arrange
               </h2>
             </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(23,63,107,0.8)]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(52,87,202,0.8)]">
               <Camera className="h-5 w-5" aria-hidden />
             </div>
           </div>

@@ -147,7 +147,7 @@ export function HomePage() {
                   aria-label="Yana Travels home"
                   className="group flex shrink-0 items-center gap-3 rounded-full"
                 >
-                  <span className="flex h-16 w-16 items-center justify-center rounded-[1.15rem] bg-white shadow-[0_18px_34px_-18px_rgba(23,63,107,0.45)] transition-transform duration-300 group-hover:scale-[1.03]">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-[1.15rem] bg-white shadow-[0_18px_34px_-18px_rgba(52,87,202,0.45)] transition-transform duration-300 group-hover:scale-[1.03]">
                     <img
                       src="/brand/yana-logo.png"
                       alt="Yana Travels"
@@ -243,7 +243,7 @@ export function HomePage() {
                   aria-hidden
                 />
                 <div className="relative flex items-start justify-between">
-                  <div className="rounded-[1.1rem] bg-primary p-3.5 text-[#f8db78] shadow-[0_14px_28px_-16px_rgba(23,63,107,0.95)] ring-2 ring-[#f2d36d]/75 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#0f5c9e]">
+                  <div className="rounded-[1.1rem] bg-primary p-3.5 text-[#f8db78] shadow-[0_14px_28px_-16px_rgba(52,87,202,0.95)] ring-2 ring-[#f2d36d]/75 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2a46a8]">
                     <Icon className="h-6 w-6" aria-hidden />
                   </div>
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#e5c45b] bg-white/80 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:text-white">
@@ -357,7 +357,7 @@ export function HomePage() {
               </ul>
               <Link
                 to="/about"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 font-semibold text-white shadow-[0_18px_30px_-18px_rgba(23,63,107,0.8)] transition-all duration-300 hover:-translate-y-0.5"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 font-semibold text-white shadow-[0_18px_30px_-18px_rgba(52,87,202,0.8)] transition-all duration-300 hover:-translate-y-0.5"
               >
                 About Yana Travels <ArrowRight className="h-4 w-4" />
               </Link>

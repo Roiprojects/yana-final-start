@@ -51,7 +51,7 @@ export function GroupToursPage() {
               </p>
             </div>
             <div className="rounded-[1.8rem] border border-[#eadfcf] bg-[linear-gradient(135deg,#fffefb,#f7f1e4)] p-6 shadow-[0_22px_52px_-34px_rgba(16,33,58,0.24)]">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(23,63,107,0.8)]">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(52,87,202,0.8)]">
                 <Sparkles className="h-5 w-5" aria-hidden />
               </div>
               <p className="text-sm leading-7 text-text-secondary">

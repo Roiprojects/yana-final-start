@@ -52,7 +52,7 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
       </div>
 
       {/* Hover state — full details overlay + Explore */}
-      <div className="absolute inset-0 flex translate-y-5 flex-col justify-end bg-[linear-gradient(180deg,rgba(16,33,58,0.55),rgba(23,63,107,0.94))] p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="absolute inset-0 flex translate-y-5 flex-col justify-end bg-[linear-gradient(180deg,rgba(16,33,58,0.55),rgba(52,87,202,0.94))] p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e8c979]">
           {pkg.scope}
           {pkg.destination_name ? ` · ${pkg.destination_name}` : ""}

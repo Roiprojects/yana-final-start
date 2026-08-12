@@ -43,7 +43,7 @@ export function SiteHeader() {
             aria-label="Yana Travels home"
             className="group flex items-center gap-3 rounded-full px-1 py-1"
           >
-            <span className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-white shadow-[0_18px_34px_-18px_rgba(23,63,107,0.45)] transition-transform duration-300 group-hover:scale-[1.03] sm:h-16 sm:w-16 sm:rounded-[1.15rem]">
+            <span className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-white shadow-[0_18px_34px_-18px_rgba(52,87,202,0.45)] transition-transform duration-300 group-hover:scale-[1.03] sm:h-16 sm:w-16 sm:rounded-[1.15rem]">
               <img
                 src="/brand/yana-logo.png"
                 alt="Yana Travels"
