@@ -14,6 +14,7 @@ import { Container } from "@/components/ui/container";
 import { LinkButton } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { whatsappLink } from "@/lib/site-config";
+import { useSiteSettings } from "@/components/providers/site-settings-context";
 import { EnquireNowButton } from "@/components/ui/enquire-now-button";
 import type { PackageDetail } from "@/lib/types/tour";
 
@@ -107,6 +108,7 @@ function formatPrice(amount: number | null, currency: string): string | null {
 }
 
 export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
+  const { whatsapp } = useSiteSettings();
   const price = formatPrice(pkg.price_amount, pkg.price_currency);
   const dur =
     pkg.duration_days != null && pkg.duration_nights != null
@@ -339,7 +341,7 @@ export function PackageDetailView({ pkg }: { pkg: PackageDetail }) {
                 <EnquireNowButton destination={pkg.title} />
 
                 <LinkButton
-                  href={whatsappLink(enquiryMsg)}
+                  href={whatsappLink(enquiryMsg, whatsapp)}
                   external
                   variant="ghost"
                   className="w-full"

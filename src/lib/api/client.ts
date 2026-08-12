@@ -4,6 +4,7 @@ import type {
   PublicGalleryItem,
   PublicOffice,
   PublicTestimonial,
+  SiteSettings,
 } from "@/lib/types/content";
 
 /**
@@ -108,6 +109,21 @@ export const api = {
   },
   async listPublicOffices(): Promise<PublicOffice[]> {
     const res = await fetch("/api/public/offices");
+    return parse(res);
+  },
+  async getPublicSettings(): Promise<SiteSettings> {
+    const res = await fetch("/api/public/settings");
+    return parse(res);
+  },
+  async saveSettings(
+    key: string,
+    value: Record<string, unknown>,
+  ): Promise<{ ok: boolean }> {
+    const res = await fetch("/api/admin/settings", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key, value }),
+    });
     return parse(res);
   },
 

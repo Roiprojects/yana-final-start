@@ -31,3 +31,31 @@ export type PublicOffice = {
   email: string | null;
   hours: string | null;
 };
+
+export type AboutValue = {
+  title: string;
+  desc: string;
+};
+
+export type AboutContent = {
+  headline?: string;
+  intro?: string[];
+  offerings?: string[];
+  values?: AboutValue[];
+};
+
+export type SiteSettings = {
+  site?: {
+    phone?: string;
+    email?: string;
+    whatsapp?: string;
+    tagline?: string;
+    founded?: number;
+    social?: { facebook?: string; instagram?: string };
+  };
+  about?: AboutContent;
+  seo?: {
+    title?: string;
+    description?: string;
+  };
+};

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   MapPin,
   Compass,
@@ -9,9 +10,11 @@ import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { EnquiryCta } from "@/components/marketing/enquiry-cta";
-import { siteConfig } from "@/lib/site-config";
+import { useSiteSettings } from "@/components/providers/site-settings-context";
+import { api } from "@/lib/api/client";
+import type { PublicOffice } from "@/lib/types/content";
 
-const offerings = [
+const fallbackOfferings = [
   "Domestic group tours across India",
   "International group departures",
   "Fully customized private itineraries",
@@ -22,7 +25,7 @@ const offerings = [
   "Forex and hotel bookings",
 ];
 
-const values = [
+const fallbackValues = [
   {
     icon: Compass,
     title: "End-to-end planning",
@@ -40,12 +43,60 @@ const values = [
   },
 ];
 
+function officeAddress(o: PublicOffice): string {
+  return [o.address, o.city, o.pincode].filter(Boolean).join(", ");
+}
+
 export function AboutPage() {
+  const { tagline, founded, about } = useSiteSettings();
+  const [offices, setOffices] = useState<PublicOffice[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    api
+      .listPublicOffices()
+      .then((res) => {
+        if (!cancelled) setOffices(res);
+      })
+      .catch(() => {
+        if (!cancelled) setOffices([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const headline = about.headline || "Welcome to Yana Travels";
+
+  const intro =
+    about.intro && about.intro.length > 0
+      ? about.intro
+      : [
+          `Yana Travels was founded in ${founded}. We are a team of travel experts with deep knowledge of historic, scenic, and culturally rich destinations across India and abroad.`,
+          "We understand the importance of your time, and our aim is to make every getaway memorable. Be it a personal holiday, a leisure tour, or a corporate travel plan, we work to balance comfort, coordination, and value while keeping the journey smooth from start to finish.",
+          "From flights and stays to documentation, day-to-day planning, food, activities, and support, we handle the details so your experience feels curated instead of stressful. We also customize around your needs whenever the journey calls for it.",
+        ];
+
+  const offerings =
+    about.offerings && about.offerings.length > 0
+      ? about.offerings
+      : fallbackOfferings;
+
+  const values: { title: string; desc: string; icon?: typeof Compass }[] =
+    about.values && about.values.length > 0
+      ? about.values.map((v) => ({ title: v.title, desc: v.desc }))
+      : fallbackValues;
+
+  const officeList =
+    offices.length > 0
+      ? offices.map((o) => ({ name: o.office_name, address: officeAddress(o) }))
+      : [{ name: "Udupi", address: "Corporate Office, Udupi" }];
+
   return (
     <>
       <PageHeader
         title="About Yana Travels"
-        subtitle={siteConfig.tagline}
+        subtitle={tagline}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         image="photo-1548013146-72479768bada"
       />
@@ -55,28 +106,12 @@ export function AboutPage() {
           <Reveal>
             <div className="max-w-3xl">
               <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">
-                Welcome to Yana Travels
+                {headline}
               </h2>
               <div className="mt-5 space-y-4 text-lg leading-8 text-text-secondary">
-                <p>
-                  Yana Travels was founded in {siteConfig.founded}. We are a
-                  team of travel experts with deep knowledge of historic,
-                  scenic, and culturally rich destinations across India and
-                  abroad.
-                </p>
-                <p>
-                  We understand the importance of your time, and our aim is to
-                  make every getaway memorable. Be it a personal holiday, a
-                  leisure tour, or a corporate travel plan, we work to balance
-                  comfort, coordination, and value while keeping the journey
-                  smooth from start to finish.
-                </p>
-                <p>
-                  From flights and stays to documentation, day-to-day planning,
-                  food, activities, and support, we handle the details so your
-                  experience feels curated instead of stressful. We also
-                  customize around your needs whenever the journey calls for it.
-                </p>
+                {intro.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </div>
           </Reveal>
@@ -138,7 +173,11 @@ export function AboutPage() {
             <Reveal key={v.title} delay={i * 110}>
               <div className="h-full rounded-[1.7rem] border border-[#eadfcf] bg-white p-7 shadow-[0_22px_48px_-30px_rgba(16,33,58,0.26)]">
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-[#f8f2e3] text-primary ring-1 ring-[#eadfcf]">
-                  <v.icon className="h-6 w-6" aria-hidden />
+                  {v.icon ? (
+                    <v.icon className="h-6 w-6" aria-hidden />
+                  ) : (
+                    <Compass className="h-6 w-6" aria-hidden />
+                  )}
                 </div>
                 <h3 className="text-lg font-bold tracking-[-0.02em]">
                   {v.title}
@@ -162,21 +201,14 @@ export function AboutPage() {
           </div>
         </Reveal>
         <div className="grid gap-6 md:grid-cols-2">
-          {siteConfig.offices.map((office, i) => (
+          {officeList.map((office, i) => (
             <Reveal key={office.name} delay={i * 100}>
               <div className="flex h-full items-start gap-4 rounded-[1.7rem] border border-[#eadfcf] bg-white p-6 shadow-[0_18px_44px_-30px_rgba(16,33,58,0.24)]">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] bg-[#f8f2e3] text-primary">
                   <MapPin className="h-5 w-5" aria-hidden />
                 </div>
                 <div>
-                  <h3 className="font-bold text-deep">
-                    {office.name}
-                    {office.note ? (
-                      <span className="ml-2 rounded-full bg-[#f8f2e3] px-2.5 py-0.5 text-xs font-semibold text-primary">
-                        {office.note}
-                      </span>
-                    ) : null}
-                  </h3>
+                  <h3 className="font-bold text-deep">{office.name}</h3>
                   <p className="mt-2 text-sm leading-6 text-text-secondary">
                     {office.address}
                   </p>

@@ -1,10 +1,36 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
-import { primaryNav, siteConfig } from "@/lib/site-config";
+import { primaryNav } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
+import { useSiteSettings } from "@/components/providers/site-settings-context";
+import { api } from "@/lib/api/client";
+import type { PublicOffice } from "@/lib/types/content";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
+  const { phone, email, facebook, instagram } = useSiteSettings();
+  const [offices, setOffices] = useState<PublicOffice[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    api
+      .listPublicOffices()
+      .then((res) => {
+        if (!cancelled) setOffices(res);
+      })
+      .catch(() => {
+        if (!cancelled) setOffices([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const officeList =
+    offices.length > 0
+      ? offices
+      : [{ office_name: "Udupi", address: "Corporate Office, Udupi" }];
 
   return (
     <footer className="mt-24 overflow-hidden bg-[#3457ca] text-white/80">
@@ -29,7 +55,7 @@ export function SiteFooter() {
           </div>
           <div className="mt-5 flex gap-3">
             <a
-              href={siteConfig.social.facebook}
+              href={facebook}
               aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
@@ -38,7 +64,7 @@ export function SiteFooter() {
               <Facebook className="h-4 w-4" />
             </a>
             <a
-              href={siteConfig.social.instagram}
+              href={instagram}
               aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
@@ -74,13 +100,11 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3.5 text-sm text-white/70">
             <li className="flex items-center gap-2.5">
               <Phone className="h-4 w-4 shrink-0 text-[#e8c979]" />
-              <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}>
-                {siteConfig.phone}
-              </a>
+              <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail className="h-4 w-4 shrink-0 text-[#e8c979]" />
-              <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+              <a href={`mailto:${email}`}>{email}</a>
             </li>
           </ul>
         </div>
@@ -90,13 +114,12 @@ export function SiteFooter() {
             Offices
           </p>
           <ul className="mt-4 space-y-4 text-sm text-white/70">
-            {siteConfig.offices.map((office) => (
-              <li key={office.name} className="flex gap-2.5">
+            {officeList.map((office) => (
+              <li key={office.office_name} className="flex gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#e8c979]" />
                 <span>
                   <span className="font-semibold text-white">
-                    {office.name}
-                    {office.note ? ` — ${office.note}` : ""}
+                    {office.office_name}
                   </span>
                   <br />
                   {office.address}

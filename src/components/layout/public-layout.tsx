@@ -5,20 +5,23 @@ import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { FloatingContactActions } from "@/components/layout/floating-contact-actions";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { EnquiryModalProvider } from "@/components/providers/enquiry-modal-provider";
+import { SiteSettingsProvider } from "@/components/providers/site-settings-context";
 
 export function PublicLayout() {
   return (
     <EnquiryModalProvider>
-      <div className="flex min-h-full flex-col">
-        <ScrollProgress />
-        <SiteHeader />
-        <main className="flex-1 pb-24 lg:pb-0">
-          <Outlet />
-        </main>
-        <SiteFooter />
-        <MobileActionBar />
-        <FloatingContactActions />
-      </div>
+      <SiteSettingsProvider>
+        <div className="flex min-h-full flex-col">
+          <ScrollProgress />
+          <SiteHeader />
+          <main className="flex-1 pb-24 lg:pb-0">
+            <Outlet />
+          </main>
+          <SiteFooter />
+          <MobileActionBar />
+          <FloatingContactActions />
+        </div>
+      </SiteSettingsProvider>
     </EnquiryModalProvider>
   );
 }

@@ -1,12 +1,13 @@
-
 import { Container } from "@/components/ui/container";
 import { LinkButton } from "@/components/ui/button";
 import { whatsappLink } from "@/lib/site-config";
 import { unsplash, ctaImage } from "@/lib/images";
 import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
+import { useSiteSettings } from "@/components/providers/site-settings-context";
 
 export function EnquiryCta() {
   const { open: openEnquiry } = useEnquiryModal();
+  const { whatsapp } = useSiteSettings();
 
   return (
     <section className="relative overflow-hidden">
@@ -37,7 +38,12 @@ export function EnquiryCta() {
           >
             Make an enquiry
           </button>
-          <LinkButton href={whatsappLink()} external variant="ghost" size="lg">
+          <LinkButton
+            href={whatsappLink(undefined, whatsapp)}
+            external
+            variant="ghost"
+            size="lg"
+          >
             Chat on WhatsApp
           </LinkButton>
         </div>

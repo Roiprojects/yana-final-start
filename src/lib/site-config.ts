@@ -72,7 +72,10 @@ export const primaryNav: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export function whatsappLink(message?: string): string {
-  const base = `https://wa.me/${siteConfig.whatsapp}`;
+export function whatsappLink(
+  message?: string,
+  whatsappNumber?: string,
+): string {
+  const base = `https://wa.me/${whatsappNumber ?? siteConfig.whatsapp}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }

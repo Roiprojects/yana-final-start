@@ -496,6 +496,33 @@ export async function listPublicOffices(): Promise<AdminOfficeRow[]> {
   return rows ?? [];
 }
 
+// ── Site Settings (key/value) ────────────────────────────────────────────────
+const SETTING_KEYS = ["site", "about", "seo"] as const;
+
+export async function listSiteSettings(): Promise<Record<string, unknown>> {
+  const rows = await query<{ key: string; value: unknown }>(
+    `select key, value from site_settings`,
+  );
+  const out: Record<string, unknown> = {};
+  for (const r of rows ?? []) out[r.key] = r.value;
+  return out;
+}
+
+export async function saveSiteSetting(
+  key: string,
+  value: unknown,
+): Promise<{ ok: boolean }> {
+  if (!(SETTING_KEYS as readonly string[]).includes(key)) return { ok: false };
+  await query(
+    `insert into site_settings (key, value, updated_at)
+     values ($1, $2::jsonb, now())
+     on conflict (key) do update
+       set value = excluded.value, updated_at = now()`,
+    [key, JSON.stringify(value ?? {})],
+  );
+  return { ok: true };
+}
+
 // ── Generic CRUD (table whitelist enforced) ────────────────────────────────
 const ALLOWED_TABLES = [
   "tour_packages",

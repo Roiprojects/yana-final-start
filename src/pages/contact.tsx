@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/section";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { siteConfig } from "@/lib/site-config";
 import { api } from "@/lib/api/client";
+import { useSiteSettings } from "@/components/providers/site-settings-context";
 import type { PublicOffice } from "@/lib/types/content";
 
 const fallbackOffices: { name: string; address: string }[] =
@@ -15,6 +16,7 @@ function officeAddress(o: PublicOffice): string {
 }
 
 export function ContactPage() {
+  const { phone, email } = useSiteSettings();
   const [offices, setOffices] = useState<PublicOffice[]>([]);
 
   useEffect(() => {
@@ -66,10 +68,10 @@ export function ContactPage() {
                 <div>
                   <p className="font-semibold text-deep">Phone</p>
                   <a
-                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+                    href={`tel:${phone.replace(/\s/g, "")}`}
                     className="text-text-secondary hover:text-primary"
                   >
-                    {siteConfig.phone}
+                    {phone}
                   </a>
                 </div>
               </div>
@@ -78,10 +80,10 @@ export function ContactPage() {
                 <div>
                   <p className="font-semibold text-deep">Email</p>
                   <a
-                    href={`mailto:${siteConfig.email}`}
+                    href={`mailto:${email}`}
                     className="text-text-secondary hover:text-primary"
                   >
-                    {siteConfig.email}
+                    {email}
                   </a>
                 </div>
               </div>

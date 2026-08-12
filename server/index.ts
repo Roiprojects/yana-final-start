@@ -158,6 +158,13 @@ app.get(
   }),
 );
 
+app.get(
+  "/api/public/settings",
+  wrap(async (_req, res) => {
+    res.json(await admin.listSiteSettings());
+  }),
+);
+
 // ── Enquiry submission (public) ──────────────────────────────────────────────
 app.post(
   "/api/enquiries",
@@ -358,6 +365,15 @@ app.post(
       return;
     }
     res.json(await mod.save(req.body ?? {}));
+  }),
+);
+
+app.post(
+  "/api/admin/settings",
+  requireAdmin,
+  wrap(async (req, res) => {
+    const result = await admin.saveSiteSetting(req.body?.key, req.body?.value);
+    res.status(result.ok ? 200 : 400).json(result);
   }),
 );
 

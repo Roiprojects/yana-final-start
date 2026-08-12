@@ -1,14 +1,16 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X, Phone, Search } from "lucide-react";
-import { primaryNav, siteConfig, whatsappLink } from "@/lib/site-config";
+import { primaryNav, whatsappLink } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
+import { useSiteSettings } from "@/components/providers/site-settings-context";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { open: openEnquiry } = useEnquiryModal();
+  const { phone, whatsapp } = useSiteSettings();
   const { pathname } = useLocation();
   const isHome = pathname === "/";
 
@@ -78,7 +80,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <a
-            href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
+            href={`tel:${phone.replace(/\s/g, "")}`}
             className={cn(
               "hidden items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-semibold shadow-sm transition-colors xl:inline-flex",
               scrolled
@@ -93,7 +95,7 @@ export function SiteHeader() {
               )}
               aria-hidden
             />
-            {siteConfig.phone}
+            {phone}
           </a>
           <button
             type="button"
@@ -156,7 +158,7 @@ export function SiteHeader() {
                 Enquire now
               </button>
               <a
-                href={whatsappLink()}
+                href={whatsappLink(undefined, whatsapp)}
                 className="flex-1 rounded-full border border-primary px-5 py-2.5 text-center text-sm font-semibold text-primary"
                 target="_blank"
                 rel="noopener noreferrer"
