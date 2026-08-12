@@ -107,7 +107,7 @@ function EnquiryDialog({
             aria-hidden
           />
           <div className="relative">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">
+            <p className="text-base font-extrabold uppercase tracking-widest text-white">
               Yana Travels
             </p>
             <h2 className="mt-1 font-heading text-xl font-bold leading-snug text-white">
@@ -137,7 +137,7 @@ function EnquiryDialog({
         {/* Right — form */}
         <div className="flex flex-1 flex-col">
           {/* Header */}
-          <div className="flex items-center justify-between bg-gradient-to-r from-[#bae6fd] to-[#7dd3fc] px-5 py-4">
+          <div className="flex items-center justify-between bg-gradient-to-r from-[#3457ca] to-[#2a46a8] px-5 py-4">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">
                 Free consultation
@@ -296,7 +296,7 @@ function EnquiryDialog({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#bae6fd] to-[#7dd3fc] py-3 text-sm font-bold text-white shadow-[0_10px_26px_-8px_rgba(125,211,252,0.6)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-8px_rgba(125,211,252,0.8)] disabled:opacity-70"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#3457ca] to-[#2a46a8] py-3 text-sm font-bold text-white shadow-[0_10px_26px_-8px_rgba(52,87,202,0.5)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-8px_rgba(52,87,202,0.7)] disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />

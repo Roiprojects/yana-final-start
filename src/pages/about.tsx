@@ -48,7 +48,7 @@ function officeAddress(o: PublicOffice): string {
 }
 
 export function AboutPage() {
-  const { tagline, founded, about } = useSiteSettings();
+  const { founded, about } = useSiteSettings();
   const [offices, setOffices] = useState<PublicOffice[]>([]);
 
   useEffect(() => {
@@ -96,7 +96,7 @@ export function AboutPage() {
     <>
       <PageHeader
         title="About Yana Travels"
-        subtitle={tagline}
+        subtitle=""
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         image="photo-1548013146-72479768bada"
       />

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {
-  Trophy,
+  Tag,
   ShieldCheck,
   CreditCard,
   UserCheck,
@@ -19,7 +19,7 @@ const benefits: BenefitCard[] = [
     id: "best-price",
     title: "Best Price Guarantee",
     subtitle: "Unbeatable deals",
-    icon: Trophy,
+    icon: Tag,
   },
   {
     id: "assistance",

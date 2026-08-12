@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Globe, Compass, ArrowRight, Sparkles } from "lucide-react";
+import { MapPin, Globe, ArrowRight, Sparkles } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -17,12 +17,6 @@ const options = [
     icon: Globe,
     title: "International Tours",
     desc: "Travel abroad with an itinerary designed around how you want to experience it.",
-  },
-  {
-    href: "/packages",
-    icon: Compass,
-    title: "View All Packages",
-    desc: "Browse every package in one place with cleaner filtering and richer presentation.",
   },
 ];
 

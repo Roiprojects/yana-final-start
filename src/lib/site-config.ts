@@ -65,7 +65,6 @@ export const primaryNav: NavItem[] = [
     children: [
       { label: "Domestic", href: "/customized-tours/domestic" },
       { label: "International", href: "/customized-tours/international" },
-      { label: "View All Packages", href: "/packages" },
     ],
   },
   { label: "Services", href: "/services" },
