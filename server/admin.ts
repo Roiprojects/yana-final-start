@@ -476,6 +476,26 @@ export async function listPublicServices(): Promise<AdminServiceRow[]> {
   return rows ?? [];
 }
 
+export async function listPublicGallery(): Promise<AdminGalleryRow[]> {
+  const rows = await query<AdminGalleryRow>(
+    `select id, title, category, image_url, is_active, sort_order
+       from gallery
+      where is_active = true
+      order by sort_order asc`,
+  );
+  return rows ?? [];
+}
+
+export async function listPublicOffices(): Promise<AdminOfficeRow[]> {
+  const rows = await query<AdminOfficeRow>(
+    `select id, office_name, address, city, pincode, phone, email, hours, is_active, sort_order
+       from contact_info
+      where is_active = true
+      order by sort_order asc`,
+  );
+  return rows ?? [];
+}
+
 // ── Generic CRUD (table whitelist enforced) ────────────────────────────────
 const ALLOWED_TABLES = [
   "tour_packages",

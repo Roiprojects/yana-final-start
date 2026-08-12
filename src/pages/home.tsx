@@ -22,6 +22,8 @@ import { HowItWorks } from "@/components/marketing/how-it-works";
 import { ValueProps } from "@/components/marketing/value-props";
 import { TrustBadges } from "@/components/marketing/trust-badges";
 import { DestinationMarquee } from "@/components/marketing/destination-marquee";
+import { TestimonialsSection } from "@/components/marketing/testimonials-section";
+import { GallerySection } from "@/components/marketing/gallery-section";
 import { Faq } from "@/components/marketing/faq";
 import { primaryNav } from "@/lib/site-config";
 import {
@@ -32,6 +34,7 @@ import {
 } from "@/lib/images";
 import { api } from "@/lib/api/client";
 import type { PackageListItem } from "@/lib/types/tour";
+import type { PublicFaq } from "@/lib/types/content";
 
 const categories = [
   {
@@ -60,7 +63,7 @@ const categories = [
   },
 ];
 
-const faqs = [
+const fallbackFaqs = [
   {
     q: "How do I book a trip?",
     a: "Send us an enquiry or message us on WhatsApp with your plans, and our team will help you arrange everything.",
@@ -82,6 +85,7 @@ const faqs = [
 export function HomePage() {
   const [featured, setFeatured] = useState<PackageListItem[]>([]);
   const [sample, setSample] = useState(false);
+  const [faqs, setFaqs] = useState<PublicFaq[]>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -95,11 +99,22 @@ export function HomePage() {
       .catch(() => {
         if (!cancelled) setFeatured([]);
       });
+    api
+      .listPublicFaqs()
+      .then((items) => {
+        if (!cancelled) setFaqs(items);
+      })
+      .catch(() => {
+        if (!cancelled) setFaqs([]);
+      });
     return () => {
       cancelled = true;
     };
   }, []);
-
+  const faqItems =
+    faqs.length > 0
+      ? faqs.map((f) => ({ q: f.question, a: f.answer }))
+      : fallbackFaqs;
   return (
     <>
       <div className="px-0 pt-0 sm:px-4 sm:pt-3">
@@ -384,6 +399,8 @@ export function HomePage() {
         <ValueProps />
       </Section>
 
+      <TestimonialsSection />
+
       <Section>
         <Reveal>
           <div className="mb-10 text-center">
@@ -395,10 +412,12 @@ export function HomePage() {
         </Reveal>
         <Reveal delay={100}>
           <div className="mx-auto max-w-3xl">
-            <Faq items={faqs} />
+            <Faq items={faqItems} />
           </div>
         </Reveal>
       </Section>
+
+      <GallerySection />
 
       <EnquiryCta />
     </>

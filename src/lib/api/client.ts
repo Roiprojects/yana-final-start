@@ -1,4 +1,10 @@
 import type { PackageDetail, PackageListItem } from "@/lib/types/tour";
+import type {
+  PublicFaq,
+  PublicGalleryItem,
+  PublicOffice,
+  PublicTestimonial,
+} from "@/lib/types/content";
 
 /**
  * Typed fetch client for the Express API.
@@ -86,6 +92,22 @@ export const api = {
   // ── Public content ─────────────────────────────────────────────────────
   async listPublicServices(): Promise<unknown[]> {
     const res = await fetch("/api/public/services");
+    return parse(res);
+  },
+  async listPublicFaqs(): Promise<PublicFaq[]> {
+    const res = await fetch("/api/public/faqs");
+    return parse(res);
+  },
+  async listPublicTestimonials(): Promise<PublicTestimonial[]> {
+    const res = await fetch("/api/public/testimonials");
+    return parse(res);
+  },
+  async listPublicGallery(): Promise<PublicGalleryItem[]> {
+    const res = await fetch("/api/public/gallery");
+    return parse(res);
+  },
+  async listPublicOffices(): Promise<PublicOffice[]> {
+    const res = await fetch("/api/public/offices");
     return parse(res);
   },
 

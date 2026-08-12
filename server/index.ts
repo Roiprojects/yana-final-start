@@ -122,6 +122,42 @@ app.get(
   }),
 );
 
+// ── Public content (single source of truth shared with the admin panel) ──────
+app.get(
+  "/api/public/faqs",
+  wrap(async (_req, res) => {
+    res.json(await admin.listPublicFaqs());
+  }),
+);
+
+app.get(
+  "/api/public/testimonials",
+  wrap(async (_req, res) => {
+    res.json(await admin.listPublicTestimonials());
+  }),
+);
+
+app.get(
+  "/api/public/gallery",
+  wrap(async (_req, res) => {
+    res.json(await admin.listPublicGallery());
+  }),
+);
+
+app.get(
+  "/api/public/offices",
+  wrap(async (_req, res) => {
+    res.json(await admin.listPublicOffices());
+  }),
+);
+
+app.get(
+  "/api/public/destinations",
+  wrap(async (_req, res) => {
+    res.json(await admin.listPublicDestinations());
+  }),
+);
+
 // ── Enquiry submission (public) ──────────────────────────────────────────────
 app.post(
   "/api/enquiries",

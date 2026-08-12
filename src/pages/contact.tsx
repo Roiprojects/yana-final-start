@@ -1,10 +1,42 @@
+import { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, Sparkles } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { siteConfig } from "@/lib/site-config";
+import { api } from "@/lib/api/client";
+import type { PublicOffice } from "@/lib/types/content";
+
+const fallbackOffices: { name: string; address: string }[] =
+  siteConfig.offices.map((o) => ({ name: o.name, address: o.address }));
+
+function officeAddress(o: PublicOffice): string {
+  return [o.address, o.city, o.pincode].filter(Boolean).join(", ");
+}
 
 export function ContactPage() {
+  const [offices, setOffices] = useState<PublicOffice[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    api
+      .listPublicOffices()
+      .then((res) => {
+        if (!cancelled) setOffices(res);
+      })
+      .catch(() => {
+        if (!cancelled) setOffices([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const list =
+    offices.length > 0
+      ? offices.map((o) => ({ name: o.office_name, address: officeAddress(o) }))
+      : fallbackOffices;
+
   return (
     <>
       <PageHeader
@@ -53,18 +85,14 @@ export function ContactPage() {
                   </a>
                 </div>
               </div>
-              {siteConfig.offices.map((office) => (
+              {list.map((office) => (
                 <div
                   key={office.name}
                   className="flex items-start gap-3 rounded-[1.3rem] border border-white/80 bg-white/80 p-4 shadow-sm"
                 >
                   <MapPin className="mt-1 h-5 w-5 text-primary" aria-hidden />
                   <div>
-                    <p className="font-semibold text-deep">
-                      {office.note
-                        ? `${office.name} — ${office.note}`
-                        : `${office.name} Office`}
-                    </p>
+                    <p className="font-semibold text-deep">{office.name}</p>
                     <p className="text-sm leading-6 text-text-secondary">
                       {office.address}
                     </p>
