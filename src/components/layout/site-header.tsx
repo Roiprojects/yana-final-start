@@ -54,7 +54,7 @@ export function SiteHeader() {
               <span
                 className={cn(
                   "font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em]",
-                  scrolled ? "text-white" : "text-deep",
+                  scrolled ? "text-white" : "text-primary",
                 )}
               >
                 Yana
@@ -62,7 +62,7 @@ export function SiteHeader() {
               <span
                 className={cn(
                   "font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em]",
-                  scrolled ? "text-white" : "text-deep",
+                  scrolled ? "text-white" : "text-primary",
                 )}
               >
                 Travels

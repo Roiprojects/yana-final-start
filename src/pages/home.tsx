@@ -185,9 +185,9 @@ export function HomePage() {
             <div className="grid flex-1 w-full items-center gap-6 pt-6 lg:grid-cols-12 lg:gap-8 lg:pt-8">
               <div className="lg:col-span-7">
                 <div className="max-w-3xl p-1 sm:p-2">
-                  <h1 className="max-w-3xl animate-rise font-display text-4xl font-semibold leading-[0.96] tracking-[-0.045em] text-white drop-shadow-[0_18px_34px_rgba(0,0,0,0.58)] sm:text-5xl md:text-[3.7rem] xl:text-[4.35rem]">
+                  <h1 className="max-w-3xl animate-rise font-display text-4xl font-semibold leading-[0.96] tracking-[-0.045em] text-yellow-400 drop-shadow-[0_18px_34px_rgba(0,0,0,0.58)] sm:text-5xl md:text-[3.7rem] xl:text-[4.35rem]">
                     Traveling - it leaves you speechless,
-                    <span className="block text-white">
+                    <span className="block text-yellow-400">
                       then turns you into a story teller.
                     </span>
                   </h1>

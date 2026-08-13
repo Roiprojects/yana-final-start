@@ -490,7 +490,6 @@ export async function listPublicOffices(): Promise<AdminOfficeRow[]> {
   const rows = await query<AdminOfficeRow>(
     `select id, office_name, address, city, pincode, phone, email, hours, is_active, sort_order
        from contact_info
-      where is_active = true
       order by sort_order asc`,
   );
   return rows ?? [];
