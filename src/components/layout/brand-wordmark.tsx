@@ -10,10 +10,15 @@ export function BrandWordmark({
   textClassName?: string;
 }) {
   return (
-    <span className={cn("flex min-w-0 flex-col", className)}>
+    <span
+      className={cn(
+        "flex min-w-0 items-baseline gap-1.5 whitespace-nowrap",
+        className,
+      )}
+    >
       <span
         className={cn(
-          "font-heading text-[1.5rem] font-black uppercase leading-[0.84] tracking-[-0.05em]",
+          "font-body text-[1.72rem] font-semibold leading-none tracking-[-0.05em]",
           accentClassName,
         )}
       >
@@ -21,7 +26,7 @@ export function BrandWordmark({
       </span>
       <span
         className={cn(
-          "font-heading text-[1.9rem] font-black leading-[0.84] tracking-[-0.06em]",
+          "font-body text-[1.72rem] font-semibold leading-none tracking-[-0.05em]",
           textClassName,
         )}
       >
