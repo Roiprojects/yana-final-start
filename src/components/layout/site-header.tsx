@@ -5,6 +5,7 @@ import { primaryNav, whatsappLink } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
 import { useSiteSettings } from "@/components/providers/site-settings-context";
+import { BrandWordmark } from "@/components/layout/brand-wordmark";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -50,24 +51,15 @@ export function SiteHeader() {
                 className="h-9 w-auto object-contain sm:h-12"
               />
             </span>
-            <span className="hidden min-w-0 flex-col sm:flex">
-              <span
-                className={cn(
-                  "font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em]",
-                  scrolled ? "text-white" : "text-primary",
-                )}
-              >
-                Yana
-              </span>
-              <span
-                className={cn(
-                  "font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em]",
-                  scrolled ? "text-white" : "text-primary",
-                )}
-              >
-                Travels
-              </span>
-            </span>
+            <BrandWordmark
+              className="hidden sm:flex"
+              accentClassName={cn(
+                scrolled ? "text-white/88" : "text-primary/82",
+              )}
+              textClassName={cn(
+                scrolled ? "text-white" : "text-primary",
+              )}
+            />
           </Link>
           <SearchBar dark={scrolled} />
         </div>

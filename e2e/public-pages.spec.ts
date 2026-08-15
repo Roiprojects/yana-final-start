@@ -59,6 +59,21 @@ test("enquiry modal validates required fields", async ({ page }) => {
   await expect(page.getByText(/please enter your name/i)).toBeVisible();
 });
 
+test("homepage shows five compact benefit cards and all fallback offices", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
+    "href",
+    "/brand/favicon-blue.png",
+  );
+  await expect(page.getByText("Since 2015")).toBeVisible();
+  await expect(page.getByText("Best Price Guarantee")).toBeVisible();
+  await expect(page.getByText("24/7 Support")).toBeVisible();
+  await expect(page.getByRole("contentinfo").getByText("Bengaluru")).toBeVisible();
+  await expect(page.getByRole("contentinfo").getByText("Hubli")).toBeVisible();
+});
+
 test("enquiry modal submits end-to-end (success or graceful error)", async ({
   page,
 }) => {

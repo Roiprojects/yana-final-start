@@ -25,6 +25,7 @@ import { DestinationMarquee } from "@/components/marketing/destination-marquee";
 import { TestimonialsSection } from "@/components/marketing/testimonials-section";
 import { GallerySection } from "@/components/marketing/gallery-section";
 import { Faq } from "@/components/marketing/faq";
+import { BrandWordmark } from "@/components/layout/brand-wordmark";
 import { primaryNav } from "@/lib/site-config";
 import {
   unsplash,
@@ -154,14 +155,11 @@ export function HomePage() {
                       className="h-12 w-auto object-contain"
                     />
                   </span>
-                  <span className="hidden min-w-0 flex-col sm:flex">
-                    <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
-                      Yana
-                    </span>
-                    <span className="font-heading text-[1.7rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)]">
-                      Travels
-                    </span>
-                  </span>
+                  <BrandWordmark
+                    className="hidden drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)] sm:flex"
+                    accentClassName="text-white/88"
+                    textClassName="text-white"
+                  />
                 </Link>
 
                 <div className="w-56 sm:w-72 md:w-80">
@@ -243,7 +241,7 @@ export function HomePage() {
                   aria-hidden
                 />
                 <div className="relative flex items-start justify-between">
-                  <div className="rounded-[1.1rem] bg-primary p-3.5 text-[#f8db78] shadow-[0_14px_28px_-16px_rgba(52,87,202,0.95)] ring-2 ring-[#f2d36d]/75 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2a46a8]">
+                  <div className="rounded-[1.1rem] bg-primary p-3.5 text-[#f8db78] shadow-[0_14px_28px_-16px_rgba(52,87,202,0.95)] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#2a46a8]">
                     <Icon className="h-6 w-6" aria-hidden />
                   </div>
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#e5c45b] bg-white/80 text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:text-white">

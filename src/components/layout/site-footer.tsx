@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { primaryNav } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui/container";
 import { useSiteSettings } from "@/components/providers/site-settings-context";
 import { api } from "@/lib/api/client";
 import type { PublicOffice } from "@/lib/types/content";
+import { BrandWordmark } from "@/components/layout/brand-wordmark";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -27,10 +29,28 @@ export function SiteFooter() {
     };
   }, []);
 
-  const officeList =
-    offices.length > 0
-      ? offices
-      : [{ office_name: "Udupi", address: "Corporate Office, Udupi" }];
+  const fallbackOffices: PublicOffice[] = siteConfig.offices.map((office, index) => ({
+    id: `fallback-${index}`,
+    office_name: office.name,
+    address: office.address,
+    city: null,
+    pincode: null,
+    phone: null,
+    email: null,
+    hours: null,
+    is_active: true,
+    sort_order: index,
+  }));
+
+  const officeMap = new Map(
+    fallbackOffices.map((office) => [office.office_name.toLowerCase(), office]),
+  );
+
+  for (const office of offices) {
+    officeMap.set(office.office_name.toLowerCase(), office);
+  }
+
+  const officeList = Array.from(officeMap.values());
 
   return (
     <footer className="mt-24 overflow-hidden bg-[#3457ca] text-white/80">
@@ -44,14 +64,10 @@ export function SiteFooter() {
                 className="h-13 w-auto object-contain"
               />
             </span>
-            <div className="flex flex-col">
-              <p className="font-heading text-[1.85rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white">
-                Yana
-              </p>
-              <p className="font-heading text-[1.85rem] font-extrabold leading-[0.88] tracking-[-0.03em] text-white">
-                Travels
-              </p>
-            </div>
+            <BrandWordmark
+              accentClassName="text-white/88"
+              textClassName="text-white"
+            />
           </div>
           <div className="mt-5 flex gap-3">
             <a
