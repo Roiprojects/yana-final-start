@@ -118,8 +118,8 @@ export function HomePage() {
       : fallbackFaqs;
   return (
     <>
-      <div className="px-0 pt-0 sm:px-4 sm:pt-3">
-        <section className="relative min-h-[calc(100svh-0.75rem)] overflow-hidden rounded-none border-0 bg-[linear-gradient(135deg,rgba(255,253,248,0.12),rgba(247,241,228,0.08))] shadow-[0_34px_80px_-42px_rgba(16,33,58,0.34)] sm:rounded-[2rem] sm:border sm:border-white/45 md:rounded-[2.6rem]">
+      <div className="px-0 pt-0">
+        <section className="relative min-h-[100svh] overflow-hidden rounded-none border-0 bg-[linear-gradient(135deg,rgba(255,253,248,0.12),rgba(247,241,228,0.08))] shadow-[0_34px_80px_-42px_rgba(16,33,58,0.34)]">
           <HeroSlideshow
             videoSrc="/hero/homepage-hero-real-16x9.mp4"
             mobileVideoSrc="/hero/homepage-hero-real-9x16.mp4"

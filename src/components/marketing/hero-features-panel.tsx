@@ -80,13 +80,18 @@ export function HeroFeaturesPanel() {
           initial="hidden"
           animate="visible"
         >
-          {benefits.map(({ id, title, subtitle, imageSrc }) => (
+          {benefits.map(({ id, title, subtitle, Icon }) => (
             <motion.div
               key={id}
               variants={cardVariants}
               className="flex items-center gap-3.5 rounded-2xl border border-white/35 bg-white/24 px-4 py-4 shadow-[0_16px_36px_-24px_rgba(16,33,58,0.4)] backdrop-blur-lg transition-all duration-300 hover:bg-white/34"
             >
-              <Icon type={Icon} className="h-6 w-6 text-gold" />
+              <div
+                className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--color-primary)] shadow-[0_16px_28px_-18px_rgba(52,87,202,0.95)] ring-1 ring-white/40"
+                aria-hidden="true"
+              >
+                <Icon className="h-6 w-6 text-gold" />
+              </div>
               <div className="min-w-0">
                 <h3 className="text-base font-bold leading-5 tracking-[-0.02em] text-white sm:text-lg">
                   {title}
