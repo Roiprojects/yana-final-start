@@ -10,20 +10,22 @@
     {
       "id": "karnataka-jog-b",
       "phase": "nature-karnataka",
-      "src": "public/hero-footage/raw/12-karnataka-jog-falls-b.mp4",
-      "label": "Jog Falls mist aerial",
-      "location": "Karnataka",
-      "start": 1.5,
-      "duration": 3.0
+      "src": "public/hero-footage/raw/30-new-jog.mp4",
+      "srcMobile": "public/hero-footage/raw/30-new-jog-mobile.mp4",
+      "label": "Nature scenery",
+      "location": "Nature",
+      "start": 0.0,
+      "duration": 8.0
     },
     {
       "id": "india-kerala-tea",
       "phase": "nature-india",
-      "src": "public/hero-footage/raw/14-india-kerala-tea-valley.mp4",
-      "label": "Kerala tea valley",
-      "location": "India",
-      "start": 2.0,
-      "duration": 3.0
+      "src": "public/hero-footage/raw/31-new-kerala.mp4",
+      "srcMobile": "public/hero-footage/raw/31-new-kerala-mobile.mp4",
+      "label": "Turkey hot air balloon",
+      "location": "Turkey",
+      "start": 0.0,
+      "duration": 6.0
     },
     {
       "id": "india-kerala-backwaters",
@@ -64,11 +66,12 @@
     {
       "id": "europe-italy",
       "phase": "nature-world",
-      "src": "public/hero-footage/raw/18-europe-italy-coast.mp4",
-      "label": "Italy coastline",
-      "location": "Italy",
-      "start": 2.0,
-      "duration": 2.5
+      "src": "public/hero-footage/raw/32-new-italy.mp4",
+      "srcMobile": "public/hero-footage/raw/32-new-italy-mobile.mp4",
+      "label": "Nature clip",
+      "location": "World",
+      "start": 0.0,
+      "duration": 5.0
     },
     {
       "id": "world-maldives",
@@ -109,11 +112,12 @@
     {
       "id": "europe-georgia",
       "phase": "cities-world",
-      "src": "public/hero-footage/raw/25-europe-georgia-caucasus.mp4",
-      "label": "Caucasus Mountains",
-      "location": "Georgia",
-      "start": 2.0,
-      "duration": 2.5
+      "src": "public/hero-footage/raw/33-new-georgia.mp4",
+      "srcMobile": "public/hero-footage/raw/33-new-georgia-mobile.mp4",
+      "label": "Cityscape",
+      "location": "World",
+      "start": 0.0,
+      "duration": 4.0
     },
     {
       "id": "dubai-burj-khalifa",
