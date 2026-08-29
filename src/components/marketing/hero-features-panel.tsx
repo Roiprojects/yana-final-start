@@ -65,9 +65,9 @@ const cardVariants = {
 
 export function HeroFeaturesPanel() {
   return (
-    <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+    <div className="relative w-full max-w-[285px] sm:max-w-[305px] lg:ml-auto">
       <motion.div
-        className="grid gap-2"
+        className="grid gap-3 sm:gap-3.5"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -76,19 +76,19 @@ export function HeroFeaturesPanel() {
           <motion.div
             key={id}
             variants={cardVariants}
-            className="flex items-center gap-3 rounded-2xl border border-white/35 bg-white/24 px-3.5 py-3 shadow-[0_16px_36px_-24px_rgba(16,33,58,0.4)] backdrop-blur-lg transition-all duration-300 hover:bg-white/34"
+            className="flex items-center gap-3.5 rounded-2xl border border-white/35 bg-white/24 px-3.5 py-2.5 shadow-[0_16px_36px_-24px_rgba(16,33,58,0.4)] backdrop-blur-lg transition-all duration-300 hover:bg-white/34 sm:py-3"
           >
             <div
-              className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-[0_16px_28px_-18px_rgba(52,87,202,0.95)] ring-1 ring-white/40"
+              className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full shadow-[0_10px_22px_-8px_rgba(0,0,0,0.5)] ring-2 ring-white/50"
               aria-hidden="true"
             >
-              <img src={image} alt="" className="h-9 w-9 object-contain" />
+              <img src={image} alt={title} className="h-full w-full object-cover" />
             </div>
             <div className="min-w-0">
-              <h3 className="text-sm font-bold leading-4 tracking-[-0.02em] text-white sm:text-base">
+              <h3 className="text-sm font-bold leading-snug tracking-[-0.02em] text-white">
                 {title}
               </h3>
-              <p className="text-xs leading-4 text-white/80">{subtitle}</p>
+              <p className="mt-0.5 text-xs leading-snug text-white/85">{subtitle}</p>
             </div>
           </motion.div>
         ))}

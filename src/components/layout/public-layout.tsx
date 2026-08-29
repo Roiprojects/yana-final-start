@@ -14,7 +14,7 @@ export function PublicLayout() {
         <div className="flex min-h-full flex-col">
           <ScrollProgress />
           <SiteHeader />
-          <main className="flex-1 pb-24 lg:pb-0">
+          <main className="flex-1">
             <Outlet />
           </main>
           <SiteFooter />

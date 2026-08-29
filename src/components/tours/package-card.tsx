@@ -41,60 +41,60 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
       />
 
       {/* Resting state — the full image with a subtle title */}
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent p-5 pt-20">
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent p-4 sm:p-5 pt-20">
         <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e8c979]">
           {pkg.scope}
           {pkg.destination_name ? ` · ${pkg.destination_name}` : ""}
         </p>
-        <h3 className="mt-1 font-heading text-lg font-bold leading-snug text-white">
+        <h3 className="mt-1 font-heading text-base sm:text-lg font-bold leading-snug text-white">
           {pkg.title}
         </h3>
       </div>
 
       {/* Hover state — full details overlay + Explore */}
-      <div className="absolute inset-0 flex translate-y-5 flex-col justify-end bg-[linear-gradient(180deg,rgba(16,33,58,0.55),rgba(52,87,202,0.94))] p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="absolute inset-0 flex translate-y-5 flex-col justify-end bg-[linear-gradient(180deg,rgba(16,33,58,0.6),rgba(52,87,202,0.95))] p-4 sm:p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e8c979]">
           {pkg.scope}
           {pkg.destination_name ? ` · ${pkg.destination_name}` : ""}
         </p>
-        <h3 className="mt-1 font-heading text-xl font-bold leading-snug text-white">
+        <h3 className="mt-1 font-heading text-base sm:text-lg font-bold leading-snug text-white">
           {pkg.title}
         </h3>
         {dur ? (
-          <span className="mt-2 inline-flex w-fit items-center gap-1 rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white/90">
+          <span className="mt-1.5 inline-flex w-fit items-center gap-1 rounded-full bg-white/15 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-semibold text-white/90">
             <Clock className="h-3 w-3" aria-hidden />
             {dur}
           </span>
         ) : null}
-        <p className="mt-2 line-clamp-3 text-sm leading-6 text-white/80">
+        <p className="mt-1.5 line-clamp-2 sm:line-clamp-3 text-xs sm:text-sm leading-relaxed text-white/85">
           {pkg.overview ||
             "A richer, better-presented journey curated for comfort, clarity, and attraction."}
         </p>
 
-        <div className="mt-4 flex items-center justify-between gap-3 border-t border-white/20 pt-4">
+        <div className="mt-3 sm:mt-4 flex items-center justify-between gap-2 border-t border-white/20 pt-3">
           <span className="text-white">
             {price ? (
               <>
-                <span className="block text-[11px] font-medium uppercase tracking-wide text-white/60">
+                <span className="block text-[10px] font-medium uppercase tracking-wide text-white/60">
                   From
                 </span>
-                <span className="font-heading text-lg font-extrabold tracking-tight text-[#e8c979]">
+                <span className="font-heading text-base sm:text-lg font-extrabold tracking-tight text-[#e8c979]">
                   {price}
                 </span>
-                <span className="text-xs font-medium text-white/60">
+                <span className="text-[11px] font-medium text-white/60">
                   {" "}
                   / person
                 </span>
               </>
             ) : (
-              <span className="text-sm font-semibold text-white/80">
+              <span className="text-xs sm:text-sm font-semibold text-white/80">
                 Enquire for price
               </span>
             )}
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#3457ca] px-4 py-2 text-sm font-bold text-white shadow-[0_10px_22px_-8px_rgba(52,87,202,0.55)]">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#3457ca] px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-[0_10px_22px_-8px_rgba(52,87,202,0.55)] transition-transform group-hover:scale-105">
             Explore
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
+            <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden />
           </span>
         </div>
       </div>

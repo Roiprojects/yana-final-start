@@ -18,27 +18,34 @@ export function PageHeader({
   image?: string;
 }) {
   if (image) {
+    const bgUrl =
+      image.startsWith("http") || image.startsWith("/")
+        ? image
+        : unsplash(image, 1800);
+
     return (
       <div className="px-3 pt-22 sm:px-4">
         <div className="grain relative overflow-hidden rounded-[2rem] border border-white/60 shadow-[0_30px_80px_-40px_rgba(16,33,58,0.4)] md:rounded-[2.4rem]">
           <div
-            className="absolute inset-0 scale-[1.02] bg-cover bg-center brightness-[1.05]"
-            style={{ backgroundImage: `url(${unsplash(image, 1800)})` }}
+            className="absolute inset-0 scale-[1.02] bg-cover bg-center"
+            style={{ backgroundImage: `url(${bgUrl})` }}
             aria-hidden
           />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-slate-950/20" />
           <Container className="relative pb-16 pt-16 text-white md:pb-24 md:pt-24">
             {breadcrumbs && breadcrumbs.length > 0 ? (
               <Breadcrumbs crumbs={breadcrumbs} tone="light" />
             ) : null}
             <div className="max-w-3xl">
-              <span className="mb-5 inline-flex rounded-full border border-white/55 bg-white/72 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-deep shadow-sm backdrop-blur-sm">
+              <span className="mb-5 inline-flex rounded-full border border-white/40 bg-white/20 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-white shadow-sm backdrop-blur-md">
                 Premium travel experiences
               </span>
-              <h1 className="text-4xl font-extrabold tracking-[-0.05em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.18)] md:text-6xl">
+              <h1 className="text-4xl font-extrabold tracking-[-0.05em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.4)] md:text-6xl">
                 {title}
               </h1>
               {subtitle ? (
-                <p className="mt-4 max-w-2xl text-lg leading-8 text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.14)] md:text-xl">
+                <p className="mt-4 max-w-2xl text-lg leading-8 text-white/95 [text-shadow:0_2px_14px_rgba(0,0,0,0.3)] md:text-xl">
                   {subtitle}
                 </p>
               ) : null}

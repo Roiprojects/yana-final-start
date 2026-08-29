@@ -14,6 +14,7 @@ export function SiteHeader() {
   const { phone, whatsapp } = useSiteSettings();
   const { pathname } = useLocation();
   const isHome = pathname === "/";
+  const isDarkHeader = scrolled || !isHome;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,8 +33,8 @@ export function SiteHeader() {
       className={cn(
         "fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300",
         isHome && !scrolled && "pointer-events-none -translate-y-4 opacity-0",
-        scrolled
-          ? "bg-[#3457ca] shadow-[0_18px_44px_-28px_rgba(16,33,58,0.36)]"
+        isDarkHeader
+          ? "bg-[#3457ca] shadow-[0_18px_44px_-28px_rgba(16,33,58,0.36)] text-white"
           : "bg-white/72 backdrop-blur-md",
       )}
     >
@@ -44,9 +45,9 @@ export function SiteHeader() {
             aria-label="Yana Travels home"
             className="group flex items-center gap-3 rounded-full px-1 py-1"
           >
-            <span className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-white shadow-[0_18px_34px_-18px_rgba(52,87,202,0.45)] transition-transform duration-300 group-hover:scale-[1.03] sm:h-16 sm:w-16 sm:rounded-[1.15rem]">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-16 sm:w-16">
               <img
-                src="/brand/yana-logo.png"
+                src={isDarkHeader ? "/brand/yana-logo-white.png" : "/brand/yana-logo-color.png"}
                 alt="Yana Travels"
                 className="h-9 w-auto object-contain sm:h-12"
               />
@@ -54,19 +55,19 @@ export function SiteHeader() {
             <BrandWordmark
               className="hidden sm:flex"
               accentClassName={cn(
-                scrolled ? "text-white/88" : "text-primary/82",
+                isDarkHeader ? "text-white/88" : "text-primary/82",
               )}
               textClassName={cn(
-                scrolled ? "text-white" : "text-primary",
+                isDarkHeader ? "text-white" : "text-primary",
               )}
             />
           </Link>
-          <SearchBar dark={scrolled} />
+          <SearchBar dark={isDarkHeader} />
         </div>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {primaryNav.map((item) => (
-            <NavLink key={item.href} item={item} dark={scrolled} />
+            <NavLink key={item.href} item={item} dark={isDarkHeader} />
           ))}
         </nav>
 
@@ -75,7 +76,7 @@ export function SiteHeader() {
             href={`tel:${phone.replace(/\s/g, "")}`}
             className={cn(
               "hidden items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-semibold shadow-sm transition-colors xl:inline-flex",
-              scrolled
+              isDarkHeader
                 ? "border-white/30 bg-white/15 text-white hover:bg-white/25"
                 : "border-border-soft bg-white/80 text-text-main hover:text-primary",
             )}
@@ -83,7 +84,7 @@ export function SiteHeader() {
             <Phone
               className={cn(
                 "h-4 w-4",
-                scrolled ? "text-white" : "text-primary",
+                isDarkHeader ? "text-white" : "text-primary",
               )}
               aria-hidden
             />
@@ -93,7 +94,7 @@ export function SiteHeader() {
             type="button"
             className={cn(
               "inline-flex items-center justify-center rounded-full border p-2.5 shadow-sm transition-colors lg:hidden",
-              scrolled
+              isDarkHeader
                 ? "border-white/30 bg-white/15 text-white hover:bg-white/25"
                 : "border-border-soft bg-white/85 text-deep hover:text-primary",
             )}

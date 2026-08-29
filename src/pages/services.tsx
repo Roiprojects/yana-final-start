@@ -1,11 +1,95 @@
 
 import { useEffect, useState } from "react";
-import { Briefcase, Sparkles, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  Sparkles,
+  ArrowUpRight,
+  MapPin,
+  Globe2,
+  Compass,
+  Heart,
+  Landmark,
+  Building2,
+  Plane,
+  FileCheck,
+  Coins,
+  BedDouble,
+  LucideIcon,
+} from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { EnquiryCta } from "@/components/marketing/enquiry-cta";
 import { api } from "@/lib/api/client";
+import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
+
+// Custom AI-generated background images (strictly landscape, architecture, nature — NO human faces, NO bike license numbers)
+const serviceMeta: Record<
+  string,
+  { image: string; tag: string; icon: LucideIcon; link?: string }
+> = {
+  "Domestic Packages": {
+    image: "/services/service-domestic.jpg",
+    tag: "Incredible India",
+    icon: MapPin,
+    link: "/packages?scope=domestic",
+  },
+  "International Packages": {
+    image: "/services/service-international.jpg",
+    tag: "Global Horizons",
+    icon: Globe2,
+    link: "/packages?scope=international",
+  },
+  "Bike Trips": {
+    image: "/services/service-biketrips.jpg",
+    tag: "Mountain Expeditions",
+    icon: Compass,
+    link: "/packages?q=bike",
+  },
+  "Honeymoon Packages": {
+    image: "/services/service-honeymoon.jpg",
+    tag: "Romantic Escapes",
+    icon: Heart,
+    link: "/packages?q=honeymoon",
+  },
+  "Historic Destinations": {
+    image: "/services/service-historic.jpg",
+    tag: "Heritage & Culture",
+    icon: Landmark,
+    link: "/packages?q=heritage",
+  },
+  "Pilgrimage Packages": {
+    image: "/services/service-pilgrimage.jpg",
+    tag: "Spiritual Journeys",
+    icon: Sparkles,
+    link: "/packages?q=pilgrimage",
+  },
+  MICE: {
+    image: "/services/service-mice.jpg",
+    tag: "Corporate & Events",
+    icon: Building2,
+  },
+  "Flight Booking": {
+    image: "/services/service-flight.jpg",
+    tag: "Air Ticketing",
+    icon: Plane,
+  },
+  Visa: {
+    image: "/services/service-visa.jpg",
+    tag: "Documentation",
+    icon: FileCheck,
+  },
+  Forex: {
+    image: "/services/service-forex.jpg",
+    tag: "Currency Exchange",
+    icon: Coins,
+  },
+  "Hotel Booking": {
+    image: "/services/service-hotel.jpg",
+    tag: "Luxury Stays",
+    icon: BedDouble,
+  },
+};
 
 const fallbackServices = [
   {
@@ -69,6 +153,7 @@ type ServiceItem = { id: string; name: string; description?: string };
 
 export function ServicesPage() {
   const [services, setServices] = useState<ServiceItem[]>([]);
+  const { open: openEnquiry } = useEnquiryModal();
 
   useEffect(() => {
     let cancelled = false;
@@ -102,16 +187,16 @@ export function ServicesPage() {
 
       <Section>
         <Reveal>
-          <div className="mb-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div className="mb-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div className="max-w-2xl">
               <p className="eyebrow text-[#ad7f19]">What we offer</p>
-              <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">
+              <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-deep md:text-4xl">
                 From the first enquiry to the last mile of the journey
               </h2>
               <p className="mt-4 text-base leading-8 text-text-secondary">
-                Beyond full tour planning, Yana can coordinate the individual
-                parts of your travel as well, so the trip feels smoother, more
-                organized, and more premium from start to finish.
+                Beyond full tour planning, Yana coordinates every individual
+                element of your travel — flights, visas, stays, forex, and guided
+                itineraries — so your journey is effortless and memorable.
               </p>
             </div>
             <div className="rounded-[1.8rem] border border-[#eadfcf] bg-[linear-gradient(135deg,#fffefb,#f7f1e4)] p-6 shadow-[0_22px_52px_-34px_rgba(16,33,58,0.24)]">
@@ -119,38 +204,89 @@ export function ServicesPage() {
                 <Sparkles className="h-5 w-5" aria-hidden />
               </div>
               <p className="text-sm leading-7 text-text-secondary">
-                The service layer now reads as a premium concierge offering
-                instead of a plain list, with stronger content blocks and better
-                focus on convenience.
+                The service layer operates as a comprehensive travel concierge,
+                delivering tailored convenience, fast response times, and
+                verified supplier standards.
               </p>
             </div>
           </div>
         </Reveal>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {list.map((item, i) => (
-            <Reveal key={item.id ?? item.name} delay={(i % 3) * 90}>
-              <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.7rem] border border-[#eadfcf] bg-white p-6 shadow-[0_20px_46px_-30px_rgba(16,33,58,0.26)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-28px_rgba(16,33,58,0.34)]">
-                <span
-                  className="hairline absolute inset-x-6 top-0 h-px"
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {list.map((item, i) => {
+            const meta = serviceMeta[item.name] ?? {
+              image:
+                "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=85",
+              tag: "Concierge Service",
+              icon: Sparkles,
+            };
+            const Icon = meta.icon;
+
+            const cardContent = (
+              <div className="group relative flex h-full min-h-[310px] flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/40 bg-deep p-6 shadow-[0_18px_42px_-18px_rgba(16,33,58,0.38)] transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_28px_60px_-18px_rgba(52,87,202,0.4)]">
+                {/* Scenic Background Image */}
+                <img
+                  src={meta.image}
+                  alt={item.name}
+                  className="absolute inset-0 h-full w-full object-cover brightness-[0.78] transition-transform duration-[1200ms] ease-out group-hover:scale-108 group-hover:brightness-[0.68]"
+                />
+
+                {/* Dark Gradient Overlay for Maximum Readability */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20 transition-opacity duration-300 group-hover:via-black/60"
                   aria-hidden
                 />
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-[1.15rem] bg-[#f8f2e3] text-primary ring-1 ring-[#eadfcf] transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                  <Briefcase className="h-5 w-5" aria-hidden />
+
+                {/* Top Glassmorphic Tag & Icon */}
+                <div className="relative z-10 flex items-center justify-between gap-3">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/20 text-white shadow-md backdrop-blur-md ring-1 ring-white/30 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_10px_22px_-6px_rgba(52,87,202,0.6)]">
+                    <Icon className="h-6 w-6" aria-hidden />
+                  </div>
+                  <span className="rounded-full border border-white/25 bg-black/40 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#f8d77f] backdrop-blur-md shadow-sm">
+                    {meta.tag}
+                  </span>
                 </div>
-                <h3 className="font-heading text-lg font-bold tracking-[-0.02em] text-deep">
-                  {item.name}
-                </h3>
-                <p className="mt-2 flex-1 text-sm leading-6 text-text-secondary">
-                  {item.description}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  Explore service
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
-                </span>
+
+                {/* Bottom Content Area */}
+                <div className="relative z-10 mt-12">
+                  <h3 className="font-heading text-xl font-bold tracking-tight text-white transition-colors duration-200 group-hover:text-[#f8d77f]">
+                    {item.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/85 line-clamp-2">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-5 flex items-center justify-between border-t border-white/20 pt-3.5">
+                    <span className="text-xs font-semibold text-white/75 transition-colors group-hover:text-white">
+                      Explore Details
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3.5 py-1.5 text-xs font-bold text-white backdrop-blur-md transition-all group-hover:bg-primary group-hover:shadow-md group-hover:scale-105">
+                      <span>View</span>
+                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-45" />
+                    </span>
+                  </div>
+                </div>
               </div>
-            </Reveal>
-          ))}
+            );
+
+            return (
+              <Reveal key={item.id ?? item.name} delay={(i % 3) * 90}>
+                {meta.link ? (
+                  <Link to={meta.link} className="block h-full">
+                    {cardContent}
+                  </Link>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => openEnquiry()}
+                    className="block h-full w-full text-left focus:outline-none"
+                  >
+                    {cardContent}
+                  </button>
+                )}
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 

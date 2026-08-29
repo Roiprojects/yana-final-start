@@ -2,11 +2,23 @@ import { PackageCard } from "@/components/tours/package-card";
 import { Reveal } from "@/components/ui/reveal";
 import type { PackageListItem } from "@/lib/types/tour";
 
-export function PackageGrid({ items }: { items: PackageListItem[] }) {
+export function PackageGrid({
+  items,
+  columns = 4,
+}: {
+  items: PackageListItem[];
+  columns?: 3 | 4;
+}) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      className={
+        columns === 4
+          ? "grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          : "grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      }
+    >
       {items.map((pkg, i) => (
-        <Reveal key={pkg.id} delay={(i % 3) * 90} className="h-full">
+        <Reveal key={pkg.id} delay={(i % columns) * 80} className="h-full">
           <PackageCard pkg={pkg} />
         </Reveal>
       ))}

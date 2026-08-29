@@ -66,25 +66,38 @@ export function GroupToursPage() {
             <Reveal key={href} delay={i * 110}>
               <Link
                 to={href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-[#eadfcf] bg-white p-6 shadow-[0_22px_48px_-30px_rgba(16,33,58,0.26)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-28px_rgba(16,33,58,0.34)]"
+                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/20 bg-primary p-7 text-white shadow-[0_20px_45px_-18px_rgba(52,87,202,0.48)] transition-all duration-300 hover:-translate-y-2 hover:border-[#eadfcf] hover:bg-white hover:text-deep hover:shadow-[0_30px_60px_-20px_rgba(16,33,58,0.22)]"
               >
+                {/* Top Subtle Light Line */}
                 <span
-                  className="hairline absolute inset-x-6 top-0 h-px"
+                  className="hairline absolute inset-x-6 top-0 h-px bg-white/25 transition-colors group-hover:bg-primary/20"
                   aria-hidden
                 />
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-[1.15rem] bg-[#f8f2e3] text-primary ring-1 ring-[#eadfcf] transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                  <Icon className="h-6 w-6" aria-hidden />
+
+                <div>
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-white text-primary shadow-[0_8px_20px_-6px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_12px_24px_-6px_rgba(52,87,202,0.6)]">
+                      <Icon className="h-6 w-6 transition-colors duration-300" aria-hidden />
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-bold tracking-[-0.02em] text-white transition-colors duration-300 group-hover:text-deep">
+                    {title}
+                  </h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-white/85 transition-colors duration-300 group-hover:text-text-secondary">
+                    {desc}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold tracking-[-0.02em] text-deep">
-                  {title}
-                </h3>
-                <p className="mt-2 flex-1 text-sm leading-6 text-text-secondary">
-                  {desc}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  Explore
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
+
+                <div className="mt-8 flex items-center justify-between border-t border-white/20 pt-4 transition-colors group-hover:border-[#eadfcf]">
+                  <span className="text-xs font-semibold text-white/80 transition-colors group-hover:text-text-secondary">
+                    View departures
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-xs font-bold text-primary shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-md">
+                    <span>Explore</span>
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}

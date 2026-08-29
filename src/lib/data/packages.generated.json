@@ -1385,5 +1385,246 @@
     "source_pdf": "VIETNAM 5Nights 06Days By Yana Travels (2).pdf",
     "source_pages": "all",
     "review_status": "extracted"
+  },
+  {
+    "package_title": "Kerala Backwaters & Munnar Hills",
+    "slug": "kerala-backwaters-munnar-5n6d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "South India Holidays",
+    "destination_name": "Kerala (Munnar · Thekkady · Alleppey)",
+    "country": "India",
+    "duration_days": 6,
+    "duration_nights": 5,
+    "overview": "Experience God's Own Country with aromatic Munnar tea hills, Periyar wildlife in Thekkady, and a tranquil houseboat cruise across Alleppey backwaters.",
+    "highlights": [
+      "Scenic drive through Munnar tea gardens, Cheeyappara & Valara waterfalls",
+      "Eravikulam National Park and Mattupetty Dam boating",
+      "Periyar Wildlife Sanctuary spice plantation walk in Thekkady",
+      "Overnight luxury houseboat cruise along the serene backwaters of Alleppey"
+    ],
+    "itinerary": [
+      { "day_number": 1, "title": "Cochin Arrival to Munnar — Waterfalls & Tea Estates", "description": null, "meals": "D", "stay": "Munnar" },
+      { "day_number": 2, "title": "Munnar Sightseeing — Eravikulam, Mattupetty & Echo Point", "description": null, "meals": "B/D", "stay": "Munnar" },
+      { "day_number": 3, "title": "Munnar to Thekkady — Spice Plantations & Periyar Lake", "description": null, "meals": "B/D", "stay": "Thekkady" },
+      { "day_number": 4, "title": "Thekkady to Alleppey — Houseboat Backwater Cruise", "description": null, "meals": "B/L/D", "stay": "Alleppey Houseboat" },
+      { "day_number": 5, "title": "Alleppey to Cochin — Fort Kochi & Marine Drive", "description": null, "meals": "B/D", "stay": "Cochin" },
+      { "day_number": 6, "title": "Cochin Departure", "description": null, "meals": "B", "stay": null }
+    ],
+    "inclusions": [
+      "Accommodation in premium 3-star/4-star verified hotels on twin sharing basis.",
+      "Daily breakfast and dinners at all hotels, plus full meals on the Alleppey houseboat.",
+      "All transfers and sightseeing by private air-conditioned vehicle.",
+      "Traditional Kerala Houseboat day/night cruise experience.",
+      "Toll charges, parking fees, driver allowances, and state entry taxes."
+    ],
+    "exclusions": [
+      "Airfare or train fare to/from Cochin.",
+      "Entry tickets to monuments, boating fees, and personal activity charges.",
+      "GST (5%).",
+      "Anything not mentioned in the inclusions list."
+    ],
+    "price_amount": 24500,
+    "price_currency": "INR",
+    "taxes_info": "Per person on twin sharing basis. Indicative price.",
+    "hero_image_url": "/packages/kerala-backwaters-munnar-5n6d.jpg",
+    "is_featured": true,
+    "source_pdf": "Kerala_Group_Tour.pdf",
+    "source_pages": "all",
+    "review_status": "verified"
+  },
+  {
+    "package_title": "Kashmir Paradise: Srinagar, Gulmarg & Pahalgam",
+    "slug": "kashmir-paradise-5n6d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Himalayan Escapes",
+    "destination_name": "Kashmir (Srinagar · Gulmarg · Pahalgam)",
+    "country": "India",
+    "duration_days": 6,
+    "duration_nights": 5,
+    "overview": "Discover the crown of India with relaxing Shikara rides on Dal Lake, snow thrills at Gulmarg Gondola, and the picturesque valleys of Pahalgam.",
+    "highlights": [
+      "Traditional Shikara ride on Dal Lake with floating market views",
+      "Excursion to Gulmarg and high-altitude Gondola cable car ride",
+      "Pahalgam Betaab Valley, Aru Valley and Lidder river exploration",
+      "Mughal Gardens visit: Shalimar Bagh, Nishat Bagh & Chashme Shahi"
+    ],
+    "itinerary": [
+      { "day_number": 1, "title": "Srinagar Arrival & Dal Lake Shikara Ride", "description": null, "meals": "D", "stay": "Srinagar Houseboat/Hotel" },
+      { "day_number": 2, "title": "Srinagar to Gulmarg Day Excursion — Gondola Ride", "description": null, "meals": "B/D", "stay": "Srinagar" },
+      { "day_number": 3, "title": "Srinagar to Pahalgam — Saffron Fields & Lidder Valley", "description": null, "meals": "B/D", "stay": "Pahalgam" },
+      { "day_number": 4, "title": "Pahalgam Valley Exploration — Betaab Valley & Aru Valley", "description": null, "meals": "B/D", "stay": "Pahalgam" },
+      { "day_number": 5, "title": "Pahalgam to Srinagar — Mughal Gardens & Local Bazaars", "description": null, "meals": "B/D", "stay": "Srinagar" },
+      { "day_number": 6, "title": "Srinagar Departure", "description": null, "meals": "B", "stay": null }
+    ],
+    "inclusions": [
+      "Accommodation in deluxe hotels and 1 night on a luxury Dal Lake Houseboat.",
+      "Daily breakfast and dinner.",
+      "All transfers and sightseeing by dedicated AC vehicle.",
+      "1-hour complimentary Shikara boat ride on Dal Lake.",
+      "Driver allowances, toll taxes, and parking fees."
+    ],
+    "exclusions": [
+      "Airfare to/from Srinagar.",
+      "Gulmarg Gondola ride tickets and pony rides.",
+      "GST (5%).",
+      "Personal expenses and anything not itemized in inclusions."
+    ],
+    "price_amount": 26900,
+    "price_currency": "INR",
+    "taxes_info": "Per person on twin sharing basis. Indicative price.",
+    "hero_image_url": "/packages/kashmir-paradise-5n6d.jpg",
+    "is_featured": true,
+    "source_pdf": "Kashmir_Group_Tour.pdf",
+    "source_pages": "all",
+    "review_status": "verified"
+  },
+  {
+    "package_title": "Royal Rajasthan & Golden Forts",
+    "slug": "royal-rajasthan-forts-6n7d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Royal Heritage",
+    "destination_name": "Rajasthan (Jaipur · Jodhpur · Udaipur)",
+    "country": "India",
+    "duration_days": 7,
+    "duration_nights": 6,
+    "overview": "Immerse yourself in royal heritage across the Pink City Jaipur, Blue City Jodhpur Mehrangarh Fort, and romantic Lake City Udaipur.",
+    "highlights": [
+      "Jaipur Amber Fort, City Palace, Hawa Mahal and Jantar Mantar",
+      "Jodhpur Mehrangarh Fort, Jaswant Thada & Umaid Bhawan Palace",
+      "Scenic drive to Udaipur via the intricate marble temples of Ranakpur",
+      "Udaipur City Palace and sunset boat ride on Lake Pichola"
+    ],
+    "itinerary": [
+      { "day_number": 1, "title": "Jaipur Arrival & Evening Chokhi Dhani / Market Tour", "description": null, "meals": "D", "stay": "Jaipur" },
+      { "day_number": 2, "title": "Jaipur Royal Sightseeing — Amber Fort, Hawa Mahal & City Palace", "description": null, "meals": "B/D", "stay": "Jaipur" },
+      { "day_number": 3, "title": "Jaipur to Jodhpur — Sun City Arrival & Clock Tower", "description": null, "meals": "B/D", "stay": "Jodhpur" },
+      { "day_number": 4, "title": "Jodhpur Mehrangarh Fort to Udaipur via Ranakpur Temples", "description": null, "meals": "B/D", "stay": "Udaipur" },
+      { "day_number": 5, "title": "Udaipur City Palace, Saheliyon Ki Bari & Jagdish Temple", "description": null, "meals": "B/D", "stay": "Udaipur" },
+      { "day_number": 6, "title": "Udaipur Sunset at Lake Pichola & Bagore Ki Haveli", "description": null, "meals": "B/D", "stay": "Udaipur" },
+      { "day_number": 7, "title": "Udaipur Departure", "description": null, "meals": "B", "stay": null }
+    ],
+    "inclusions": [
+      "6 nights accommodation in curated heritage/deluxe hotels.",
+      "Daily breakfast and dinner.",
+      "Private AC coach for the entire journey.",
+      "Experienced local tour escort and monument guides.",
+      "All toll, parking, driver bata, and inter-state permits."
+    ],
+    "exclusions": [
+      "Airfare or train fare to Jaipur / from Udaipur.",
+      "Monument entrance fees and camera charges.",
+      "GST (5%).",
+      "Personal expenses and tips."
+    ],
+    "price_amount": 29500,
+    "price_currency": "INR",
+    "taxes_info": "Per person on twin sharing basis. Indicative price.",
+    "hero_image_url": "/packages/royal-rajasthan-forts-6n7d.jpg",
+    "is_featured": true,
+    "source_pdf": "Rajasthan_Heritage_Tour.pdf",
+    "source_pages": "all",
+    "review_status": "verified"
+  },
+  {
+    "package_title": "South India Temple Heritage & Coastal Yatra",
+    "slug": "south-india-temple-heritage-5n6d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Pilgrimage & Heritage",
+    "destination_name": "South India (Madurai · Rameshwaram · Kanyakumari)",
+    "country": "India",
+    "duration_days": 6,
+    "duration_nights": 5,
+    "overview": "A spiritual and scenic pilgrimage journey to Madurai Meenakshi Temple, sacred Ramanathaswamy Temple at Rameshwaram, Dhanushkodi and Kanyakumari sunrise.",
+    "highlights": [
+      "Madurai Sri Meenakshi Amman Temple with towering sculpted Gopurams",
+      "Rameshwaram 22 sacred Theertham baths & Ramanathaswamy corridor",
+      "Excursion to Dhanushkodi coastal beach and confluence of two seas",
+      "Kanyakumari Vivekananda Rock Memorial, Thiruvalluvar Statue & Triveni Sangam"
+    ],
+    "itinerary": [
+      { "day_number": 1, "title": "Madurai Arrival & Meenakshi Temple Darshan", "description": null, "meals": "D", "stay": "Madurai" },
+      { "day_number": 2, "title": "Madurai to Rameshwaram — Pamban Bridge & Temple Darshan", "description": null, "meals": "B/D", "stay": "Rameshwaram" },
+      { "day_number": 3, "title": "Rameshwaram Theertham Yatra & Dhanushkodi Coastal Tour", "description": null, "meals": "B/D", "stay": "Rameshwaram" },
+      { "day_number": 4, "title": "Rameshwaram to Kanyakumari — Sunset View & Beach", "description": null, "meals": "B/D", "stay": "Kanyakumari" },
+      { "day_number": 5, "title": "Kanyakumari Sunrise, Vivekananda Rock & Suchindram Temple", "description": null, "meals": "B/D", "stay": "Kanyakumari / Trivandrum" },
+      { "day_number": 6, "title": "Trivandrum Padmanabhaswamy Temple & Departure", "description": null, "meals": "B", "stay": null }
+    ],
+    "inclusions": [
+      "5 nights hotel accommodation in comfortable verified hotels.",
+      "Daily pure vegetarian / multi-cuisine breakfast and dinner.",
+      "All transfers and temple sightseeing in AC coach.",
+      "Special darshan coordination assistance.",
+      "All toll, parking, and driver charges."
+    ],
+    "exclusions": [
+      "Flight or train fare to Madurai / from Trivandrum.",
+      "Special pooja tickets and boat ride fees to Vivekananda Rock.",
+      "GST (5%).",
+      "Personal expenses."
+    ],
+    "price_amount": 21500,
+    "price_currency": "INR",
+    "taxes_info": "Per person on twin sharing basis. Indicative price.",
+    "hero_image_url": "/packages/south-india-temple-heritage-5n6d.jpg",
+    "is_featured": true,
+    "source_pdf": "South_India_Temple_Tour.pdf",
+    "source_pages": "all",
+    "review_status": "verified"
+  },
+  {
+    "package_title": "Himachal Magic: Shimla, Kullu & Manali",
+    "slug": "himachal-shimla-manali-5n6d",
+    "scope": "domestic",
+    "tour_type": "group",
+    "group_subtype": null,
+    "category_name": "Himalayan Escapes",
+    "destination_name": "Himachal Pradesh (Shimla · Kullu · Manali)",
+    "country": "India",
+    "duration_days": 6,
+    "duration_nights": 5,
+    "overview": "Embark on an exhilarating group escape through the queen of hills Shimla, pine-clad Kufri slopes, Kullu river valleys, and snow-filled adventures in Solang Valley Manali.",
+    "highlights": [
+      "Shimla Mall Road, The Ridge, Christ Church & scenic Kufri pine hills",
+      "Scenic mountain drive through Sundernagar Lake, Pandoh Dam & Kullu Valley",
+      "Manali Hadimba Devi Temple, Vashisht Hot Springs & Tibetan Monastery",
+      "Full day snow and adventure sports excursion to Solang Valley & Atal Tunnel"
+    ],
+    "itinerary": [
+      { "day_number": 1, "title": "Delhi / Chandigarh to Shimla — Queen of Hills Arrival", "description": null, "meals": "D", "stay": "Shimla" },
+      { "day_number": 2, "title": "Shimla & Kufri Sightseeing — Mall Road & The Ridge", "description": null, "meals": "B/D", "stay": "Shimla" },
+      { "day_number": 3, "title": "Shimla to Manali via Kullu Valley & Pandoh Dam", "description": null, "meals": "B/D", "stay": "Manali" },
+      { "day_number": 4, "title": "Solang Valley Snow Adventure & Atal Tunnel Excursion", "description": null, "meals": "B/D", "stay": "Manali" },
+      { "day_number": 5, "title": "Manali Local Sightseeing — Hadimba Temple & Vashisht", "description": null, "meals": "B/D", "stay": "Manali" },
+      { "day_number": 6, "title": "Manali to Chandigarh / Delhi Departure", "description": null, "meals": "B", "stay": null }
+    ],
+    "inclusions": [
+      "5 nights deluxe hotel stay in Shimla and Manali.",
+      "Daily buffet breakfast and dinner at all hotels.",
+      "All transfers and sightseeing by private AC coach.",
+      "Experienced mountain drivers and dedicated tour escort.",
+      "Toll charges, parking fees, driver allowance, and state entry taxes."
+    ],
+    "exclusions": [
+      "Airfare or train tickets to/from Delhi/Chandigarh.",
+      "Rohtang Pass permit/vehicle charges and Solang sports activities.",
+      "GST (5%).",
+      "Personal expenses."
+    ],
+    "price_amount": 22900,
+    "price_currency": "INR",
+    "taxes_info": "Per person on twin sharing basis. Indicative price.",
+    "hero_image_url": "/packages/himachal-shimla-manali-5n6d.jpg",
+    "is_featured": true,
+    "source_pdf": "Himachal_Group_Tour.pdf",
+    "source_pages": "all",
+    "review_status": "verified"
   }
 ]

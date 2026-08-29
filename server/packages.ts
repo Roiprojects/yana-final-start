@@ -161,6 +161,11 @@ const curatedPackageImages = new Set([
   "chardham-helicopter-5n6d",
   "leh-ladakh-kargil-6n7d",
   "odisha-3n4d",
+  "kerala-backwaters-munnar-5n6d",
+  "kashmir-paradise-5n6d",
+  "royal-rajasthan-forts-6n7d",
+  "south-india-temple-heritage-5n6d",
+  "himachal-shimla-manali-5n6d",
   "vietnam-5n6d",
 ]);
 

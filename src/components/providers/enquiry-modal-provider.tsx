@@ -97,16 +97,16 @@ function EnquiryDialog({
       aria-label="Enquiry form"
     >
       <div className="relative flex w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-[0_32px_80px_-16px_rgba(12,39,64,0.45)]">
-        {/* Left — hero image (desktop only) */}
+        {/* Left — team image (desktop only) */}
         <div
-          className="hidden w-[42%] shrink-0 flex-col justify-end bg-cover bg-center p-6 md:flex"
-          style={{ backgroundImage: `url(${unsplash(MODAL_IMAGE, 800)})` }}
+          className="relative hidden w-[42%] shrink-0 flex-col justify-end overflow-hidden bg-cover bg-top p-6 md:flex"
+          style={{ backgroundImage: `url('/brand/enquiry-modal-team.png')` }}
         >
           <div
-            className="absolute inset-0 left-0 w-[42%] bg-gradient-to-b from-deep/20 via-deep/50 to-deep/90"
+            className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/25"
             aria-hidden
           />
-          <div className="relative">
+          <div className="relative z-10">
             <p className="text-base font-extrabold uppercase tracking-widest text-white">
               Yana Travels
             </p>
@@ -115,7 +115,7 @@ function EnquiryDialog({
               <br />
               dream journey
             </h2>
-            <p className="mt-2 text-xs leading-relaxed text-white/75">
+            <p className="mt-2 text-xs leading-relaxed text-white/85">
               Share a few details and our travel experts will craft the perfect
               itinerary for you.
             </p>
@@ -126,8 +126,8 @@ function EnquiryDialog({
                 "Expert guidance",
               ].map((t) => (
                 <div key={t} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-                  <span className="text-[11px] text-white/80">{t}</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#fcd34d]" />
+                  <span className="text-[11px] font-medium text-white/90">{t}</span>
                 </div>
               ))}
             </div>

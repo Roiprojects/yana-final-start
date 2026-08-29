@@ -45,7 +45,7 @@ export function ContactPage() {
         title="Contact Us"
         subtitle="We'd love to help plan your next journey with a smoother, brighter, more premium travel experience."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-        image="photo-1590050752117-238cb0fb12b1"
+        image="photo-1476514525535-07fb3b4ae5f1"
       />
       <Section>
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
