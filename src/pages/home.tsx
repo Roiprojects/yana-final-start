@@ -211,11 +211,11 @@ export function HomePage() {
                   aria-label="Yana Travels home"
                   className="group flex shrink-0 items-center gap-3 rounded-full"
                 >
-                  <span className="flex h-20 w-20 items-center justify-center transition-transform duration-300 group-hover:scale-[1.04]">
+                  <span className="flex h-16 w-16 items-center justify-center transition-transform duration-300 group-hover:scale-[1.04] sm:h-18 sm:w-18">
                     <img
-                      src="/brand/yana-logo-blue.png"
+                      src="/brand/yana-logo-white.png"
                       alt="Yana Travels"
-                      className="h-20 w-20 object-contain"
+                      className="h-14 w-auto object-contain sm:h-[3.6rem]"
                     />
                   </span>
                   <BrandWordmark

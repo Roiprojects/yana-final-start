@@ -49,7 +49,7 @@ export function SiteHeader() {
               <img
                 src={isDarkHeader ? "/brand/yana-logo-white.png" : "/brand/yana-logo-color.png"}
                 alt="Yana Travels"
-                className="h-9 w-auto object-contain sm:h-12"
+                className="h-11 w-auto object-contain sm:h-[3.6rem]"
               />
             </span>
             <BrandWordmark

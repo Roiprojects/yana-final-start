@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Sparkles,
-  ArrowUpRight,
   MapPin,
   Globe2,
   Compass,
@@ -248,23 +247,13 @@ export function ServicesPage() {
                 </div>
 
                 {/* Bottom Content Area */}
-                <div className="relative z-10 mt-12">
+                <div className="relative z-10 mt-8">
                   <h3 className="font-heading text-xl font-bold tracking-tight text-white transition-colors duration-200 group-hover:text-[#f8d77f]">
                     {item.name}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/85 line-clamp-2">
+                  <p className="mt-2 text-sm leading-relaxed text-white/85 line-clamp-3">
                     {item.description}
                   </p>
-
-                  <div className="mt-5 flex items-center justify-between border-t border-white/20 pt-3.5">
-                    <span className="text-xs font-semibold text-white/75 transition-colors group-hover:text-white">
-                      Explore Details
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3.5 py-1.5 text-xs font-bold text-white backdrop-blur-md transition-all group-hover:bg-primary group-hover:shadow-md group-hover:scale-105">
-                      <span>View</span>
-                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-45" />
-                    </span>
-                  </div>
                 </div>
               </div>
             );

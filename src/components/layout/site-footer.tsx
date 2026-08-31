@@ -143,19 +143,23 @@ export function SiteFooter() {
       <Container className="relative z-10 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.9fr_1fr_1.3fr]">
         {/* Column 1: Brand Wordmark & Recognition */}
         <div className="space-y-6">
-          <div className="flex items-center gap-3.5">
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white p-2 shadow-[0_16px_36px_-12px_rgba(0,0,0,0.4)]">
+          <Link
+            to="/"
+            aria-label="Yana Travels"
+            className="group inline-flex items-center gap-3.5 transition-opacity hover:opacity-90"
+          >
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center">
               <img
-                src="/brand/yana-logo.png"
+                src="/brand/yana-logo-white.png"
                 alt="Yana Travels"
-                className="h-12 w-auto object-contain"
+                className="h-[3.6rem] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </span>
             <BrandWordmark
               accentClassName="text-[#e8c979]"
               textClassName="text-white"
             />
-          </div>
+          </Link>
 
           <p className="text-sm leading-relaxed text-white/75">
             Karnataka&apos;s premier travel partner specializing in curated domestic group tours, international escapes, customized itineraries, and sacred pilgrimage journeys since 2015.
