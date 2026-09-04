@@ -5,7 +5,6 @@ import { primaryNav, whatsappLink } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
 import { useSiteSettings } from "@/components/providers/site-settings-context";
-import { BrandWordmark } from "@/components/layout/brand-wordmark";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -14,7 +13,6 @@ export function SiteHeader() {
   const { phone, whatsapp } = useSiteSettings();
   const { pathname } = useLocation();
   const isHome = pathname === "/";
-  const isDarkHeader = scrolled || !isHome;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,71 +31,45 @@ export function SiteHeader() {
       className={cn(
         "fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300",
         isHome && !scrolled && "pointer-events-none -translate-y-4 opacity-0",
-        isDarkHeader
-          ? "bg-[#3457ca] shadow-[0_18px_44px_-28px_rgba(16,33,58,0.36)] text-white"
-          : "bg-white/72 backdrop-blur-md",
+        "bg-white/95 backdrop-blur-md shadow-[0_12px_32px_-18px_rgba(16,33,58,0.12)] border-b border-border-soft/70 text-text-main",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[var(--container-site)] items-center justify-between gap-3 px-4 sm:h-22 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-18 max-w-[var(--container-site)] items-center justify-between gap-3 px-4 sm:h-22 sm:px-6 lg:px-8">
         <div className="flex shrink-0 items-center gap-3">
           <Link
             to="/"
             aria-label="Yana Travels home"
-            className="group flex items-center gap-3 rounded-full px-1 py-1"
+            className="group flex items-center transition-transform duration-300 hover:scale-[1.02]"
           >
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center sm:h-16 sm:w-16">
-              <img
-                src={isDarkHeader ? "/brand/yana-logo-white.png" : "/brand/yana-logo-color.png"}
-                alt="Yana Travels"
-                className="h-11 w-auto object-contain sm:h-[3.6rem]"
-              />
-            </span>
-            <BrandWordmark
-              className="hidden sm:flex"
-              accentClassName={cn(
-                isDarkHeader ? "text-white/88" : "text-primary/82",
-              )}
-              textClassName={cn(
-                isDarkHeader ? "text-white" : "text-primary",
-              )}
+            <img
+              src="/brand/yana-logo-nav-white.png"
+              alt="Yana Travels"
+              className="h-12 w-auto max-w-[210px] object-contain sm:h-14 sm:max-w-[260px] md:h-16 md:max-w-[300px]"
             />
           </Link>
-          <SearchBar dark={isDarkHeader} />
+          <SearchBar dark={false} />
         </div>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {primaryNav.map((item) => (
-            <NavLink key={item.href} item={item} dark={isDarkHeader} />
+            <NavLink key={item.href} item={item} dark={false} />
           ))}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={`tel:${phone.replace(/\s/g, "")}`}
-            className={cn(
-              "hidden items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2 text-sm font-semibold shadow-sm transition-colors xl:inline-flex",
-              isDarkHeader
-                ? "border-white/30 bg-white/15 text-white hover:bg-white/25"
-                : "border-border-soft bg-white/80 text-text-main hover:text-primary",
-            )}
+            className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-border-soft bg-white/90 px-3.5 py-2 text-sm font-semibold text-text-main shadow-sm transition-colors hover:border-primary/40 hover:text-primary xl:inline-flex"
           >
             <Phone
-              className={cn(
-                "h-4 w-4",
-                isDarkHeader ? "text-white" : "text-primary",
-              )}
+              className="h-4 w-4 text-primary"
               aria-hidden
             />
             {phone}
           </a>
           <button
             type="button"
-            className={cn(
-              "inline-flex items-center justify-center rounded-full border p-2.5 shadow-sm transition-colors lg:hidden",
-              isDarkHeader
-                ? "border-white/30 bg-white/15 text-white hover:bg-white/25"
-                : "border-border-soft bg-white/85 text-deep hover:text-primary",
-            )}
+            className="inline-flex items-center justify-center rounded-full border border-border-soft bg-white/90 p-2.5 text-deep shadow-sm transition-colors hover:text-primary lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((value) => !value)}

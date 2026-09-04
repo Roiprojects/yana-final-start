@@ -47,7 +47,7 @@ export function CustomizedToursPage() {
               </p>
             </div>
             <div className="rounded-[1.8rem] border border-[#eadfcf] bg-[linear-gradient(135deg,#fffefb,#f7f1e4)] p-6 shadow-[0_22px_52px_-34px_rgba(16,33,58,0.24)]">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(52,87,202,0.8)]">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(11,102,228,0.8)]">
                 <Sparkles className="h-5 w-5" aria-hidden />
               </div>
               <p className="text-sm leading-7 text-text-secondary">
@@ -62,7 +62,7 @@ export function CustomizedToursPage() {
             <Reveal key={href} delay={i * 120}>
               <Link
                 to={href}
-                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/20 bg-primary p-7 text-white shadow-[0_20px_45px_-18px_rgba(52,87,202,0.48)] transition-all duration-300 hover:-translate-y-2 hover:border-[#eadfcf] hover:bg-white hover:text-deep hover:shadow-[0_30px_60px_-20px_rgba(16,33,58,0.22)]"
+                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/20 bg-primary p-7 text-white shadow-[0_20px_45px_-18px_rgba(11,102,228,0.48)] transition-all duration-300 hover:-translate-y-2 hover:border-[#eadfcf] hover:bg-white hover:text-deep hover:shadow-[0_30px_60px_-20px_rgba(16,33,58,0.22)]"
               >
                 {/* Top Subtle Light Line */}
                 <span
@@ -72,7 +72,7 @@ export function CustomizedToursPage() {
 
                 <div>
                   <div className="mb-6 flex items-center justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-white text-primary shadow-[0_8px_20px_-6px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_12px_24px_-6px_rgba(52,87,202,0.6)]">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-white text-primary shadow-[0_8px_20px_-6px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_12px_24px_-6px_rgba(11,102,228,0.6)]">
                       <Icon className="h-6 w-6 transition-colors duration-300" aria-hidden />
                     </div>
                   </div>

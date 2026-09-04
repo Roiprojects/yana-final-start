@@ -1,32 +1,12 @@
 {
-  "version": 4,
+  "version": 7,
   "title": "Yana Travels Homepage Hero Reel",
-  "durationTargetSeconds": 38,
+  "durationTargetSeconds": 36,
   "desktopOutput": "/hero/homepage-hero-real-16x9.mp4",
   "mobileOutput": "/hero/homepage-hero-real-9x16.mp4",
   "posterDesktop": "/hero/homepage-hero-real-16x9-poster.jpg",
   "posterMobile": "/hero/homepage-hero-real-9x16-poster.jpg",
   "segments": [
-    {
-      "id": "karnataka-jog-b",
-      "phase": "nature-karnataka",
-      "src": "public/hero-footage/raw/30-new-jog.mp4",
-      "srcMobile": "public/hero-footage/raw/30-new-jog-mobile.mp4",
-      "label": "Nature scenery",
-      "location": "Nature",
-      "start": 0.0,
-      "duration": 8.0
-    },
-    {
-      "id": "india-kerala-tea",
-      "phase": "nature-india",
-      "src": "public/hero-footage/raw/31-new-kerala.mp4",
-      "srcMobile": "public/hero-footage/raw/31-new-kerala-mobile.mp4",
-      "label": "Turkey hot air balloon",
-      "location": "Turkey",
-      "start": 0.0,
-      "duration": 6.0
-    },
     {
       "id": "india-kerala-backwaters",
       "phase": "nature-india",
@@ -34,7 +14,7 @@
       "label": "Kerala backwaters",
       "location": "India",
       "start": 2.0,
-      "duration": 3.0
+      "duration": 3.5
     },
     {
       "id": "vietnam-halong",
@@ -42,8 +22,8 @@
       "src": "public/hero-footage/raw/04-epic-vietnam-landscape.mp4",
       "label": "Ha Long Bay",
       "location": "Vietnam",
-      "start": 2.0,
-      "duration": 3.0
+      "start": 0.0,
+      "duration": 3.5
     },
     {
       "id": "europe-norway",
@@ -52,7 +32,7 @@
       "label": "Norway fjord",
       "location": "Norway",
       "start": 1.0,
-      "duration": 2.5
+      "duration": 3.0
     },
     {
       "id": "europe-switzerland",
@@ -61,17 +41,7 @@
       "label": "Swiss lake and mountains",
       "location": "Switzerland",
       "start": 1.0,
-      "duration": 2.5
-    },
-    {
-      "id": "europe-italy",
-      "phase": "nature-world",
-      "src": "public/hero-footage/raw/32-new-italy.mp4",
-      "srcMobile": "public/hero-footage/raw/32-new-italy-mobile.mp4",
-      "label": "Nature clip",
-      "location": "World",
-      "start": 0.0,
-      "duration": 5.0
+      "duration": 3.0
     },
     {
       "id": "world-maldives",
@@ -80,22 +50,31 @@
       "label": "Maldives water aerial",
       "location": "Maldives",
       "start": 1.0,
-      "duration": 2.5
+      "duration": 3.0
     },
     {
-      "id": "europe-paris",
+      "id": "europe-hallstatt",
       "phase": "cities-world",
-      "src": "public/hero-footage/raw/21-europe-paris-eiffel-night.mp4",
-      "label": "Eiffel Tower at night",
-      "location": "Paris",
-      "start": 2.0,
+      "src": "public/hero-footage/raw/36-austria-hallstatt.mp4",
+      "label": "Hallstatt village",
+      "location": "Austria",
+      "start": 0.0,
+      "duration": 3.0
+    },
+    {
+      "id": "europe-finland",
+      "phase": "nature-world",
+      "src": "public/hero-footage/raw/37-finland-lapland.mp4",
+      "label": "Finland Lapland snowy village",
+      "location": "Finland",
+      "start": 0.0,
       "duration": 3.0
     },
     {
       "id": "europe-edinburgh",
       "phase": "cities-world",
-      "src": "public/hero-footage/raw/23-europe-edinburgh-st-giles.mp4",
-      "label": "St Giles Cathedral",
+      "src": "public/hero-footage/raw/23-europe-edinburgh.mp4",
+      "label": "Edinburgh",
       "location": "Scotland",
       "start": 2.0,
       "duration": 3.0
@@ -110,33 +89,22 @@
       "duration": 3.0
     },
     {
-      "id": "europe-georgia",
+      "id": "europe-paris-drone",
       "phase": "cities-world",
-      "src": "public/hero-footage/raw/33-new-georgia.mp4",
-      "srcMobile": "public/hero-footage/raw/33-new-georgia-mobile.mp4",
-      "label": "Cityscape",
-      "location": "World",
+      "src": "public/hero-footage/raw/34-paris-eiffel-drone.mp4",
+      "label": "Eiffel Tower drone view",
+      "location": "Paris",
       "start": 0.0,
       "duration": 4.0
     },
     {
-      "id": "dubai-burj-khalifa",
+      "id": "dubai-burj-khalifa-drone",
       "phase": "cities-world",
-      "src": "public/hero-footage/raw/26-dubai-burj-khalifa-night.mp4",
-      "label": "Burj Khalifa at night",
+      "src": "public/hero-footage/raw/35-dubai-burj-drone.mp4",
+      "label": "Burj Khalifa drone flight",
       "location": "Dubai",
-      "start": 10.0,
-      "duration": 3.0
-    },
-    {
-      "id": "europe-hallstatt",
-      "phase": "cities-world",
-      "src": "public/hero-footage/raw/27-europe-hallstatt.mp4",
-      "srcMobile": "public/hero-footage/raw/27-europe-hallstatt-mobile.mp4",
-      "label": "Hallstatt village",
-      "location": "Austria",
-      "start": 2.0,
-      "duration": 3.0
+      "start": 0.0,
+      "duration": 4.0
     }
   ]
 }

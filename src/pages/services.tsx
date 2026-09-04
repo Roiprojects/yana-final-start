@@ -199,7 +199,7 @@ export function ServicesPage() {
               </p>
             </div>
             <div className="rounded-[1.8rem] border border-[#eadfcf] bg-[linear-gradient(135deg,#fffefb,#f7f1e4)] p-6 shadow-[0_22px_52px_-34px_rgba(16,33,58,0.24)]">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(52,87,202,0.8)]">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(11,102,228,0.8)]">
                 <Sparkles className="h-5 w-5" aria-hidden />
               </div>
               <p className="text-sm leading-7 text-text-secondary">
@@ -222,7 +222,7 @@ export function ServicesPage() {
             const Icon = meta.icon;
 
             const cardContent = (
-              <div className="group relative flex h-full min-h-[310px] flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/40 bg-deep p-6 shadow-[0_18px_42px_-18px_rgba(16,33,58,0.38)] transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_28px_60px_-18px_rgba(52,87,202,0.4)]">
+              <div className="group relative flex h-full min-h-[310px] flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/40 bg-deep p-6 shadow-[0_18px_42px_-18px_rgba(16,33,58,0.38)] transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_28px_60px_-18px_rgba(11,102,228,0.4)]">
                 {/* Scenic Background Image */}
                 <img
                   src={meta.image}
@@ -238,7 +238,7 @@ export function ServicesPage() {
 
                 {/* Top Glassmorphic Tag & Icon */}
                 <div className="relative z-10 flex items-center justify-between gap-3">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/20 text-white shadow-md backdrop-blur-md ring-1 ring-white/30 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_10px_22px_-6px_rgba(52,87,202,0.6)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/20 text-white shadow-md backdrop-blur-md ring-1 ring-white/30 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_10px_22px_-6px_rgba(11,102,228,0.6)]">
                     <Icon className="h-6 w-6" aria-hidden />
                   </div>
                   <span className="rounded-full border border-white/25 bg-black/40 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#f8d77f] backdrop-blur-md shadow-sm">

@@ -12,8 +12,8 @@
   /* Brand colours — bright luxury palette with pearl backgrounds and navy-gold accents */
   --color-bg-main: #fffdf8;
   --color-bg-soft: #f7f1e4;
-  --color-primary: #3457ca;
-  --color-primary-hover: #2a46a8;
+  --color-primary: #0b66e4;
+  --color-primary-hover: #084db8;
   --color-gold: #c99b2d;
   --color-gold-soft: #ecd8a0;
   --color-deep: #10213a;
@@ -116,7 +116,7 @@
 }
 
 .bg-cta {
-  background-image: linear-gradient(135deg, #3457ca 0%, #2743ab 100%);
+  background-image: linear-gradient(135deg, #0b66e4 0%, #004dc7 100%);
 }
 
 .glow-lavender {

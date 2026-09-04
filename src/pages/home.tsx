@@ -29,7 +29,6 @@ import { DestinationMarquee } from "@/components/marketing/destination-marquee";
 import { TestimonialsSection } from "@/components/marketing/testimonials-section";
 import { GallerySection } from "@/components/marketing/gallery-section";
 import { Faq } from "@/components/marketing/faq";
-import { BrandWordmark } from "@/components/layout/brand-wordmark";
 import { primaryNav } from "@/lib/site-config";
 import {
   unsplash,
@@ -48,8 +47,8 @@ const categories = [
     tag: "Escorted Journeys",
     title: "Group Tours",
     desc: "Curated departures that feel organised, comfortable, guided, and social.",
-    gradient: "from-[#3457ca] to-[#1d4ed8]",
-    glow: "bg-[#3457ca]/12",
+    gradient: "from-[#0b66e4] to-[#1d4ed8]",
+    glow: "bg-[#0b66e4]/12",
   },
   {
     href: "/customized-tours",
@@ -204,42 +203,36 @@ export function HomePage() {
           />
 
           <Container className="relative z-10 flex min-h-[calc(100svh-1rem)] flex-col py-5 sm:py-6 lg:py-7">
-            <div className="flex w-full flex-wrap items-center justify-between gap-x-4 gap-y-4">
-              <div className="flex min-w-0 items-center gap-4">
+            <div className="flex w-full items-center justify-between gap-4">
+              <div className="flex shrink-0 items-center">
                 <Link
                   to="/"
                   aria-label="Yana Travels home"
-                  className="group flex shrink-0 items-center gap-3 rounded-full"
+                  className="group flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.03]"
                 >
-                  <span className="flex h-16 w-16 items-center justify-center transition-transform duration-300 group-hover:scale-[1.04] sm:h-18 sm:w-18">
-                    <img
-                      src="/brand/yana-logo-white.png"
-                      alt="Yana Travels"
-                      className="h-14 w-auto object-contain sm:h-[3.6rem]"
-                    />
-                  </span>
-                  <BrandWordmark
-                    className="hidden drop-shadow-[0_10px_24px_rgba(0,0,0,0.48)] sm:flex"
-                    accentClassName="text-white/88"
-                    textClassName="text-white"
+                  <img
+                    src="/brand/yana-logo-hero-dark.png"
+                    alt="Yana Travels"
+                    className="h-14 w-auto max-w-[220px] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] sm:h-16 sm:max-w-[260px] md:h-20 md:max-w-[320px]"
                   />
                 </Link>
-
-                <div className="w-56 sm:w-72 md:w-80">
-                  <HeroSearch />
-                </div>
               </div>
 
-              <div className="hidden max-w-4xl flex-wrap items-center justify-end gap-2 sm:flex">
-                {primaryNav.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    className="inline-flex items-center rounded-full border border-white/28 bg-black/26 px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_28px_-16px_rgba(0,0,0,0.55)] backdrop-blur-[4px] transition-all duration-200 hover:bg-black/38"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+              <div className="hidden items-center gap-3 lg:flex">
+                <div className="w-48 xl:w-60">
+                  <HeroSearch />
+                </div>
+                <nav className="flex items-center gap-1.5" aria-label="Hero navigation">
+                  {primaryNav.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="inline-flex items-center whitespace-nowrap rounded-full border border-white/28 bg-black/26 px-3.5 py-2 text-sm font-semibold text-white shadow-[0_12px_28px_-16px_rgba(0,0,0,0.55)] backdrop-blur-[4px] transition-all duration-200 hover:border-white/40 hover:bg-black/40"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
               </div>
             </div>
 
@@ -264,7 +257,7 @@ export function HomePage() {
       </div>
 
       <div className="relative overflow-hidden border-y border-[#efe3cd] bg-[linear-gradient(90deg,#faf6ed,#fffdf8,#f3f7fd)]">
-        <Container className="relative z-10 py-14 md:py-16">
+        <Container className="relative z-10 py-4 sm:py-5">
           <TrustBadges />
         </Container>
       </div>
@@ -287,14 +280,14 @@ export function HomePage() {
           aria-hidden
         />
         <Reveal>
-          <div className="relative z-10 mb-12 flex flex-wrap items-end justify-between gap-4">
+          <div className="relative z-10 mb-6 flex flex-wrap items-end justify-between gap-3 sm:mb-8">
             <div>
               <p className="eyebrow text-[#ad7f19]">How you travel</p>
-              <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-[#10213a] md:text-4xl">
+              <h2 className="mt-1 text-xl font-bold tracking-tight text-[#10213a] sm:text-2xl md:text-3xl">
                 Travel styles with a clearer premium identity
               </h2>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-[#6c7788]">
+            <p className="max-w-md text-xs leading-relaxed text-[#6c7788] sm:text-sm">
               Whether you prefer escorted group departures or bespoke private itineraries, choose the travel format crafted for your journey.
             </p>
           </div>
@@ -304,11 +297,11 @@ export function HomePage() {
             <Reveal key={href} delay={i * 90}>
               <Link
                 to={href}
-                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/90 bg-white/85 p-6 shadow-[0_14px_38px_-16px_rgba(16,33,58,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-2.5 hover:border-[#3457ca]/30 hover:bg-white hover:shadow-[0_28px_56px_-16px_rgba(52,87,202,0.22)]"
+                className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/90 bg-white/85 p-6 shadow-[0_14px_38px_-16px_rgba(16,33,58,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-2.5 hover:border-[#0b66e4]/30 hover:bg-white hover:shadow-[0_28px_56px_-16px_rgba(11,102,228,0.22)]"
               >
                 {/* Decorative top accent glow line */}
                 <span
-                  className="absolute inset-x-8 top-0 h-[3px] rounded-b-full bg-gradient-to-r from-transparent via-[#3457ca]/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  className="absolute inset-x-8 top-0 h-[3px] rounded-b-full bg-gradient-to-r from-transparent via-[#0b66e4]/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   aria-hidden
                 />
 
@@ -320,27 +313,27 @@ export function HomePage() {
 
                 <div>
                   <div className="flex items-center justify-between gap-3">
-                    <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} p-3 text-white shadow-[0_10px_24px_-6px_rgba(16,33,58,0.35)] ring-4 ring-black/5 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_14px_28px_-6px_rgba(52,87,202,0.45)]`}>
+                    <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} p-3 text-white shadow-[0_10px_24px_-6px_rgba(16,33,58,0.35)] ring-4 ring-black/5 transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_14px_28px_-6px_rgba(11,102,228,0.45)]`}>
                       <Icon className="h-6 w-6 transition-transform duration-300 group-hover:rotate-6" aria-hidden />
                     </div>
-                    <span className="rounded-full border border-[#e8decb]/80 bg-[#fffdf8] px-3 py-1 text-[11px] font-bold tracking-wide text-[#6c7788] transition-colors group-hover:border-[#3457ca]/30 group-hover:text-[#3457ca]">
+                    <span className="rounded-full border border-[#e8decb]/80 bg-[#fffdf8] px-3 py-1 text-[11px] font-bold tracking-wide text-[#6c7788] transition-colors group-hover:border-[#0b66e4]/30 group-hover:text-[#0b66e4]">
                       {tag}
                     </span>
                   </div>
 
-                  <h3 className="relative mt-6 text-xl font-bold tracking-tight text-[#10213a] transition-colors duration-200 group-hover:text-[#3457ca]">
+                  <h3 className="relative mt-6 text-lg font-bold tracking-tight text-[#10213a] transition-colors duration-200 group-hover:text-[#0b66e4]">
                     {title}
                   </h3>
-                  <p className="relative mt-2.5 text-sm leading-relaxed text-[#6c7788]">
+                  <p className="relative mt-2 text-xs leading-relaxed text-[#6c7788] sm:text-sm">
                     {desc}
                   </p>
                 </div>
 
                 <div className="relative mt-6 flex items-center justify-between border-t border-[#f0e8d8] pt-4">
-                  <span className="text-xs font-semibold text-[#6c7788] transition-colors group-hover:text-[#3457ca]">
+                  <span className="text-xs font-semibold text-[#6c7788] transition-colors group-hover:text-[#0b66e4]">
                     Explore Style
                   </span>
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#e8decb] bg-[#fffdf8] text-[#10213a] shadow-sm transition-all duration-300 group-hover:bg-[#3457ca] group-hover:border-[#3457ca] group-hover:text-white group-hover:rotate-45">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#e8decb] bg-[#fffdf8] text-[#10213a] shadow-sm transition-all duration-300 group-hover:bg-[#0b66e4] group-hover:border-[#0b66e4] group-hover:text-white group-hover:rotate-45">
                     <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </div>
@@ -352,16 +345,16 @@ export function HomePage() {
 
       <Section className="relative overflow-hidden">
         <Reveal>
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-3 sm:mb-8">
             <div>
               <p className="eyebrow text-[#ad7f19]">Curated themes</p>
-              <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">
+              <h2 className="mt-1 text-xl font-bold tracking-tight text-[#10213a] sm:text-2xl md:text-3xl">
                 Journeys arranged for every kind of traveller
               </h2>
             </div>
             <Link
               to="/packages"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline sm:text-sm"
             >
               View all packages <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -380,10 +373,10 @@ export function HomePage() {
                   className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-white/94 p-5 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold leading-tight text-deep">
+                  <h3 className="text-base font-bold leading-tight text-deep sm:text-lg">
                     {c.title}
                   </h3>
-                  <p className="mt-1.5 text-sm font-normal text-text-secondary">
+                  <p className="mt-1 text-xs font-normal text-text-secondary sm:text-sm">
                     {c.blurb}
                   </p>
                 </div>
@@ -394,7 +387,7 @@ export function HomePage() {
       </Section>
 
       <Section tone="soft" className="relative overflow-hidden">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div className="grid items-center gap-8 lg:grid-cols-2">
           <Reveal>
             <div className="relative overflow-hidden rounded-[1.9rem] shadow-[0_28px_60px_-32px_rgba(16,33,58,0.38)]">
               <div className="relative aspect-[4/3]">
@@ -408,7 +401,7 @@ export function HomePage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ad7f19]">
                   End-to-end comfort
                 </p>
-                <p className="mt-2 text-sm leading-6 text-text-secondary">
+                <p className="mt-2 text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6">
                   Enquiry, planning, documentation, and departure support in one
                   smoother journey.
                 </p>
@@ -418,15 +411,15 @@ export function HomePage() {
           <Reveal delay={120}>
             <div>
               <p className="eyebrow text-[#ad7f19]">Why choose Yana</p>
-              <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">
+              <h2 className="mt-1 text-xl font-bold tracking-tight text-[#10213a] sm:text-2xl md:text-3xl">
                 Every detail handled, with a brighter and more polished feel
               </h2>
-              <p className="mt-4 text-base leading-8 text-text-secondary">
+              <p className="mt-3 text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6">
                 From flights and stays to sightseeing and documentation, the
                 site now frames the same travel offer with better spacing, more
                 confidence, and stronger luxury cues.
               </p>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-4 space-y-2">
                 {[
                   "Group departures and fully customized itineraries",
                   "Domestic and international destinations",
@@ -434,10 +427,10 @@ export function HomePage() {
                 ].map((line) => (
                   <li
                     key={line}
-                    className="flex items-start gap-3 font-medium text-text-main"
+                    className="flex items-start gap-2.5 text-xs font-medium text-text-main sm:text-sm"
                   >
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <Check className="h-3.5 w-3.5" aria-hidden />
+                    <span className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Check className="h-3 w-3" aria-hidden />
                     </span>
                     {line}
                   </li>
@@ -445,7 +438,7 @@ export function HomePage() {
               </ul>
               <Link
                 to="/about"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 font-semibold text-white shadow-[0_18px_30px_-18px_rgba(52,87,202,0.8)] transition-all duration-300 hover:-translate-y-0.5"
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-xs font-semibold text-white shadow-[0_18px_30px_-18px_rgba(11,102,228,0.8)] transition-all duration-300 hover:-translate-y-0.5 sm:text-sm"
               >
                 About Yana Travels <ArrowRight className="h-4 w-4" />
               </Link>
@@ -457,10 +450,10 @@ export function HomePage() {
       {featured.length > 0 ? (
         <Section>
           <Reveal>
-            <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3 sm:mb-8">
               <div>
                 <p className="eyebrow text-[#ad7f19]">Featured departures</p>
-                <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-deep md:text-4xl">
+                <h2 className="mt-1 text-xl font-bold tracking-tight text-deep sm:text-2xl md:text-3xl">
                   Packages that now feel more premium at first glance
                 </h2>
               </div>
@@ -475,7 +468,7 @@ export function HomePage() {
                     className={cn(
                       "rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-200",
                       selectedScope === "all"
-                        ? "bg-primary text-white shadow-[0_8px_18px_-6px_rgba(52,87,202,0.6)]"
+                        ? "bg-primary text-white shadow-[0_8px_18px_-6px_rgba(11,102,228,0.6)]"
                         : "text-text-secondary hover:text-deep",
                     )}
                   >
@@ -487,7 +480,7 @@ export function HomePage() {
                     className={cn(
                       "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-200",
                       selectedScope === "domestic"
-                        ? "bg-primary text-white shadow-[0_8px_18px_-6px_rgba(52,87,202,0.6)]"
+                        ? "bg-primary text-white shadow-[0_8px_18px_-6px_rgba(11,102,228,0.6)]"
                         : "text-text-secondary hover:text-deep",
                     )}
                   >
@@ -500,7 +493,7 @@ export function HomePage() {
                     className={cn(
                       "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold transition-all duration-200",
                       selectedScope === "international"
-                        ? "bg-primary text-white shadow-[0_8px_18px_-6px_rgba(52,87,202,0.6)]"
+                        ? "bg-primary text-white shadow-[0_8px_18px_-6px_rgba(11,102,228,0.6)]"
                         : "text-text-secondary hover:text-deep",
                     )}
                   >
@@ -514,7 +507,7 @@ export function HomePage() {
                   <button
                     type="button"
                     onClick={() => setBrowseDropdownOpen((v) => !v)}
-                    className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-gradient-to-r from-primary to-[#2a48b8] px-4 py-2 text-xs font-bold text-white shadow-[0_10px_22px_-8px_rgba(52,87,202,0.55)] transition-all duration-200 hover:shadow-[0_14px_28px_-8px_rgba(52,87,202,0.7)] hover:scale-[1.02] focus:outline-none sm:text-sm"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-gradient-to-r from-primary to-[#0052cc] px-4 py-2 text-xs font-bold text-white shadow-[0_10px_22px_-8px_rgba(11,102,228,0.55)] transition-all duration-200 hover:shadow-[0_14px_28px_-8px_rgba(11,102,228,0.7)] hover:scale-[1.02] focus:outline-none sm:text-sm"
                     aria-expanded={browseDropdownOpen}
                   >
                     <span>Browse Packages</span>
@@ -639,9 +632,9 @@ export function HomePage() {
 
       <Section>
         <Reveal>
-          <div className="mb-10 text-center">
+          <div className="mb-6 text-center sm:mb-8">
             <p className="eyebrow text-[#ad7f19]">Good to know</p>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">
+            <h2 className="mt-1 text-xl font-bold tracking-tight text-[#10213a] sm:text-2xl md:text-3xl">
               Frequently asked questions
             </h2>
           </div>

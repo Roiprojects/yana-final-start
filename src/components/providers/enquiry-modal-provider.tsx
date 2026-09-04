@@ -96,7 +96,7 @@ function EnquiryDialog({
       aria-modal="true"
       aria-label="Enquiry form"
     >
-      <div className="relative flex w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-[0_32px_80px_-16px_rgba(12,39,64,0.45)]">
+      <div className="relative flex max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-[0_32px_80px_-16px_rgba(12,39,64,0.45)]">
         {/* Left — team image (desktop only) */}
         <div
           className="relative hidden w-[42%] shrink-0 flex-col justify-end overflow-hidden bg-cover bg-top p-6 md:flex"
@@ -137,7 +137,7 @@ function EnquiryDialog({
         {/* Right — form */}
         <div className="flex flex-1 flex-col">
           {/* Header */}
-          <div className="flex items-center justify-between bg-gradient-to-r from-[#3457ca] to-[#2a46a8] px-5 py-4">
+          <div className="flex items-center justify-between bg-gradient-to-r from-[#0b66e4] to-[#084db8] px-5 py-4">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">
                 Free consultation
@@ -296,7 +296,7 @@ function EnquiryDialog({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#3457ca] to-[#2a46a8] py-3 text-sm font-bold text-white shadow-[0_10px_26px_-8px_rgba(52,87,202,0.5)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-8px_rgba(52,87,202,0.7)] disabled:opacity-70"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0b66e4] to-[#084db8] py-3 text-sm font-bold text-white shadow-[0_10px_26px_-8px_rgba(11,102,228,0.5)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-8px_rgba(11,102,228,0.7)] disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -346,12 +346,11 @@ export function EnquiryModalProvider({
     setState((s) => ({ ...s, open: false }));
   }, []);
 
-  // Auto-open the enquiry popup once when the site first loads.
-  const autoOpened = useRef(false);
+  // Auto-open the enquiry popup when the site first opens or is refreshed.
   useEffect(() => {
-    if (autoOpened.current) return;
-    autoOpened.current = true;
-    const t = setTimeout(() => open(), 700);
+    const t = setTimeout(() => {
+      open();
+    }, 800);
     return () => clearTimeout(t);
   }, [open]);
 

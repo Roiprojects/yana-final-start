@@ -31,16 +31,16 @@ export function GallerySection() {
 
   return (
     <section className="bg-bg-main">
-      <Container className="py-16 md:py-20">
+      <Container className="py-8 sm:py-10 md:py-12">
         <Reveal>
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-3 sm:mb-8">
             <div>
               <p className="eyebrow text-[#ad7f19]">Moments from the road</p>
-              <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">
+              <h2 className="mt-1 text-xl font-bold tracking-tight text-deep sm:text-2xl md:text-3xl">
                 A glimpse of journeys we arrange
               </h2>
             </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(52,87,202,0.8)]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_30px_-18px_rgba(11,102,228,0.8)]">
               <Camera className="h-5 w-5" aria-hidden />
             </div>
           </div>

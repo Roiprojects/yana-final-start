@@ -12,7 +12,7 @@ export function Section({
 }) {
   return (
     <section className={cn(tone === "soft" ? "bg-bg-soft" : "bg-bg-main")}>
-      <Container className={cn("py-16 md:py-20", className)}>
+      <Container className={cn("py-4 sm:py-6 md:py-7", className)}>
         {children}
       </Container>
     </section>

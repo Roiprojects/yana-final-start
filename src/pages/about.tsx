@@ -35,7 +35,7 @@ const detailedOfferings = [
     tag: "Domestic",
     title: "India Group Tours",
     desc: "Curated escorted journeys across Kashmir, Ladakh, Kerala, Chardham & Northeast.",
-    gradient: "from-[#3457ca] to-[#1e3fae]",
+    gradient: "from-[#0b66e4] to-[#1e3fae]",
     link: "/group-tours/domestic",
   },
   {
@@ -234,7 +234,7 @@ export function AboutPage() {
 
           <Reveal delay={120}>
             <div className="rounded-[1.9rem] border border-[#eadfcf] bg-[linear-gradient(135deg,#fffefb,#f7f1e4)] p-7 shadow-[0_24px_56px_-34px_rgba(16,33,58,0.28)]">
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-white shadow-[0_18px_34px_-20px_rgba(52,87,202,0.8)]">
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-white shadow-[0_18px_34px_-20px_rgba(11,102,228,0.8)]">
                 <Sparkles className="h-6 w-6" aria-hidden />
               </div>
               <h3 className="text-xl font-extrabold tracking-[-0.03em] text-deep">
@@ -289,7 +289,7 @@ export function AboutPage() {
               <Reveal key={item.title} delay={i * 60}>
                 <Link
                   to={item.link}
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-[#eadfcf] bg-white p-6 shadow-[0_16px_36px_-24px_rgba(16,33,58,0.14)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_26px_50px_-18px_rgba(52,87,202,0.2)]"
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-[#eadfcf] bg-white p-6 shadow-[0_16px_36px_-24px_rgba(16,33,58,0.14)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_26px_50px_-18px_rgba(11,102,228,0.2)]"
                 >
                   {/* Top Subtle Light Line */}
                   <span

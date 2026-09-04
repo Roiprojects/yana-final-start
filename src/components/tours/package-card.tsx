@@ -52,7 +52,7 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
       </div>
 
       {/* Hover state — full details overlay + Explore */}
-      <div className="absolute inset-0 flex translate-y-5 flex-col justify-end bg-[linear-gradient(180deg,rgba(16,33,58,0.6),rgba(52,87,202,0.95))] p-4 sm:p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="absolute inset-0 flex translate-y-5 flex-col justify-end bg-[linear-gradient(180deg,rgba(16,33,58,0.6),rgba(11,102,228,0.95))] p-4 sm:p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#e8c979]">
           {pkg.scope}
           {pkg.destination_name ? ` · ${pkg.destination_name}` : ""}
@@ -92,7 +92,7 @@ export function PackageCard({ pkg }: { pkg: PackageListItem }) {
               </span>
             )}
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-[#3457ca] px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-[0_10px_22px_-8px_rgba(52,87,202,0.55)] transition-transform group-hover:scale-105">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#0b66e4] px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-[0_10px_22px_-8px_rgba(11,102,228,0.55)] transition-transform group-hover:scale-105">
             Explore
             <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden />
           </span>

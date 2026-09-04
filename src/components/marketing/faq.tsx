@@ -28,7 +28,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
               className={cn(
                 "overflow-hidden rounded-2xl border bg-white/95 transition-all duration-300 backdrop-blur-md",
                 isOpen
-                  ? "border-primary/40 shadow-[0_16px_36px_-16px_rgba(52,87,202,0.18)]"
+                  ? "border-primary/40 shadow-[0_16px_36px_-16px_rgba(11,102,228,0.18)]"
                   : "border-[#e8decb]/80 shadow-[0_4px_20px_-8px_rgba(16,33,58,0.06)] hover:border-primary/25 hover:shadow-md",
               )}
             >

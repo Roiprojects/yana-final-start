@@ -9,8 +9,8 @@ const timelineSteps = [
     title: "Planned end to end",
     desc: "Flights, luxury stays, sightseeing, and documentation — seamlessly organised so you don't have to stress.",
     highlight: "Complete Itinerary Handling",
-    gradient: "from-[#3457ca] to-[#1d4ed8]",
-    glow: "bg-[#3457ca]/12",
+    gradient: "from-[#0b66e4] to-[#1d4ed8]",
+    glow: "bg-[#0b66e4]/12",
   },
   {
     step: "02",
@@ -39,8 +39,8 @@ const timelineSteps = [
     title: "Support along the way",
     desc: "A dedicated travel expert team you can reach anytime before and throughout your journey via call or WhatsApp.",
     highlight: "24/7 Live Assistance",
-    gradient: "from-[#3457ca] to-[#2563eb]",
-    glow: "bg-[#3457ca]/12",
+    gradient: "from-[#0b66e4] to-[#2563eb]",
+    glow: "bg-[#0b66e4]/12",
   },
 ];
 
@@ -49,12 +49,12 @@ export function ValueProps() {
     <div className="relative">
       {/* Section Heading */}
       <Reveal>
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-6 max-w-2xl sm:mb-8">
           <p className="eyebrow text-[#ad7f19]">Why travel with us</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-deep md:text-4xl">
+          <h2 className="mt-1 text-xl font-bold tracking-tight text-deep sm:text-2xl md:text-3xl">
             Thoughtful travel, handled with care
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-text-secondary">
+          <p className="mt-2 text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6">
             A seamless 4-stage travel journey crafted for effortless comfort, clear communication, and memorable experiences.
           </p>
         </div>
@@ -65,13 +65,13 @@ export function ValueProps() {
         {/* Desktop Horizontal Connecting Track */}
         <div
           aria-hidden
-          className="absolute left-8 right-8 top-7 hidden h-[3px] -translate-y-1/2 rounded-full bg-gradient-to-r from-[#3457ca]/20 via-[#c99b2d]/40 to-[#3457ca]/20 lg:block"
+          className="absolute left-8 right-8 top-7 hidden h-[3px] -translate-y-1/2 rounded-full bg-gradient-to-r from-[#0b66e4]/20 via-[#c99b2d]/40 to-[#0b66e4]/20 lg:block"
         />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {timelineSteps.map((step, i) => (
             <Reveal key={step.title} delay={i * 100}>
-              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/80 bg-white/90 p-6 shadow-[0_12px_36px_-16px_rgba(16,33,58,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:bg-white hover:shadow-[0_26px_52px_-16px_rgba(52,87,202,0.2)]">
+              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.8rem] border border-white/80 bg-white/90 p-6 shadow-[0_12px_36px_-16px_rgba(16,33,58,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:bg-white hover:shadow-[0_26px_52px_-16px_rgba(11,102,228,0.2)]">
                 {/* Top glow accent line on hover */}
                 <span
                   aria-hidden
@@ -88,7 +88,7 @@ export function ValueProps() {
                   {/* Timeline Header: Milestone Node & Icon */}
                   <div className="relative mb-6 flex items-center justify-between gap-3">
                     <div
-                      className={`flex h-13 w-13 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${step.gradient} text-white shadow-[0_10px_22px_-6px_rgba(16,33,58,0.35)] ring-4 ring-white transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_14px_28px_-6px_rgba(52,87,202,0.45)]`}
+                      className={`flex h-13 w-13 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${step.gradient} text-white shadow-[0_10px_22px_-6px_rgba(16,33,58,0.35)] ring-4 ring-white transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_14px_28px_-6px_rgba(11,102,228,0.45)]`}
                     >
                       <step.icon className="h-6 w-6 transition-transform duration-300 group-hover:rotate-6" aria-hidden />
                     </div>

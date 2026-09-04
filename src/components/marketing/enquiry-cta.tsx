@@ -21,12 +21,12 @@ export function EnquiryCta() {
         style={{ background: "rgba(30, 20, 52, 0.78)" }}
         aria-hidden
       />
-      <Container className="relative flex flex-col items-center gap-6 py-20 text-center text-white">
+      <Container className="relative flex flex-col items-center gap-5 py-10 text-center text-white sm:py-14">
         <p className="eyebrow text-white/70">Ready when you are</p>
-        <h2 className="max-w-2xl text-3xl font-extrabold text-white md:text-4xl">
+        <h2 className="max-w-2xl text-xl font-bold tracking-tight text-white sm:text-2xl md:text-3xl">
           Ready to plan your next journey?
         </h2>
-        <p className="max-w-xl text-white/75">
+        <p className="max-w-xl text-xs text-white/80 sm:text-sm sm:leading-6">
           Tell us where you want to go and how you like to travel — we&apos;ll
           craft the rest.
         </p>

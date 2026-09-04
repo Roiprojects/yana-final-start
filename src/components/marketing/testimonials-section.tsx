@@ -31,11 +31,11 @@ export function TestimonialsSection() {
 
   return (
     <section className="bg-bg-soft">
-      <Container className="py-16 md:py-20">
+      <Container className="py-8 sm:py-10 md:py-12">
         <Reveal>
-          <div className="mb-10 text-center">
+          <div className="mb-6 text-center sm:mb-8">
             <p className="eyebrow text-[#ad7f19]">Traveller stories</p>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] md:text-4xl">
+            <h2 className="mt-1 text-xl font-bold tracking-tight text-deep sm:text-2xl md:text-3xl">
               Loved by travellers like you
             </h2>
           </div>

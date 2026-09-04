@@ -47,7 +47,7 @@ export function MobileActionBar() {
         <button
           type="button"
           onClick={() => openEnquiry()}
-          className="flex min-w-0 flex-col items-center gap-1 rounded-xl bg-[linear-gradient(145deg,#2a9bea,#075eac)] px-1 py-1.5 text-[10px] font-bold text-white shadow-[0_10px_22px_-12px_rgba(52,87,202,0.9)]"
+          className="flex min-w-0 flex-col items-center gap-1 rounded-xl bg-[linear-gradient(145deg,#2a9bea,#075eac)] px-1 py-1.5 text-[10px] font-bold text-white shadow-[0_10px_22px_-12px_rgba(11,102,228,0.9)]"
         >
           <Send className="h-5 w-5" aria-hidden />
           <span>Enquire</span>

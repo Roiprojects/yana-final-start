@@ -11,8 +11,8 @@ const steps = [
     title: "Share your travel vision",
     desc: "Tell us where you want to travel, your dates, group size, and preferences — via our quick enquiry form or directly on WhatsApp.",
     highlight: "Prompt Response & Consultation",
-    gradient: "from-[#3457ca] to-[#1d4ed8]",
-    glow: "bg-[#3457ca]/12",
+    gradient: "from-[#0b66e4] to-[#1d4ed8]",
+    glow: "bg-[#0b66e4]/12",
   },
   {
     step: "02",
@@ -45,13 +45,13 @@ export function HowItWorks() {
     <div className="relative">
       {/* Section Header */}
       <Reveal>
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-4 sm:mb-8">
           <div className="max-w-2xl">
             <p className="eyebrow text-[#ad7f19]">How it works</p>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-[-0.04em] text-deep md:text-4xl">
+            <h2 className="mt-1 text-xl font-bold tracking-tight text-deep sm:text-2xl md:text-3xl">
               Planning your trip is simple & effortless
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-text-secondary">
+            <p className="mt-2 text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6">
               From your initial idea to smooth return, our three-step process makes dream holidays seamless and stress-free.
             </p>
           </div>
@@ -59,7 +59,7 @@ export function HowItWorks() {
           <button
             type="button"
             onClick={() => openEnquiry()}
-            className="inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 text-sm font-bold text-white shadow-[0_16px_32px_-12px_rgba(52,87,202,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-10px_rgba(52,87,202,0.75)] hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-full bg-cta px-6 py-3 text-sm font-bold text-white shadow-[0_16px_32px_-12px_rgba(11,102,228,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-10px_rgba(11,102,228,0.75)] hover:scale-[1.02]"
           >
             <span>Start Planning Now</span>
             <ArrowRight className="h-4 w-4" />
@@ -72,13 +72,13 @@ export function HowItWorks() {
         {/* Desktop Connected Progress Line */}
         <div
           aria-hidden
-          className="absolute left-[12%] right-[12%] top-9 hidden h-[3px] -translate-y-1/2 rounded-full bg-gradient-to-r from-[#3457ca]/30 via-[#c99b2d]/45 to-[#2e9e6b]/30 lg:block z-0"
+          className="absolute left-[12%] right-[12%] top-9 hidden h-[3px] -translate-y-1/2 rounded-full bg-gradient-to-r from-[#0b66e4]/30 via-[#c99b2d]/45 to-[#2e9e6b]/30 lg:block z-0"
         />
 
         <div className="relative z-10 grid gap-7 md:grid-cols-3">
           {steps.map((step, i) => (
             <Reveal key={step.title} delay={i * 130}>
-              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[2.2rem] border border-white/90 bg-white/90 p-8 shadow-[0_16px_40px_-16px_rgba(16,33,58,0.1)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2.5 hover:border-primary/35 hover:bg-white hover:shadow-[0_30px_60px_-18px_rgba(52,87,202,0.22)]">
+              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[2.2rem] border border-white/90 bg-white/90 p-8 shadow-[0_16px_40px_-16px_rgba(16,33,58,0.1)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2.5 hover:border-primary/35 hover:bg-white hover:shadow-[0_30px_60px_-18px_rgba(11,102,228,0.22)]">
                 {/* Top glow accent line */}
                 <span
                   aria-hidden
@@ -103,7 +103,7 @@ export function HowItWorks() {
                   {/* Step Header: Icon & Step Tag */}
                   <div className="relative mb-6 flex items-center justify-between gap-3">
                     <div
-                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${step.gradient} text-white shadow-[0_12px_26px_-6px_rgba(16,33,58,0.35)] ring-4 ring-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_16px_32px_-6px_rgba(52,87,202,0.5)]`}
+                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${step.gradient} text-white shadow-[0_12px_26px_-6px_rgba(16,33,58,0.35)] ring-4 ring-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_16px_32px_-6px_rgba(11,102,228,0.5)]`}
                     >
                       <step.icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
                     </div>

@@ -91,7 +91,7 @@ export function PackagesPage() {
           <aside className="space-y-6">
             <div className="rounded-[1.8rem] border border-[#eadfcf] bg-[linear-gradient(135deg,#fffefb,#f7f1e4)] p-6 shadow-[0_22px_48px_-34px_rgba(16,33,58,0.24)]">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_26px_-16px_rgba(52,87,202,0.8)]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-primary text-white shadow-[0_16px_26px_-16px_rgba(11,102,228,0.8)]">
                   <Layers3 className="h-5 w-5" aria-hidden />
                 </div>
                 <div>
@@ -217,7 +217,7 @@ function FilterGroup({
               className={cn(
                 "rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all duration-200",
                 active
-                  ? "border-primary bg-primary text-white shadow-[0_10px_22px_-14px_rgba(52,87,202,0.8)]"
+                  ? "border-primary bg-primary text-white shadow-[0_10px_22px_-14px_rgba(11,102,228,0.8)]"
                   : "border-[#eadfcf] bg-white text-text-secondary hover:border-[#dbc498] hover:text-primary",
               )}
             >

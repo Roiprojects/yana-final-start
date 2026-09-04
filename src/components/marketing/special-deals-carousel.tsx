@@ -83,22 +83,22 @@ export function SpecialDealsSection({ items }: SpecialDealsProps) {
         ];
 
   return (
-    <div className="my-8 w-full">
-      <div className="mb-6 overflow-hidden rounded-[2rem] border border-[#e7dcc6] bg-[linear-gradient(135deg,#fffdf8,#f7f1e4)] p-6 shadow-[0_28px_60px_-36px_rgba(16,33,58,0.28)] sm:p-8">
+    <div className="w-full">
+      <div className="mb-5 overflow-hidden rounded-[2rem] border border-[#e7dcc6] bg-[linear-gradient(135deg,#fffdf8,#f7f1e4)] p-5 shadow-[0_28px_60px_-36px_rgba(16,33,58,0.28)] sm:p-7">
         <p className="eyebrow text-[#ad7f19]">Signature departures</p>
-        <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
+        <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-deep sm:text-3xl lg:text-4xl">
+            <h2 className="text-xl font-bold tracking-tight text-deep sm:text-2xl lg:text-3xl">
               Brightly presented journeys that feel premium before the enquiry
               even starts.
             </h2>
-            <p className="mt-3 text-sm leading-6 text-text-secondary sm:text-base">
+            <p className="mt-2 text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6">
               A cleaner luxury layout inspired by leading travel brands: large
               imagery, stronger hierarchy, and card styling that feels curated
               instead of crowded.
             </p>
           </div>
-          <div className="hidden rounded-full border border-[#eadfcf] bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-sm sm:block">
+          <div className="hidden rounded-full border border-[#eadfcf] bg-white/80 px-3.5 py-1.5 text-xs font-semibold text-primary shadow-sm sm:block">
             Handpicked packages
           </div>
         </div>
