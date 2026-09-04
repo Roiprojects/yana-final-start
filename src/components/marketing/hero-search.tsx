@@ -66,8 +66,7 @@ export function HeroSearch() {
   return (
     <div ref={boxRef} className="relative w-full max-w-xl">
       <form onSubmit={submit}>
-        <div className="flex items-center gap-2.5 rounded-full border border-white/40 bg-white/15 px-4 py-3 shadow-[0_18px_40px_-28px_rgba(0,0,0,0.6)] backdrop-blur-lg transition-colors focus-within:bg-white/25">
-          <Search className="h-4 w-4 shrink-0 text-white/80" aria-hidden />
+        <div className="flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-3.5 py-1.5 shadow-[0_14px_30px_-20px_rgba(0,0,0,0.6)] backdrop-blur-lg transition-colors focus-within:bg-white/25">
           <input
             type="search"
             value={term}
@@ -78,17 +77,18 @@ export function HeroSearch() {
             onKeyDown={(e) => {
               if (e.key === "Escape") setOpen(false);
             }}
-            placeholder="Search packages, destinations…"
+            placeholder="Search packages…"
             aria-label="Search packages"
             autoComplete="off"
-            className="w-full bg-transparent text-sm text-white placeholder-white/70 outline-none [&::-webkit-search-cancel-button]:hidden"
+            className="w-full bg-transparent text-xs text-white placeholder-white/70 outline-none sm:text-sm [&::-webkit-search-cancel-button]:hidden"
           />
-          <kbd
-            aria-hidden
-            className="hidden items-center gap-0.5 rounded-md border border-white/30 bg-white/15 px-1.5 py-0.5 text-[10px] font-semibold text-white/70 sm:flex"
+          <button
+            type="submit"
+            aria-label="Search"
+            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 text-white transition-all duration-200 hover:bg-white/35 hover:scale-105"
           >
-            <CornerDownLeft className="h-3 w-3" />
-          </kbd>
+            <Search className="h-3.5 w-3.5" aria-hidden />
+          </button>
         </div>
       </form>
 

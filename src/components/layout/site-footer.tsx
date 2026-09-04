@@ -162,7 +162,10 @@ export function SiteFooter() {
           </Link>
 
           <p className="text-sm leading-relaxed text-white/75">
-            Karnataka&apos;s premier travel partner specializing in curated domestic group tours, international escapes, customized itineraries, and sacred pilgrimage journeys since 2015.
+            Yana Travels is Karnataka based tour operator specializing in conducting premium domestic &amp; international tours.
+          </p>
+          <p className="text-sm leading-relaxed text-white/75">
+            Yana Travels makes planning your dream vacation effortless. Discover and book your perfect getaway today with Yana Travels.
           </p>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md">

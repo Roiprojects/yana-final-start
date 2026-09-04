@@ -204,24 +204,24 @@ export function HomePage() {
 
           <Container className="relative z-10 flex min-h-[calc(100svh-1rem)] flex-col py-5 sm:py-6 lg:py-7">
             <div className="flex w-full items-center justify-between gap-4">
-              <div className="flex shrink-0 items-center">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <Link
                   to="/"
                   aria-label="Yana Travels home"
-                  className="group flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.03]"
+                  className="group flex shrink-0 items-center transition-transform duration-300 hover:scale-[1.02]"
                 >
                   <img
                     src="/brand/yana-logo-hero-dark.png"
                     alt="Yana Travels"
-                    className="h-14 w-auto max-w-[220px] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] sm:h-16 sm:max-w-[260px] md:h-20 md:max-w-[320px]"
+                    className="h-10 w-auto max-w-[170px] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)] sm:h-12 sm:max-w-[210px] md:h-14 md:max-w-[240px]"
                   />
                 </Link>
-              </div>
-
-              <div className="hidden items-center gap-3 lg:flex">
-                <div className="w-48 xl:w-60">
+                <div className="hidden w-44 sm:block sm:w-56 md:w-64 lg:w-72">
                   <HeroSearch />
                 </div>
+              </div>
+
+              <div className="hidden items-center gap-2 lg:flex">
                 <nav className="flex items-center gap-1.5" aria-label="Hero navigation">
                   {primaryNav.map((item) => (
                     <Link

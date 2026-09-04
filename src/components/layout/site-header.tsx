@@ -31,10 +31,10 @@ export function SiteHeader() {
       className={cn(
         "fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300",
         isHome && !scrolled && "pointer-events-none -translate-y-4 opacity-0",
-        "bg-white/95 backdrop-blur-md shadow-[0_12px_32px_-18px_rgba(16,33,58,0.12)] border-b border-border-soft/70 text-text-main",
+        "bg-[#0b66e4]/96 backdrop-blur-md shadow-[0_12px_32px_-18px_rgba(11,102,228,0.45)] border-b border-white/15 text-white",
       )}
     >
-      <div className="mx-auto flex h-18 max-w-[var(--container-site)] items-center justify-between gap-3 px-4 sm:h-22 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-[var(--container-site)] items-center justify-between gap-3 px-4 sm:h-18 sm:px-6 lg:px-8">
         <div className="flex shrink-0 items-center gap-3">
           <Link
             to="/"
@@ -42,34 +42,34 @@ export function SiteHeader() {
             className="group flex items-center transition-transform duration-300 hover:scale-[1.02]"
           >
             <img
-              src="/brand/yana-logo-nav-white.png"
+              src="/brand/yana-logo-white.png"
               alt="Yana Travels"
-              className="h-12 w-auto max-w-[210px] object-contain sm:h-14 sm:max-w-[260px] md:h-16 md:max-w-[300px]"
+              className="h-9 w-auto max-w-[170px] object-contain sm:h-11 sm:max-w-[210px] md:h-12 md:max-w-[230px]"
             />
           </Link>
-          <SearchBar dark={false} />
+          <SearchBar dark={true} />
         </div>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {primaryNav.map((item) => (
-            <NavLink key={item.href} item={item} dark={false} />
+            <NavLink key={item.href} item={item} dark={true} />
           ))}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={`tel:${phone.replace(/\s/g, "")}`}
-            className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-border-soft bg-white/90 px-3.5 py-2 text-sm font-semibold text-text-main shadow-sm transition-colors hover:border-primary/40 hover:text-primary xl:inline-flex"
+            className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-white/25 bg-white/15 px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-white hover:text-[#0b66e4] xl:inline-flex"
           >
             <Phone
-              className="h-4 w-4 text-primary"
+              className="h-4 w-4 text-[#fcd34d]"
               aria-hidden
             />
             {phone}
           </a>
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full border border-border-soft bg-white/90 p-2.5 text-deep shadow-sm transition-colors hover:text-primary lg:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/15 p-2.5 text-white shadow-sm transition-colors hover:bg-white/25 lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((value) => !value)}
@@ -84,24 +84,24 @@ export function SiteHeader() {
       </div>
 
       {mobileOpen ? (
-        <div className="border-t border-border-soft bg-white/96 shadow-[0_24px_48px_-24px_rgba(16,33,58,0.28)] lg:hidden">
+        <div className="border-t border-white/15 bg-[#0952b7] text-white shadow-[0_24px_48px_-24px_rgba(11,102,228,0.5)] lg:hidden">
           <div className="flex flex-col gap-1 p-4">
             {primaryNav.map((item) => (
               <div key={item.href} className="py-1">
                 <Link
                   to={item.href}
-                  className="block rounded-xl px-2 py-2 font-medium text-text-main"
+                  className="block rounded-xl px-2 py-2 font-medium text-white hover:bg-white/15"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
                 </Link>
                 {item.children ? (
-                  <div className="ml-3 mt-1 flex flex-col gap-1 border-l border-border-soft pl-3">
+                  <div className="ml-3 mt-1 flex flex-col gap-1 border-l border-white/20 pl-3">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         to={child.href}
-                        className="rounded-lg px-2 py-1.5 text-sm text-text-secondary hover:text-primary"
+                        className="rounded-lg px-2 py-1.5 text-sm text-white/80 hover:text-white"
                         onClick={() => setMobileOpen(false)}
                       >
                         {child.label}
@@ -114,7 +114,7 @@ export function SiteHeader() {
             <div className="mt-3 flex gap-2">
               <button
                 type="button"
-                className="flex-1 rounded-full bg-cta px-5 py-2.5 text-center text-sm font-semibold text-white"
+                className="flex-1 rounded-full bg-white px-5 py-2.5 text-center text-sm font-bold text-[#0b66e4] shadow-md hover:bg-[#f8faff]"
                 onClick={() => {
                   setMobileOpen(false);
                   openEnquiry();
@@ -124,7 +124,7 @@ export function SiteHeader() {
               </button>
               <a
                 href={whatsappLink(undefined, whatsapp)}
-                className="flex-1 rounded-full border border-primary px-5 py-2.5 text-center text-sm font-semibold text-primary"
+                className="flex-1 rounded-full border border-white/30 bg-[#25d366] px-5 py-2.5 text-center text-sm font-semibold text-white shadow-md"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -153,13 +153,12 @@ function SearchBar({ dark }: { dark: boolean }) {
       role="search"
       onSubmit={onSubmit}
       className={cn(
-        "hidden items-center gap-2 rounded-full border px-3.5 py-2 transition-colors md:flex",
+        "hidden items-center gap-1.5 rounded-full border px-3 py-1.5 transition-colors sm:flex",
         dark
           ? "border-white/30 bg-white/15 text-white focus-within:bg-white/25"
-          : "border-border-soft bg-white/85 text-text-main shadow-sm focus-within:border-primary",
+          : "border-border-soft bg-white/90 text-text-main shadow-sm focus-within:border-primary",
       )}
     >
-      <Search className="h-4 w-4 shrink-0" aria-hidden />
       <input
         type="search"
         value={term}
@@ -167,12 +166,24 @@ function SearchBar({ dark }: { dark: boolean }) {
         placeholder="Search packages…"
         aria-label="Search packages"
         className={cn(
-          "w-32 bg-transparent text-sm outline-none lg:w-44",
+          "w-28 bg-transparent text-xs outline-none sm:text-sm lg:w-40",
           dark
             ? "text-white placeholder-white/70 [&::-webkit-search-cancel-button]:hidden"
             : "text-text-main placeholder-text-secondary/60",
         )}
       />
+      <button
+        type="submit"
+        aria-label="Search packages"
+        className={cn(
+          "flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-all duration-200",
+          dark
+            ? "bg-white/20 text-white hover:bg-white/35 hover:scale-105"
+            : "bg-primary/10 text-primary hover:bg-primary hover:text-white",
+        )}
+      >
+        <Search className="h-3.5 w-3.5" aria-hidden />
+      </button>
     </form>
   );
 }
