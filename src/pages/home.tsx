@@ -190,8 +190,8 @@ export function HomePage() {
             mobilePoster="/hero/homepage-hero-real-9x16-poster.jpg"
             images={[
               unsplash(heroImage, 2000),
-              unsplash(collections[0].image, 2000),
-              unsplash(collections[3].image, 2000),
+              collections[0].image,
+              collections[3].image,
             ]}
           />
           <div

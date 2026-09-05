@@ -23,25 +23,25 @@ export const collections = [
   {
     title: "Mountains & the North",
     blurb: "Himalayan valleys, high passes, and alpine calm.",
-    image: "photo-1506905925346-21bda4d32df4",
+    image: "/themes/theme-mountains.jpg",
     href: "/group-tours/domestic",
   },
   {
     title: "Beaches & Islands",
     blurb: "Sun, sea, and slow island mornings.",
-    image: "photo-1507525428034-b723cf961d3e",
+    image: "/themes/theme-beaches.jpg",
     href: "/packages",
   },
   {
     title: "Heritage & Pilgrimage",
     blurb: "Timeless monuments and journeys of the spirit.",
-    image: "photo-1548013146-72479768bada",
+    image: "/themes/theme-heritage.jpg",
     href: "/group-tours/domestic",
   },
   {
     title: "International Escapes",
     blurb: "Iconic cities and horizons beyond India.",
-    image: "photo-1436491865332-7a61a109cc05",
+    image: "/themes/theme-international.jpg",
     href: "/group-tours/international",
   },
 ] as const;
