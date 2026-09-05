@@ -155,11 +155,11 @@ function EnquiryDialog({
                   <div className="relative flex items-center rounded-xl border border-white/60 bg-white/20 shadow-sm backdrop-blur-[2px] transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/45 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-name"
-                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder:text-gray-900 placeholder:opacity-100 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] outline-none"
                       placeholder="Enter Name"
                       {...register("name")}
                     />
-                    <User className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
+                    <User className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-900 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]" />
                   </div>
                   {errors.name && (
                     <p className={errorClass}>{errors.name.message}</p>
@@ -172,11 +172,11 @@ function EnquiryDialog({
                     <input
                       id="modal-email"
                       type="email"
-                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder:text-gray-900 placeholder:opacity-100 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] outline-none"
                       placeholder="Enter Email ID"
                       {...register("email")}
                     />
-                    <Mail className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
+                    <Mail className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-900 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]" />
                   </div>
                   {errors.email && (
                     <p className={errorClass}>{errors.email.message}</p>
@@ -186,19 +186,19 @@ function EnquiryDialog({
                 {/* Phone */}
                 <div>
                   <div className="relative flex items-center rounded-xl border border-white/60 bg-white/20 shadow-sm backdrop-blur-[2px] transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/45 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
-                    <div className="flex shrink-0 items-center gap-1.5 border-r border-slate-600/30 py-3 pl-3.5 pr-2.5 text-xs font-extrabold text-slate-900 select-none">
+                    <div className="flex shrink-0 items-center gap-1.5 border-r border-slate-600/30 py-3 pl-3.5 pr-2.5 text-xs font-bold text-gray-900 select-none drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]">
                       <span className="text-base leading-none">🇮🇳</span>
-                      <span className="text-[10px] text-slate-800">▾</span>
-                      <span className="pl-1 text-sm text-slate-900 font-extrabold">+91</span>
+                      <span className="text-[10px] text-gray-900">▾</span>
+                      <span className="pl-1 text-sm font-bold text-gray-900">+91</span>
                     </div>
                     <input
                       id="modal-phone"
                       inputMode="tel"
-                      className="w-full bg-transparent px-3 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
+                      className="w-full bg-transparent px-3 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder:text-gray-900 placeholder:opacity-100 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] outline-none"
                       placeholder="Enter Phone Number"
                       {...register("phone")}
                     />
-                    <Phone className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
+                    <Phone className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-900 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]" />
                   </div>
                   {errors.phone && (
                     <p className={errorClass}>{errors.phone.message}</p>
@@ -210,11 +210,11 @@ function EnquiryDialog({
                   <div className="relative flex items-center rounded-xl border border-white/60 bg-white/20 shadow-sm backdrop-blur-[2px] transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/45 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-destination"
-                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder:text-gray-900 placeholder:opacity-100 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)] outline-none"
                       placeholder="Enter Your Destination"
                       {...register("destinationInterest")}
                     />
-                    <MapPin className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
+                    <MapPin className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-900 drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]" />
                   </div>
                 </div>
 
