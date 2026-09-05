@@ -257,21 +257,21 @@ export function ServicesPage() {
                 <img
                   src={meta.image}
                   alt={item.name}
-                  className="absolute inset-0 h-full w-full object-cover brightness-[0.78] transition-transform duration-[1200ms] ease-out group-hover:scale-108 group-hover:brightness-[0.68]"
+                  className="absolute inset-0 h-full w-full object-cover brightness-[1.02] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                 />
 
-                {/* Dark Gradient Overlay for Maximum Readability */}
+                {/* Bottom-only Gradient Overlay — No dark shade at the top */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20 transition-opacity duration-300 group-hover:via-black/60"
+                  className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
                   aria-hidden
                 />
 
                 {/* Top Glassmorphic Tag & Icon */}
                 <div className="relative z-10 flex items-center justify-between gap-3">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/20 text-white shadow-md backdrop-blur-md ring-1 ring-white/30 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_10px_22px_-6px_rgba(11,102,228,0.6)]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-black/35 text-white shadow-md backdrop-blur-md ring-1 ring-white/30 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-[0_10px_22px_-6px_rgba(11,102,228,0.6)]">
                     <Icon className="h-6 w-6" aria-hidden />
                   </div>
-                  <span className="rounded-full border border-white/25 bg-black/40 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#f8d77f] backdrop-blur-md shadow-sm">
+                  <span className="rounded-full border border-white/25 bg-black/45 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#f8d77f] backdrop-blur-md shadow-sm">
                     {meta.tag}
                   </span>
                 </div>

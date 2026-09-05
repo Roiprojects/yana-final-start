@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { unsplash } from "@/lib/images";
 
 export interface ThemeCollection {
   title: string;
@@ -17,11 +16,8 @@ export const curatedThemesData: ThemeCollection[] = [
     blurb: "Himalayan valleys, high passes, and alpine calm.",
     href: "/group-tours/domestic",
     images: [
-      "photo-1506905925346-21bda4d32df4", // Himalayan mountain panorama
-      "photo-1595815771614-ade9d652a65d", // Kashmir valley
-      "photo-1626621341517-bbf3d9990a23", // Manali / Himachal pine slopes
-      "photo-1581793745862-99fde7fa73d2", // Ladakh mountain pass & lake
-      "photo-1519681393784-d120267933ba", // Uttarakhand alpine peaks
+      "/themes/theme-mountains.jpg",
+      "/themes/theme-mountains-2.jpg",
     ],
   },
   {
@@ -29,11 +25,8 @@ export const curatedThemesData: ThemeCollection[] = [
     blurb: "Sun, sea, and slow island mornings.",
     href: "/packages",
     images: [
-      "photo-1507525428034-b723cf961d3e", // Tropical crystalline sea
-      "photo-1512343879784-a960bf40e7f2", // Goa palm coast
-      "photo-1589308078059-be1415eab4c3", // Andaman turquoise shores
-      "photo-1590050752117-238cb0fb12b1", // Kerala coastal cliffs & beaches
-      "photo-1544551763-46a013bb70d5", // Lakshadweep tropical lagoon
+      "/themes/theme-beaches.jpg",
+      "/themes/theme-beaches-2.jpg",
     ],
   },
   {
@@ -41,11 +34,8 @@ export const curatedThemesData: ThemeCollection[] = [
     blurb: "Timeless monuments and journeys of the spirit.",
     href: "/group-tours/domestic",
     images: [
-      "photo-1548013146-72479768bada", // Taj Mahal arched view
-      "photo-1561361513-2d000a50f0dc", // Varanasi holy ghats & Ganges
-      "photo-1524492412937-b28074a5d7da", // India Gate & Delhi heritage
-      "photo-1599661046289-e31897846e41", // Rajasthan royal palaces
-      "photo-1582510003544-4d00b7f74220", // South India temple gopuram architecture
+      "/themes/theme-heritage.jpg",
+      "/themes/theme-heritage-2.jpg",
     ],
   },
   {
@@ -53,11 +43,8 @@ export const curatedThemesData: ThemeCollection[] = [
     blurb: "Iconic cities and horizons beyond India.",
     href: "/group-tours/international",
     images: [
-      "photo-1436491865332-7a61a109cc05", // Sky & flight horizon
-      "photo-1502602898657-3e91760cbb34", // Paris Eiffel Tower
-      "photo-1530122037265-a5f1f91d3b99", // Swiss Alps & alpine lakes
-      "photo-1512453979798-5ea266f8880c", // Dubai skyline
-      "photo-1523906834658-6e24ef2386f9", // Italy canals & Venice
+      "/themes/theme-international.jpg",
+      "/themes/theme-international-2.jpg",
     ],
   },
 ];
@@ -70,9 +57,9 @@ function ThemeCarouselCard({ collection, index }: { collection: ThemeCollection;
 
   // Preload images for smooth transition
   useEffect(() => {
-    collection.images.slice(1).forEach((imgId) => {
+    collection.images.slice(1).forEach((imgSrc) => {
       const img = new Image();
-      img.src = unsplash(imgId, 1280);
+      img.src = imgSrc;
     });
   }, [collection.images]);
 
@@ -109,12 +96,12 @@ function ThemeCarouselCard({ collection, index }: { collection: ThemeCollection;
       >
         {/* Layered Image Carousel Stack with crossfade & Ken Burns zoom */}
         <div className="absolute inset-0 h-full w-full overflow-hidden bg-slate-900">
-          {collection.images.map((imgId, idx) => {
+          {collection.images.map((imgSrc, idx) => {
             const isActive = idx === activeIndex;
             return (
               <img
-                key={imgId}
-                src={unsplash(imgId, 1280)}
+                key={imgSrc}
+                src={imgSrc}
                 alt={`${collection.title} slide ${idx + 1}`}
                 loading={idx === 0 ? "eager" : "lazy"}
                 className={`absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-all duration-1000 ease-out ${
