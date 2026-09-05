@@ -29,6 +29,7 @@ import { DestinationMarquee } from "@/components/marketing/destination-marquee";
 import { TestimonialsSection } from "@/components/marketing/testimonials-section";
 import { GallerySection } from "@/components/marketing/gallery-section";
 import { Faq } from "@/components/marketing/faq";
+import { CuratedThemes } from "@/components/marketing/curated-themes";
 import { primaryNav } from "@/lib/site-config";
 import {
   unsplash,
@@ -344,46 +345,7 @@ export function HomePage() {
       </Section>
 
       <Section className="relative overflow-hidden">
-        <Reveal>
-          <div className="mb-6 flex flex-wrap items-end justify-between gap-3 sm:mb-8">
-            <div>
-              <p className="eyebrow text-[#ad7f19]">Curated themes</p>
-              <h2 className="mt-1 text-xl font-bold tracking-tight text-[#10213a] sm:text-2xl md:text-3xl">
-                Journeys arranged for every kind of traveller
-              </h2>
-            </div>
-            <Link
-              to="/packages"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline sm:text-sm"
-            >
-              View all packages <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </Reveal>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {collections.map((c, i) => (
-            <Reveal key={c.title} delay={i * 110}>
-              <Link
-                to={c.href}
-                className="group relative flex aspect-[3/4] flex-col overflow-hidden rounded-[1.8rem] shadow-[0_18px_46px_-24px_rgba(16,33,58,0.4)] ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_32px_76px_-28px_rgba(16,33,58,0.45)]"
-              >
-                <img
-                  src={unsplash(c.image, 1280)}
-                  alt={c.title}
-                  className="absolute inset-0 h-full w-full object-cover brightness-[1.05] transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-white/94 p-5 backdrop-blur-sm">
-                  <h3 className="text-base font-bold leading-tight text-deep sm:text-lg">
-                    {c.title}
-                  </h3>
-                  <p className="mt-1 text-xs font-normal text-text-secondary sm:text-sm">
-                    {c.blurb}
-                  </p>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <CuratedThemes />
       </Section>
 
       <Section tone="soft" className="relative overflow-hidden">
