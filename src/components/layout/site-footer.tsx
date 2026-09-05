@@ -20,7 +20,6 @@ import { useSiteSettings } from "@/components/providers/site-settings-context";
 import { useEnquiryModal } from "@/components/providers/enquiry-modal-context";
 import { api } from "@/lib/api/client";
 import type { PublicOffice } from "@/lib/types/content";
-import { BrandWordmark } from "@/components/layout/brand-wordmark";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -146,18 +145,12 @@ export function SiteFooter() {
           <Link
             to="/"
             aria-label="Yana Travels"
-            className="group inline-flex items-center gap-3.5 transition-opacity hover:opacity-90"
+            className="group inline-flex items-center transition-opacity hover:opacity-95"
           >
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center">
-              <img
-                src="/brand/yana-logo-white.png"
-                alt="Yana Travels"
-                className="h-[3.6rem] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-            </span>
-            <BrandWordmark
-              accentClassName="text-[#e8c979]"
-              textClassName="text-white"
+            <img
+              src="/brand/yana-logo-footer.png"
+              alt="Yana Travels"
+              className="h-14 w-auto max-w-[240px] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-16 sm:max-w-[270px]"
             />
           </Link>
 
