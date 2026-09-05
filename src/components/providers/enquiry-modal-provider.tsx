@@ -10,24 +10,18 @@ import {
   MapPin,
   Calendar,
   Users,
-  PhoneCall,
+  User,
+  Mail,
+  Phone,
 } from "lucide-react";
 import {
   enquiryFormSchema,
   type EnquiryFormValues,
 } from "@/lib/schemas/enquiry";
 import { api } from "@/lib/api/client";
-import { unsplash } from "@/lib/images";
 import { EnquiryModalContext } from "./enquiry-modal-context";
 
-/* ── Form fields ── */
-const fieldClass =
-  "w-full rounded-lg border border-border-soft bg-bg-main px-3.5 py-2.5 text-sm text-text-main outline-none transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20";
-const labelClass =
-  "mb-1 block text-xs font-bold uppercase tracking-wide text-text-secondary";
-const errorClass = "mt-1 text-[11px] text-red-500";
-
-const MODAL_IMAGE = "photo-1469474968028-56623f02e42e";
+const errorClass = "mt-1 text-[11px] font-medium text-red-500";
 
 /* ── Modal dialog ── */
 function EnquiryDialog({
@@ -88,7 +82,7 @@ function EnquiryDialog({
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-deep/60 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-950/65 p-4 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === overlayRef.current) onClose();
       }}
@@ -96,18 +90,19 @@ function EnquiryDialog({
       aria-modal="true"
       aria-label="Enquiry form"
     >
-      <div className="relative flex max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-[0_32px_80px_-16px_rgba(12,39,64,0.45)]">
+      <div className="relative flex max-h-[94vh] w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-[0_32px_80px_-16px_rgba(12,39,64,0.45)]">
         {/* Left — team image (desktop only) */}
         <div
           className="relative hidden w-[42%] shrink-0 flex-col justify-end overflow-hidden bg-cover bg-top p-6 md:flex"
           style={{ backgroundImage: `url('/brand/enquiry-modal-team.png')` }}
         >
+          {/* Gentle gradient overlay to keep team smiling faces clear and bottom text readable */}
           <div
-            className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/25"
+            className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/35 to-transparent"
             aria-hidden
           />
           <div className="relative z-10">
-            <p className="text-base font-extrabold uppercase tracking-widest text-white">
+            <p className="text-sm font-extrabold uppercase tracking-widest text-[#fcd34d]">
               Yana Travels
             </p>
             <h2 className="mt-1 font-heading text-xl font-bold leading-snug text-white">
@@ -137,14 +132,14 @@ function EnquiryDialog({
         {/* Right — form */}
         <div className="flex flex-1 flex-col">
           {/* Header */}
-          <div className="flex items-center justify-between bg-gradient-to-r from-[#0b66e4] to-[#084db8] px-5 py-4">
+          <div className="flex items-center justify-between bg-gradient-to-r from-[#0b66e4] to-[#0952b7] px-5 py-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white/60">
-                Free consultation
-              </p>
               <h3 className="font-heading text-base font-bold text-white">
-                Get a Callback
+                Enquire Now / Get a Callback
               </h3>
+              <p className="text-[11px] text-white/80">
+                Fill out the form and our team will get back to you shortly.
+              </p>
             </div>
             <button
               type="button"
@@ -171,7 +166,7 @@ function EnquiryDialog({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="mt-6 rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white hover:bg-primary-hover"
+                  className="mt-6 rounded-full bg-[#0b66e4] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#0952b7]"
                 >
                   Close
                 </button>
@@ -185,110 +180,112 @@ function EnquiryDialog({
                 <div className="grid gap-3 sm:grid-cols-2">
                   {/* Name */}
                   <div>
-                    <label className={labelClass} htmlFor="modal-name">
-                      <PhoneCall className="mr-1 inline h-3 w-3" />
-                      Name *
-                    </label>
-                    <input
-                      id="modal-name"
-                      className={fieldClass}
-                      placeholder="Your full name"
-                      {...register("name")}
-                    />
+                    <div className="relative">
+                      <input
+                        id="modal-name"
+                        className="w-full rounded-xl border border-gray-200 bg-gray-50/60 px-3.5 py-2.5 pr-10 text-sm text-text-main outline-none transition focus:border-[#0b66e4] focus:bg-white focus:ring-2 focus:ring-[#0b66e4]/15"
+                        placeholder="Enter Name *"
+                        {...register("name")}
+                      />
+                      <User className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                    </div>
                     {errors.name && (
                       <p className={errorClass}>{errors.name.message}</p>
                     )}
                   </div>
-                  {/* Phone */}
-                  <div>
-                    <label className={labelClass} htmlFor="modal-phone">
-                      Phone *
-                    </label>
-                    <input
-                      id="modal-phone"
-                      inputMode="tel"
-                      className={fieldClass}
-                      placeholder="+91 98765 43210"
-                      {...register("phone")}
-                    />
-                    {errors.phone && (
-                      <p className={errorClass}>{errors.phone.message}</p>
-                    )}
-                  </div>
+
                   {/* Email */}
                   <div>
-                    <label className={labelClass} htmlFor="modal-email">
-                      Email
-                    </label>
-                    <input
-                      id="modal-email"
-                      type="email"
-                      className={fieldClass}
-                      placeholder="you@email.com"
-                      {...register("email")}
-                    />
+                    <div className="relative">
+                      <input
+                        id="modal-email"
+                        type="email"
+                        className="w-full rounded-xl border border-gray-200 bg-gray-50/60 px-3.5 py-2.5 pr-10 text-sm text-text-main outline-none transition focus:border-[#0b66e4] focus:bg-white focus:ring-2 focus:ring-[#0b66e4]/15"
+                        placeholder="Enter Email ID"
+                        {...register("email")}
+                      />
+                      <Mail className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                    </div>
                     {errors.email && (
                       <p className={errorClass}>{errors.email.message}</p>
                     )}
                   </div>
-                  {/* Travellers */}
-                  <div>
-                    <label className={labelClass} htmlFor="modal-travellers">
-                      <Users className="mr-1 inline h-3 w-3" />
-                      Travellers
-                    </label>
-                    <input
-                      id="modal-travellers"
-                      type="number"
-                      min={1}
-                      className={fieldClass}
-                      placeholder="2"
-                      {...register("travellers")}
-                    />
+
+                  {/* Phone */}
+                  <div className="sm:col-span-2">
+                    <div className="relative flex items-center rounded-xl border border-gray-200 bg-gray-50/60 transition focus-within:border-[#0b66e4] focus-within:bg-white focus-within:ring-2 focus-within:ring-[#0b66e4]/15">
+                      <span className="flex items-center gap-1 border-r border-gray-200 px-3 text-xs font-semibold text-gray-700 select-none">
+                        <span className="text-base leading-none">🇮🇳</span>
+                        <span>+91</span>
+                      </span>
+                      <input
+                        id="modal-phone"
+                        inputMode="tel"
+                        className="w-full bg-transparent px-3 py-2.5 pr-10 text-sm text-text-main outline-none"
+                        placeholder="Phone Number *"
+                        {...register("phone")}
+                      />
+                      <Phone className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                    </div>
+                    {errors.phone && (
+                      <p className={errorClass}>{errors.phone.message}</p>
+                    )}
                   </div>
+
                   {/* Destination */}
                   <div className="sm:col-span-2">
-                    <label className={labelClass} htmlFor="modal-destination">
-                      <MapPin className="mr-1 inline h-3 w-3" />
-                      Destination of interest
-                    </label>
-                    <input
-                      id="modal-destination"
-                      className={fieldClass}
-                      placeholder="e.g. Kerala, Bali, Kashmir…"
-                      {...register("destinationInterest")}
-                    />
+                    <div className="relative">
+                      <input
+                        id="modal-destination"
+                        className="w-full rounded-xl border border-gray-200 bg-gray-50/60 px-3.5 py-2.5 pr-10 text-sm text-text-main outline-none transition focus:border-[#0b66e4] focus:bg-white focus:ring-2 focus:ring-[#0b66e4]/15"
+                        placeholder="Enter Your Destination (e.g. Europe, Bali, Kerala…)"
+                        {...register("destinationInterest")}
+                      />
+                      <MapPin className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                    </div>
                   </div>
+
+                  {/* Travellers */}
+                  <div>
+                    <div className="relative">
+                      <input
+                        id="modal-travellers"
+                        type="number"
+                        min={1}
+                        className="w-full rounded-xl border border-gray-200 bg-gray-50/60 px-3.5 py-2.5 pr-10 text-sm text-text-main outline-none transition focus:border-[#0b66e4] focus:bg-white focus:ring-2 focus:ring-[#0b66e4]/15"
+                        placeholder="Travellers (e.g. 2)"
+                        {...register("travellers")}
+                      />
+                      <Users className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+                    </div>
+                  </div>
+
                   {/* Travel Date */}
-                  <div className="sm:col-span-2">
-                    <label className={labelClass} htmlFor="modal-date">
-                      <Calendar className="mr-1 inline h-3 w-3" />
-                      Preferred travel date
-                    </label>
-                    <input
-                      id="modal-date"
-                      type="date"
-                      className={fieldClass}
-                      {...register("travelDate")}
-                    />
+                  <div>
+                    <div className="relative">
+                      <input
+                        id="modal-date"
+                        type="date"
+                        className="w-full rounded-xl border border-gray-200 bg-gray-50/60 px-3.5 py-2.5 text-sm text-text-main outline-none transition focus:border-[#0b66e4] focus:bg-white focus:ring-2 focus:ring-[#0b66e4]/15"
+                        {...register("travelDate")}
+                      />
+                    </div>
                   </div>
+
                   {/* Message */}
                   <div className="sm:col-span-2">
-                    <label className={labelClass} htmlFor="modal-message">
-                      Any other details
-                    </label>
                     <textarea
                       id="modal-message"
                       rows={2}
-                      className={fieldClass}
-                      placeholder="Budget, special requirements, etc."
+                      className="w-full rounded-xl border border-gray-200 bg-gray-50/60 px-3.5 py-2.5 text-sm text-text-main outline-none transition focus:border-[#0b66e4] focus:bg-white focus:ring-2 focus:ring-[#0b66e4]/15"
+                      placeholder="Any other details (budget, special requirements, etc.)"
                       {...register("message")}
                     />
                   </div>
                 </div>
 
                 {submitError && (
-                  <p className="rounded-lg bg-red-50 px-3 py-2 text-xs text-red-600">
+                  <p className="rounded-xl bg-red-50 px-3.5 py-2 text-xs text-red-600">
                     {submitError}
                   </p>
                 )}
@@ -296,17 +293,17 @@ function EnquiryDialog({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0b66e4] to-[#084db8] py-3 text-sm font-bold text-white shadow-[0_10px_26px_-8px_rgba(11,102,228,0.5)] transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-8px_rgba(11,102,228,0.7)] disabled:opacity-70"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b66e4] py-3.5 text-sm font-bold text-white shadow-[0_12px_28px_-8px_rgba(11,102,228,0.5)] transition-all duration-200 hover:bg-[#0952b7] hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(11,102,228,0.7)] disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
                     <Send className="h-4 w-4" />
                   )}
-                  {isSubmitting ? "Sending…" : "Send Enquiry"}
+                  <span>{isSubmitting ? "Submitting…" : "Submit Now"}</span>
                 </button>
 
-                <p className="text-center text-[10px] text-text-secondary">
+                <p className="text-center text-[11px] text-text-secondary">
                   We&apos;ll call you back within 2 business hours. No spam,
                   ever.
                 </p>
