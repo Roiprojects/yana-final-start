@@ -90,16 +90,16 @@ function EnquiryDialog({
       aria-modal="true"
       aria-label="Enquiry form"
     >
-      <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.55)]">
+      <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.65)]">
         {/* Full card background image */}
         <div
           className="absolute inset-0 bg-cover bg-top bg-no-repeat"
           style={{ backgroundImage: `url('/brand/enquiry-modal-team.png')` }}
           aria-hidden
         />
-        {/* Subtle transparent overlay to make image vibrant and clearly visible */}
+        {/* Soft, light transparent vignette so the team and logo are 100% visible */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/65 via-white/45 to-white/75"
+          className="absolute inset-0 bg-gradient-to-b from-white/30 via-black/10 to-black/35"
           aria-hidden
         />
 
@@ -109,7 +109,7 @@ function EnquiryDialog({
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-md transition hover:bg-black/40 hover:scale-110"
+            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition hover:bg-black/60 hover:scale-110"
             aria-label="Close enquiry form"
           >
             <X className="h-5 w-5 drop-shadow" />
@@ -134,32 +134,32 @@ function EnquiryDialog({
             </div>
           ) : (
             <div>
-              {/* Title & Subtitle with background blur pill for crystal-clear readability */}
-              <div className="rounded-2xl bg-white/90 p-4 text-center shadow-sm backdrop-blur-md border border-white/70">
-                <h2 className="text-2xl font-extrabold tracking-tight text-[#ea580c] sm:text-3xl">
+              {/* Title & Subtitle with soft glassmorphism pill */}
+              <div className="rounded-2xl bg-white/75 p-3.5 text-center shadow-md backdrop-blur-md border border-white/80">
+                <h2 className="text-2xl font-extrabold tracking-tight text-[#ea580c] sm:text-3xl drop-shadow-sm">
                   Enquire Now
                 </h2>
-                <p className="mt-1 text-xs font-medium text-gray-600 sm:text-sm">
+                <p className="mt-1 text-xs font-semibold text-gray-700 sm:text-sm">
                   Fill out the form and our team will get back to you shortly.
                 </p>
               </div>
 
-              {/* Form fields */}
+              {/* Form fields with transparent glassmorphism containers */}
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
-                className="mt-6 space-y-4"
+                className="mt-5 space-y-3.5"
               >
                 {/* Name */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-gray-200/90 bg-white/95 shadow-sm transition-colors focus-within:border-[#0b66e4] focus-within:ring-2 focus-within:ring-[#0b66e4]/20">
+                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-name"
-                      className="w-full bg-transparent px-4 py-3.5 pr-11 text-sm text-gray-800 placeholder-gray-400 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
                       placeholder="Enter Name"
                       {...register("name")}
                     />
-                    <User className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-400" />
+                    <User className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
                   </div>
                   {errors.name && (
                     <p className={errorClass}>{errors.name.message}</p>
@@ -168,15 +168,15 @@ function EnquiryDialog({
 
                 {/* Email */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-gray-200/90 bg-white/95 shadow-sm transition-colors focus-within:border-[#0b66e4] focus-within:ring-2 focus-within:ring-[#0b66e4]/20">
+                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-email"
                       type="email"
-                      className="w-full bg-transparent px-4 py-3.5 pr-11 text-sm text-gray-800 placeholder-gray-400 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
                       placeholder="Enter Email ID"
                       {...register("email")}
                     />
-                    <Mail className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-400" />
+                    <Mail className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
                   </div>
                   {errors.email && (
                     <p className={errorClass}>{errors.email.message}</p>
@@ -185,20 +185,20 @@ function EnquiryDialog({
 
                 {/* Phone */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-gray-200/90 bg-white/95 shadow-sm transition-colors focus-within:border-[#0b66e4] focus-within:ring-2 focus-within:ring-[#0b66e4]/20">
-                    <div className="flex shrink-0 items-center gap-1.5 border-r border-gray-200 py-3.5 pl-3.5 pr-2.5 text-xs font-semibold text-gray-700 select-none">
+                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
+                    <div className="flex shrink-0 items-center gap-1.5 border-r border-gray-400/40 py-3 pl-3.5 pr-2.5 text-xs font-bold text-gray-900 select-none">
                       <span className="text-base leading-none">🇮🇳</span>
-                      <span className="text-[10px] text-gray-400">▾</span>
-                      <span className="pl-1 text-sm text-gray-700">+91</span>
+                      <span className="text-[10px] text-gray-700">▾</span>
+                      <span className="pl-1 text-sm text-gray-900 font-bold">+91</span>
                     </div>
                     <input
                       id="modal-phone"
                       inputMode="tel"
-                      className="w-full bg-transparent px-3 py-3.5 pr-11 text-sm text-gray-800 placeholder-gray-400 outline-none"
+                      className="w-full bg-transparent px-3 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
                       placeholder="Enter Phone Number"
                       {...register("phone")}
                     />
-                    <Phone className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-400" />
+                    <Phone className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
                   </div>
                   {errors.phone && (
                     <p className={errorClass}>{errors.phone.message}</p>
@@ -207,19 +207,19 @@ function EnquiryDialog({
 
                 {/* Destination */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-gray-200/90 bg-white/95 shadow-sm transition-colors focus-within:border-[#0b66e4] focus-within:ring-2 focus-within:ring-[#0b66e4]/20">
+                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-destination"
-                      className="w-full bg-transparent px-4 py-3.5 pr-11 text-sm text-gray-800 placeholder-gray-400 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
                       placeholder="Enter Your Destination"
                       {...register("destinationInterest")}
                     />
-                    <MapPin className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-400" />
+                    <MapPin className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
                   </div>
                 </div>
 
                 {submitError && (
-                  <p className="rounded-xl bg-red-50 px-3.5 py-2 text-xs text-red-600">
+                  <p className="rounded-xl bg-red-50 px-3.5 py-2 text-xs font-medium text-red-600">
                     {submitError}
                   </p>
                 )}
@@ -228,7 +228,7 @@ function EnquiryDialog({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b66e4] py-3.5 text-base font-bold text-white shadow-md transition-all duration-200 hover:bg-[#0952b7] hover:shadow-lg disabled:opacity-70"
+                  className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#0b66e4] py-3.5 text-base font-bold text-white shadow-xl transition-all duration-200 hover:bg-[#0952b7] hover:shadow-2xl disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <>
