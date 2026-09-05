@@ -13,6 +13,8 @@ import {
   FileCheck,
   Coins,
   BedDouble,
+  Ship,
+  Smile,
   LucideIcon,
 } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
@@ -38,6 +40,24 @@ const serviceMeta: Record<
     tag: "Global Horizons",
     icon: Globe2,
     link: "/packages?scope=international",
+  },
+  Cruises: {
+    image: "/services/service-cruises.jpg",
+    tag: "Ocean & River Voyages",
+    icon: Ship,
+    link: "/packages?q=cruise",
+  },
+  "Childrens Programme": {
+    image: "/services/service-childrens-programme.jpg",
+    tag: "Family & Kids Fun",
+    icon: Smile,
+    link: "/packages?q=family",
+  },
+  "Children's Programme": {
+    image: "/services/service-childrens-programme.jpg",
+    tag: "Family & Kids Fun",
+    icon: Smile,
+    link: "/packages?q=family",
   },
   "Bike Trips": {
     image: "/services/service-biketrips.jpg",
@@ -103,46 +123,56 @@ const fallbackServices = [
   },
   {
     id: "3",
+    name: "Cruises",
+    description: "Luxury ocean and river cruise journeys to breathtaking destinations worldwide.",
+  },
+  {
+    id: "4",
+    name: "Childrens Programme",
+    description: "Fun, safe, and engaging youth travel activities curated for family holidays.",
+  },
+  {
+    id: "5",
     name: "Bike Trips",
     description: "Guided motorcycle journeys along scenic routes.",
   },
   {
-    id: "4",
+    id: "6",
     name: "Honeymoon Packages",
     description: "Romantic getaways planned for two.",
   },
   {
-    id: "5",
+    id: "7",
     name: "Historic Destinations",
     description: "Tours built around heritage and culture.",
   },
   {
-    id: "6",
+    id: "8",
     name: "Pilgrimage Packages",
     description: "Spiritual journeys to revered destinations.",
   },
   {
-    id: "7",
+    id: "9",
     name: "MICE",
     description: "Meetings, incentives, conferences, and events.",
   },
   {
-    id: "8",
+    id: "10",
     name: "Flight Booking",
     description: "Assistance booking domestic and international flights.",
   },
   {
-    id: "9",
+    id: "11",
     name: "Visa",
     description: "Support with visa applications and documentation.",
   },
   {
-    id: "10",
+    id: "12",
     name: "Forex",
     description: "Foreign currency exchange for your trip.",
   },
   {
-    id: "11",
+    id: "13",
     name: "Hotel Booking",
     description: "Accommodation arranged to suit your stay.",
   },
