@@ -127,25 +127,6 @@ function ThemeCarouselCard({ collection, index }: { collection: ThemeCollection;
           })}
         </div>
 
-        {/* Subtle Carousel Progress Dots (Visible when hovered) */}
-        <div
-          className={`absolute top-4 right-4 z-10 flex items-center gap-1.5 rounded-full bg-black/40 px-2.5 py-1 backdrop-blur-md transition-opacity duration-300 ${
-            isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-          aria-hidden
-        >
-          {collection.images.map((_, idx) => (
-            <span
-              key={idx}
-              className={`block rounded-full transition-all duration-300 ${
-                idx === activeIndex
-                  ? "h-1.5 w-3.5 bg-white shadow-sm"
-                  : "h-1.5 w-1.5 bg-white/50"
-              }`}
-            />
-          ))}
-        </div>
-
         {/* Text / Content bottom overlay - Kept strictly identical to existing card design */}
         <div className="absolute inset-x-0 bottom-0 z-20 bg-white/94 p-5 backdrop-blur-sm">
           <h3 className="text-base font-bold leading-tight text-deep sm:text-lg">
