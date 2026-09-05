@@ -136,7 +136,7 @@ function EnquiryDialog({
             <div>
               {/* Title & Subtitle with lightweight transparent glass pill */}
               <div className="rounded-2xl bg-white/45 p-3.5 text-center shadow-sm backdrop-blur-[2px] border border-white/60">
-                <h2 className="text-2xl font-extrabold tracking-tight text-[#ea580c] sm:text-3xl drop-shadow-sm">
+                <h2 className="text-2xl font-extrabold tracking-tight text-[#0b66e4] sm:text-3xl drop-shadow-sm">
                   Enquire Now
                 </h2>
                 <p className="mt-1 text-xs font-bold text-slate-800 sm:text-sm">
