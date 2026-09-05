@@ -90,16 +90,16 @@ function EnquiryDialog({
       aria-modal="true"
       aria-label="Enquiry form"
     >
-      <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]">
+      <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.55)]">
         {/* Full card background image */}
         <div
           className="absolute inset-0 bg-cover bg-top bg-no-repeat"
           style={{ backgroundImage: `url('/brand/enquiry-modal-team.png')` }}
           aria-hidden
         />
-        {/* Crisp semi-transparent frosted white overlay for 100% text readability */}
+        {/* Subtle transparent overlay to make image vibrant and clearly visible */}
         <div
-          className="absolute inset-0 bg-white/90 backdrop-blur-[6px]"
+          className="absolute inset-0 bg-gradient-to-b from-white/65 via-white/45 to-white/75"
           aria-hidden
         />
 
@@ -109,14 +109,14 @@ function EnquiryDialog({
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-gray-500 transition hover:bg-black/10 hover:text-gray-800"
+            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/20 text-white backdrop-blur-md transition hover:bg-black/40 hover:scale-110"
             aria-label="Close enquiry form"
           >
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5 drop-shadow" />
           </button>
 
           {submitted ? (
-            <div className="flex flex-col items-center py-6 text-center">
+            <div className="flex flex-col items-center rounded-2xl bg-white/95 p-6 text-center shadow-xl backdrop-blur-md">
               <CheckCircle2 className="h-12 w-12 text-green-500" />
               <h3 className="mt-4 text-xl font-bold text-gray-900">
                 Thank you!
@@ -134,12 +134,12 @@ function EnquiryDialog({
             </div>
           ) : (
             <div>
-              {/* Title & Subtitle */}
-              <div className="text-center">
+              {/* Title & Subtitle with background blur pill for crystal-clear readability */}
+              <div className="rounded-2xl bg-white/90 p-4 text-center shadow-sm backdrop-blur-md border border-white/70">
                 <h2 className="text-2xl font-extrabold tracking-tight text-[#ea580c] sm:text-3xl">
                   Enquire Now
                 </h2>
-                <p className="mt-1.5 text-xs font-medium text-gray-600 sm:text-sm">
+                <p className="mt-1 text-xs font-medium text-gray-600 sm:text-sm">
                   Fill out the form and our team will get back to you shortly.
                 </p>
               </div>
