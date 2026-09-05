@@ -97,9 +97,9 @@ function EnquiryDialog({
           style={{ backgroundImage: `url('/brand/enquiry-modal-team.png')` }}
           aria-hidden
         />
-        {/* Soft, light transparent vignette so the team and logo are 100% visible */}
+        {/* Very subtle transparent gradient to preserve full image clarity and color */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/30 via-black/10 to-black/35"
+          className="absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-black/35"
           aria-hidden
         />
 
@@ -109,7 +109,7 @@ function EnquiryDialog({
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition hover:bg-black/60 hover:scale-110"
+            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm transition hover:bg-black/60 hover:scale-110"
             aria-label="Close enquiry form"
           >
             <X className="h-5 w-5 drop-shadow" />
@@ -134,17 +134,17 @@ function EnquiryDialog({
             </div>
           ) : (
             <div>
-              {/* Title & Subtitle with soft glassmorphism pill */}
-              <div className="rounded-2xl bg-white/75 p-3.5 text-center shadow-md backdrop-blur-md border border-white/80">
+              {/* Title & Subtitle with lightweight transparent glass pill */}
+              <div className="rounded-2xl bg-white/45 p-3.5 text-center shadow-sm backdrop-blur-[2px] border border-white/60">
                 <h2 className="text-2xl font-extrabold tracking-tight text-[#ea580c] sm:text-3xl drop-shadow-sm">
                   Enquire Now
                 </h2>
-                <p className="mt-1 text-xs font-semibold text-gray-700 sm:text-sm">
+                <p className="mt-1 text-xs font-bold text-slate-800 sm:text-sm">
                   Fill out the form and our team will get back to you shortly.
                 </p>
               </div>
 
-              {/* Form fields with transparent glassmorphism containers */}
+              {/* Form fields with elegant transparent glass styling */}
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
@@ -152,14 +152,14 @@ function EnquiryDialog({
               >
                 {/* Name */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
+                  <div className="relative flex items-center rounded-xl border border-white/60 bg-white/20 shadow-sm backdrop-blur-[2px] transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/45 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-name"
-                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
                       placeholder="Enter Name"
                       {...register("name")}
                     />
-                    <User className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
+                    <User className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
                   </div>
                   {errors.name && (
                     <p className={errorClass}>{errors.name.message}</p>
@@ -168,15 +168,15 @@ function EnquiryDialog({
 
                 {/* Email */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
+                  <div className="relative flex items-center rounded-xl border border-white/60 bg-white/20 shadow-sm backdrop-blur-[2px] transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/45 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-email"
                       type="email"
-                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
                       placeholder="Enter Email ID"
                       {...register("email")}
                     />
-                    <Mail className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
+                    <Mail className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
                   </div>
                   {errors.email && (
                     <p className={errorClass}>{errors.email.message}</p>
@@ -185,20 +185,20 @@ function EnquiryDialog({
 
                 {/* Phone */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
-                    <div className="flex shrink-0 items-center gap-1.5 border-r border-gray-400/40 py-3 pl-3.5 pr-2.5 text-xs font-bold text-gray-900 select-none">
+                  <div className="relative flex items-center rounded-xl border border-white/60 bg-white/20 shadow-sm backdrop-blur-[2px] transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/45 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
+                    <div className="flex shrink-0 items-center gap-1.5 border-r border-slate-600/30 py-3 pl-3.5 pr-2.5 text-xs font-extrabold text-slate-900 select-none">
                       <span className="text-base leading-none">🇮🇳</span>
-                      <span className="text-[10px] text-gray-700">▾</span>
-                      <span className="pl-1 text-sm text-gray-900 font-bold">+91</span>
+                      <span className="text-[10px] text-slate-800">▾</span>
+                      <span className="pl-1 text-sm text-slate-900 font-extrabold">+91</span>
                     </div>
                     <input
                       id="modal-phone"
                       inputMode="tel"
-                      className="w-full bg-transparent px-3 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
+                      className="w-full bg-transparent px-3 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
                       placeholder="Enter Phone Number"
                       {...register("phone")}
                     />
-                    <Phone className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
+                    <Phone className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
                   </div>
                   {errors.phone && (
                     <p className={errorClass}>{errors.phone.message}</p>
@@ -207,19 +207,19 @@ function EnquiryDialog({
 
                 {/* Destination */}
                 <div>
-                  <div className="relative flex items-center rounded-xl border border-white/90 bg-white/60 shadow-md backdrop-blur-md transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/90 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
+                  <div className="relative flex items-center rounded-xl border border-white/60 bg-white/20 shadow-sm backdrop-blur-[2px] transition-colors focus-within:border-[#0b66e4] focus-within:bg-white/45 focus-within:ring-2 focus-within:ring-[#0b66e4]/25">
                     <input
                       id="modal-destination"
-                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-semibold text-gray-900 placeholder-gray-700 outline-none"
+                      className="w-full bg-transparent px-4 py-3 pr-11 text-sm font-bold text-slate-900 placeholder-slate-800/90 outline-none"
                       placeholder="Enter Your Destination"
                       {...register("destinationInterest")}
                     />
-                    <MapPin className="pointer-events-none absolute right-3.5 h-5 w-5 text-gray-700" />
+                    <MapPin className="pointer-events-none absolute right-3.5 h-5 w-5 text-slate-800" />
                   </div>
                 </div>
 
                 {submitError && (
-                  <p className="rounded-xl bg-red-50 px-3.5 py-2 text-xs font-medium text-red-600">
+                  <p className="rounded-xl bg-red-50/90 px-3.5 py-2 text-xs font-bold text-red-600">
                     {submitError}
                   </p>
                 )}
