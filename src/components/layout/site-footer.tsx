@@ -148,7 +148,7 @@ export function SiteFooter() {
             className="group inline-flex items-center transition-opacity hover:opacity-95"
           >
             <img
-              src="/brand/yana-logo-footer-transparent.png?v=2"
+              src="/brand/yana-logo-footer-transparent.png?v=4"
               alt="Yana Travels"
               className="h-11 w-auto max-w-[190px] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-13 sm:max-w-[220px]"
             />
