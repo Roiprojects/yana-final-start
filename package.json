@@ -7,7 +7,7 @@
     "dev": "concurrently -n api,web -c blue,green \"npm:dev:server\" \"npm:dev:web\"",
     "dev:web": "vite",
     "dev:server": "tsx watch server/index.ts",
-    "build": "vite build",
+    "build": "vite build && node -e \"require('fs').copyFileSync('vercel.json', 'dist/vercel.json')\"",
     "start": "npm run start:server",
     "start:web": "vite preview",
     "start:server": "tsx server/index.ts",
