@@ -42,9 +42,9 @@ export function SiteHeader() {
             className="group flex items-center transition-transform duration-300 hover:scale-[1.02]"
           >
             <img
-              src="/brand/yana-logo-white.png"
+              src="/brand/yana-logo-header.png"
               alt="Yana Travels"
-              className="h-9 w-auto max-w-[170px] object-contain sm:h-11 sm:max-w-[210px] md:h-12 md:max-w-[230px]"
+              className="h-10 w-auto max-w-[170px] object-contain sm:h-12 sm:max-w-[210px] md:h-14 md:max-w-[230px]"
             />
           </Link>
           <SearchBar dark={true} />
