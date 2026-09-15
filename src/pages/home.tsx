@@ -21,6 +21,7 @@ import { EnquiryCta } from "@/components/marketing/enquiry-cta";
 import { HeroSlideshow } from "@/components/marketing/hero-slideshow";
 import { HeroSearch } from "@/components/marketing/hero-search";
 import { HeroFeaturesPanel } from "@/components/marketing/hero-features-panel";
+import { UpcomingToursSection } from "@/components/marketing/upcoming-tours";
 import { SpecialDealsSection } from "@/components/marketing/special-deals-carousel";
 import { HowItWorks } from "@/components/marketing/how-it-works";
 import { ValueProps } from "@/components/marketing/value-props";
@@ -256,6 +257,8 @@ export function HomePage() {
           </Container>
         </section>
       </div>
+
+      <UpcomingToursSection />
 
       <div className="relative overflow-hidden border-y border-[#efe3cd] bg-[linear-gradient(90deg,#faf6ed,#fffdf8,#f3f7fd)]">
         <Container className="relative z-10 py-4 sm:py-5">
